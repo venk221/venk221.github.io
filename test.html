@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Venkatesh Mullur - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/professional-portfolio.png" rel="professional-portfolio">
+  <link href="./assets/img/professional-portfolio.png" rel="professional-portfolio">
+  <link rel="icon" href="./assets/img/professional-portfolio.png">
+  <!-- <link rel="icon" href="./assets/img/portfolio.png"> -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="./assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="./assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="./assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="./assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="./assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: iPortfolio - v3.10.0
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+<style>
+  h5 {text-align: center;}
+</style>
+
+<body>
+
+
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
+      <div class="container">         
+
+        <div class="section-title d-flex">
+            <a href="../index.html">
+                <img src="../assets/img/back.png" alt="Back" style="height: 20px; width: 20px; margin-top: 15px; margin-right: 10px;">
+              </a>
+              
+          <h2>Neural Radiance Fields</h2>
+              
+          <a href="https://github.com/venk221/Neural-Radiance-Fields-NeRF/tree/main">
+            <img src="../assets/img/github.png" alt="Back" style="height: 40px; width: 40px; margin-top: 0px; margin-right: 10px; margin-left: 25px;">
+          </a>
+        </div>
+        <h3>Abstract</h3>
+        <p>
+          This report explores the Neural Radiance Fields (NeRF) technique, an advanced neural rendering method used to generate novel scenes using ground truth poses and images as input. The NeRF model leverages neural networks to represent complex radiance and appearance, producing realistic renderings with RGB colors and output density. The study applies the NeRF framework to the Lego bulldozer dataset, partitioning it for training, validation, and testing. By analyzing ray generation, stratification, positional encoding, and model architecture, the report demonstrates the process of volume rendering and its applications in various fields. The results highlight the model's performance and propose potential enhancements, such as extended training duration and hierarchical volume sampling, to improve the visual fidelity and sharpness of the generated images.
+        </p>
+
+        <div class="row">
+          <div class="col-lg-4" data-aos="fade-right" style="margin-top: 200px;">
+            <img src="../assets/img/nerf/f1.jpg" class="img-fluid" alt="">
+            <p class="image-caption">View Synthesis. Source: <a href="https://dellaert.github.io/NeRF21/">NeRF at ICCV 2021</a></p>
+            <div style="display: flex;">
+              <div style="flex: 1;">
+                  <img src="../assets/img/nerf/f2.png" class="img-fluid" alt="" style="margin-top: 200px;">
+                  <p class="image-caption">Dataset Images</p>
+              </div>
+              
+              <div style="flex: 1;">
+                <img src="../assets/img/nerf/f3.png" class="img-fluid" alt="" style="margin-top: 200px;">
+                  <!-- <p class="image-caption">Caption for the second image</p> -->
+              </div>
+          </div>
+          
+            <img src="../assets/img/nerf/f4.png" class="img-fluid" alt="" style="margin-top: 300px;">
+            <p class="image-caption">Ray Generation and Stratification. Source: <a href="https://shaderbits.com/blog/creating-volumetric-ray-marcher">Creating a Volumetric Ray Marcher by Ryan Brucks</a></p>
+            <img src="" class="img-fluid" alt="" style="margin-top: 150px;">
+            <p class="image-caption"> </p>
+            <img src="../assets/img/nerf/f5.png" class="img-fluid" alt="" style="margin-top: 30px;">
+            <p class="image-caption">Positional Encoding Source: <a href="https://shaderbits.com/blog/creating-volumetric-ray-marcher">Learning high frequencies with Fourier feature mapping </a></p>
+            <img src="../assets/img/nerf/f7.png" class="img-fluid" alt="" style="margin-top: 100px;">
+            <p class="image-caption">Model for NeRF</p>
+            <img src="../assets/img/nerf/f6.png" class="img-fluid" alt="" style="margin-top: 250px;">
+            <p class="image-caption">Volume rendering</p>
+
+            <div style="display: flex;">
+              <div style="flex: 1;">
+                  <img src="../assets/img/nerf/f8.png" class="img-fluid" alt="" style="margin-top: 250px;">
+                  <p class="image-caption">Results</p>
+              </div>
+              
+              <div style="flex: 1;">
+                <img src="../assets/img/nerf/f9.png" class="img-fluid" alt="" style="margin-top: 250px;">
+                  <!-- <p class="image-caption">Caption for the second image</p> -->
+              </div>
+          </div>
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3>Introduction</h3>
+              <p class="paragraph-spacing">
+                NeRF, short for Neural Radiance Fields, is an advanced neural rendering technique that enables the generation of novel scenes by utilizing ground truth poses and their image perspectives as input. By optimizing the model based on these input poses, NeRF becomes capable of functioning as a function approximator for any given pose within the scene. In essence, NeRF has the ability to provide fresh perspectives of objects when provided with input views of those objects.
+              </p>
+              <p class="paragraph-spacing">
+                The input to the NeRF model consists of a 5D tensor, encompassing spatial location (x, y, z) and viewing direction (θ and ψ) information. The output of the model comprises RGB colors and output density, allowing for the synthesis of realistic and visually appealing renderings. This sophisticated approach leverages neural networks to capture and represent the complex radiance and appearance of objects, enabling the generation of high-quality images from various viewpoints.
+              </p>
+          <h3 style="margin-bottom: 40px; margin-top: 30px;">Dataset</h3>
+          <p class="paragraph-spacing">
+            For the conducted experiments, a specific dataset called the Lego bulldozer dataset was employed. The dataset was obtained in the form of a NumPy file and consisted of a total of 106 images, each accompanied by its respective pose information. From this dataset, a training set comprising 100 poses was selected, ensuring a diverse representation of viewpoints and object configurations. To evaluate the performance and generalization capabilities of our model during the training process, one pose was reserved for validation purposes. Furthermore, five poses were specifically set aside to establish a dedicated testing set, which served as a benchmark for assessing the final performance and accuracy of our trained model. By meticulously partitioning the dataset into distinct subsets, the main intention is to facilitate rigorous experimentation and ensure reliable evaluation of the proposed methods.
+          </p>
+          <h3 style="margin-bottom: 30px; margin-top: 30px;">Ray Generation</h3>
+          <p class="paragraph-spacing">
+            In the NeRF (Neural Radiance Fields) framework, ray-based computations play a crucial role, necessitating a clear understanding of how rays are generated for each pose. To achieve this, a comprehensive understanding of the camera's position and rotation matrix, derived from the pose matrix, is essential. This knowledge enables the determination of ray directions for every pixel in the image, taking into account the principles governing the pinhole camera model. Specifically, it involves calculating the directions of the rays with respect to the camera frame. By utilizing the rotation matrix, these ray representations can be transformed to the world frame. The "get rays" function in our code assumes the responsibility of executing these critical computations, playing a pivotal role in facilitating the ray-based operations within the NeRF framework.
+          </p>
+          <h3 style="margin-bottom: 40px; margin-top: 30px;">Ray Stratification</h3>
+          <p class="paragraph-spacing">
+            In order to approximate the sampling of each point along a ray, a practical approach involves utilizing a discrete set of points on the ray. Although achieving a truly continuous sampling is unfeasible, random points are generated within the range defined by the two endpoints of the ray. These endpoints are selected arbitrarily for the purpose of stratification. The implementation of this stratification technique can be found in the "get stratified" method.
+          </p>
+          <h3 style="margin-bottom: 40px; margin-top: 30px;">Positional Encoding</h3>
+          <p class="paragraph-spacing">
+            The incorporation of Positional Encoding plays a pivotal role in the NeRF implementation, as highlighted in the paper. The paper underscores the challenge faced by neural networks in effectively handling high-frequency inputs. To address this limitation, the paper proposes the utilization of Positional Encoding, which involves modulating the raw input with sine and cosine frequency bands. In accordance with the paper's recommendation, we have adopted the setting of 10 frequency bands for the spatial component and 4 frequency bands for the viewing directions component. This adherence to the paper's guidelines ensures the appropriate integration of Positional Encoding within our NeRF framework.
+          </p>
+          <h3 style="margin-bottom: 40px; margin-top: 30px;">Model Architecture</h3>
+          <p class="paragraph-spacing">
+            The implemented architecture closely follows the proposed NeRF architecture as outlined in the research paper. The input of the network consists of the spatial information, which is processed through an MLP comprising eight layers. Notably, on the fourth layer of the MLP, the spatial input is reintroduced as a skip connection to facilitate information flow. Subsequently, a linear layer is applied as the ninth layer, producing a one-dimensional output density logit with ReLU activation. For the RGB outputs, the ninth layer is concatenated with the input representing viewing directions. The eleventh layer serves as the output layer, employing a sigmoid activation function to generate the RGB values. The eighth and ninth layers indicates no activation function is applied. Throughout the architecture, ReLU activations are utilized, except for the specified cases.
+          </p>
+          <h3 style="margin-bottom: 40px; margin-top: 30px;">Volume Rendering</h3>
+          <p class="paragraph-spacing">
+            Volume rendering is a powerful technique that allows the creation of visually appealing 2D projections from volumetric datasets, which are typically obtained through discrete sampling in 3D space.
+            In volume rendering, an algorithm is employed to determine the RGBα values (representing Red, Green, Blue, and Alpha channels) for each voxel along the rays casted from a given camera position. These RGBα values are then converted to RGB colors and assigned to the corresponding pixels in the resulting 2D image. This process is iterated for each pixel, progressively rendering the entire 2D image.
+          </p>
+          <p>By applying volume rendering, complex volumetric data can be effectively visualized and understood in a 2D representation. this technique finds applications in various fields such as medical imaging, scientific visualization, and computer graphics, enabling researchers and professionals to gain valuable insights from volumetric datasets. The formula on the right performs volume rendering, This equation basically sums up the RGB
+            values across views according to the output density.</p>
+            <h3 style="margin-bottom: 40px; margin-top: 30px;">Results and Possible Improvements</h3>
+          <p class="paragraph-spacing">
+            The NeRF model was trained for a total of 7500 iterations, with each iteration incorporating only one pose as input. To accommodate the computational limitations of the GPU, the number of rays provided to the model was batched. This approach enabled the model to handle the image rays efficiently. Notably, the training process required approximately 7 hours on the university cluster, reflecting the computational demands of the NeRF model.
+            For the evaluation of the trained NeRF network, the four test poses were used as input. By comparing the generated color map of the model with the corresponding ground truth image, we assessed the quality of the model's predictions.
+          </p>
+          <p>We propose two potential enhancements: Firstly, extending the training duration by significantly increasing the number of iterations. In the original NeRF paper, the network was trained for 200,000 iterations, suggesting that a more extended training period could yield better results. Secondly, incorporating Hierarchical Volume Sampling into the training process could help enhance the reconstruction of textures in the generated images. By adopting these measures, we anticipate improvements in the visual fidelity and sharpness of the NeRF model's outputs.</p>
+          </div>
+        </div>
+
+
+    <!-- End Resume Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>My other projects</h2>
+          <p>Find my projects on my github profile.</p>
+        </div>
+
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+
+            <!-- <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+
+                <a href="../test.html">        
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                    <h5> Neural  Radiance Fields </h5>
+                  </div>
+                </div>
+      
+                </a> -->
+      
+      
+      
+      
+                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                  <a href="../sfm.html">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                    <h5> Structure from Motion </h5>
+                    <div class="portfolio-links">
+                    </div>
+                  </div>
+                </div>
+                </a>
+      
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                  <a href="../pc.html">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+                    <h5> Point cloud Semantic Segmentation </h5>
+                    <div class="portfolio-links">
+                    </div>
+                  </div>
+                </div>
+              </a>
+      
+                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                  <a href="../vio.html">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/VIO.png" class="img-fluid" alt="">
+                    <h5> Visual Inertial Odometry using MSCKF </h5>
+                    <div class="portfolio-links">
+                    </div>
+                  </div>
+                </div>
+              </a>
+      
+      
+                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                  <a href="../calib.html">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+                    <h5> Automatic Camera Calibration </h5>
+                    <div class="portfolio-links">
+                    </div>
+                  </div>
+                </div>
+              </a>
+      
+                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                  <a href="../pblite.html">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/portfolio-pb.jpg" class="img-fluid" alt="" >
+                    <h5> PBLite: The Kernel's way </h5>
+                    <div class="portfolio-links">
+                    </div>
+                  </div>
+                </div>
+              </a>
+      
+                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                    <a href="../deepfakes.html">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+                    <h5> DeepFakes</h5>
+                    <div class="portfolio-links">
+                    </div>
+                  </div>
+                </div>
+            </a>
+      
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    <a href="../pcjointkinematics.html">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+                    <h5> Point Cloud based Joint Kinematics Prediction on MRI </h5>
+                    <div class="portfolio-links">
+                    </div>
+                  </div>
+                </div>
+            </a>
+      
+                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                    <a href="../MP.html">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+                    <h5> Motion Planning of Robots in Adversarial Environments </h5>
+                    <div class="portfolio-links">
+                    </div>
+                  </div>
+                </div>
+            </a>
+      
+                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                    <a href="../Panaroma.html">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+                    <h5> Image Stitching using SIFT Features </h5>
+                    <div class="portfolio-links">
+                    </div>
+                  </div>
+                </div>
+            </a>
+      
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    <a href="../AI.html">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/output.jpg" class="img-fluid" alt="">
+                    <h5> Enhancing sign language to text conversion by integrating lip movement recognition. </h5>
+                    <div class="portfolio-links">
+                    </div>
+                  </div>
+                </div>
+            </a>
+      
+                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                    <a href="../C.html">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+                    <h5> Trajectory Tracking of Quadrotor </h5>
+                    <div class="portfolio-links">
+                    </div>
+                  </div>
+                </div>
+            </a>
+      
+                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                    <a href="../BE.html">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/FER.png" class="img-fluid" alt="">
+                    <h5> Facial Expression recognition </h5>
+                    <div class="portfolio-links">
+                    </div>
+                  </div>
+                </div>
+            </a>
+                                          
+              </div>
+            </div>
+          </section>
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+        </div>
+
+        <div class="row" data-aos="fade-in">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>37 William St, Worcester, MA 01609</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>vmullur@wpi.edu</p>
+              <!-- </div>
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+            </div> -->
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="./assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="./assets/vendor/aos/aos.js"></script>
+  <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="./assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="./assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="./assets/vendor/typed.js/typed.min.js"></script>
+  <script src="./assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="./assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="./assets/js/main.js"></script>
+
+</body>
+
+</html>

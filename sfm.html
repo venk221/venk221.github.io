@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Venkatesh Mullur - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/professional-portfolio.png" rel="professional-portfolio">
+  <link href="./assets/img/professional-portfolio.png" rel="professional-portfolio">
+  <link rel="icon" href="./assets/img/professional-portfolio.png">
+  <!-- <link rel="icon" href="./assets/img/portfolio.png"> -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="./assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="./assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="./assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="./assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="./assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: iPortfolio - v3.10.0
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+<style>
+  h5 {text-align: center;}
+</style>
+
+<body>
+
+
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
+      <div class="container">         
+
+        <div class="section-title d-flex">
+            <a href="../index.html">
+                <img src="../assets/img/back.png" alt="Back" style="height: 20px; width: 20px; margin-top: 15px; margin-right: 10px;">
+              </a>
+              
+          <h2>Structure from Motion</h2>
+
+          <a href="https://github.com/venk221/Structure-from-Motion-NeRF">
+            <img src="../assets/img/github.png" alt="Back" style="height: 40px; width: 40px; margin-top: 0px; margin-right: 10px; margin-left: 25px;">
+          </a>
+        </div>
+
+        <h3>Abstract</h3>
+        <p>
+          This project delves into the realm of Structure from Motion (SfM), focusing on 3D scene reconstruction and simultaneous camera pose estimation using monocular camera images. The study explores feature extraction, matching, and epipolar geometry principles to derive the Fundamental matrix and Essential matrix, which play vital roles in establishing point correspondences and camera poses. The project also incorporates Linear and Non-Linear Triangulation techniques to minimize algebraic and geometric errors in 3D point estimation. Finally, Bundle Adjustment is performed to refine camera poses and 3D points, achieving precise localization and mapping results. The combination of these methods leads to a robust and accurate SfM framework, essential for various applications in robotics, computer vision, and 3D modeling.
+        </p>
+          
+                  <div class="row">
+                    <div class="col-lg-4" data-aos="fade-right">
+                      <img src="../assets/img/sfm/sfm.png" class="img-fluid" alt="">
+                      <p class="image-caption">3D Reconstructed Unity Hall, WPI</p>
+                      <img src="../assets/img/sfm/featmatch.png" class="img-fluid" alt="" style="margin-top: 250px;">
+                      <p class="image-caption">Feature matching using SIFT </p>
+                      <img src="../assets/img/sfm/epipole1.png" class="img-fluid" alt="" style="margin-top: 150px;">
+                      <p class="image-caption">Epipolar Constraint Formulation </p>
+                      <img src="" class="img-fluid" alt="" style="margin-top: 150px;">
+                      <p class="image-caption"> </p>
+                      <img src="../assets/img/sfm/cameraposes.png" class="img-fluid" alt="" style="margin-top: 400px;">
+                      <p class="image-caption">Camera Poses: Triangulation</p>
+                      <img src="../assets/img/sfm/triang.png" class="img-fluid" alt="" style="margin-top: 250px;">
+                      <p class="image-caption">Optimization: Linear vs Non-Linear Triangulation</p>
+                    </div>
+                    <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+                      <h3>Introduction</h3>
+                        <p class="paragraph-spacing">
+                            With a foundation rooted in exploring 2D imagery, this project has led me to an exciting new realm of discovery - Structure from Motion (SfM). Within this domain, my focus has shifted towards the reconstruction of 3D scenes and the simultaneous acquisition of camera poses of monocular camera w.r.t a given scene.  The image showcased on the left stands as a testament to the fruits of my hardwork; it exhibits the impeccably reconstructed Unity Hall at WPI, along with the intricate camera poses.
+                        </p>
+                        <p class="paragraph-spacing">
+                            The primary objective of this project revolves around the creation of a complete and coherent rigid structure, leveraging a diverse range of images captured from various viewpoints or, equivalently, through a camera in motion. In undertaking this endeavor, inspiration has been drawn from the groundbreaking work by Agarwal et al., as documented in their publication titled "Building Rome in a Day." In this remarkable study, the authors successfully reconstructed an entire city by harnessing the power of a vast collection of internet-sourced photographs.
+                        </p>
+                    <h3 style="margin-bottom: 40px; margin-top: 30px;">Approach to the SfM problem</h3>
+                    <p class="paragraph-spacing">
+                        The dataset utilized for this project encompassed a collection of monocular images captured while in motion. These images were obtained using the primary camera of a Samsung S22 Ultra smartphone, with a fixed focus setting. The camera settings were optimized to achieve optimal image quality, employing an aperture of f/1.8, ISO 50, and a shutter speed of 1/500 seconds. Notably, the provided images have already undergone distortion correction and have been resized to dimensions of 800x600 pixels.
+                    </p>
+                    <p class="paragraph-spacing">
+                        Given the vital role that feature extraction and matching play in the Structure from Motion process, a robust approach was adopted in this project. Specifically, keypoint matching was implemented using SIFT (Scale-Invariant Feature Transform) keypoints and descriptors. The utilization of these techniques enhances the reliability and accuracy of the feature matching process, thereby contributing to the overall success and effectiveness of the project.
+                    </p>
+                    <h3 style="margin-bottom: 30px; margin-top: 30px;">Epipolar Geometry</h3>
+                    <p class="paragraph-spacing">
+                        Once keypoint matching has been established using SIFT and the matches further refined through the application of the Random Sample Consensus (RANSAC) algorithm to eliminate outliers, the primary objective shifts towards determining correspondences between points in the form of the Fundamental matrix.
+                    </p>
+                    <p class="paragraph-spacing">
+                        The Fundamental matrix, a rank 2, 3x3 matrix with seven degrees of freedom, plays a crucial role in expressing the relationship between corresponding image points, leveraging the principles of epipolar geometry. By utilizing the concept of the epipolar constraint, or Longuet-Higgins equation (x'ᵀFₓ = 0), a homogeneous linear system with nine unknowns - the elements of the Fundamental matrix - can be constructed. Through the pursuit of this homogeneous linear system, the goal of deriving the precise fundamental matrix is accomplished, which plays a vital role in the accurate determination of correspondences between image points.
+                    </p>
+                    <h3 style="margin-bottom: 40px; margin-top: 30px;">Entering the 3rd Dimension</h3>
+                    <p class="paragraph-spacing">
+                      Once the fundamental matrix has been derived using the eight-point algorithm and Longuet-Higgins equation, it is necessary to perform Fundamental matrix decomposition via Singular Value Decomposition (SVD). With this task accomplished, the focus shifts from point correspondences between images to establishing a connection between the images and the 3D world. To achieve this, a fundamental matrix that relates the corresponding points, assuming adherence to the pinhole camera model, is required.
+                    </p>
+                    <p class="paragraph-spacing">
+                      Herein lies the utility of the Essential Matrix, which is expressed mathematically as E = KᵀFK, where K is the camera calibration or intrinsic matrix. It is essential to note that while F is defined in original image space (i.e., pixel coordinates), E is expressed in normalized image coordinates. Therefore, a correction must be performed while executing the SVD.
+                    </p>
+                    <h3 style="margin-bottom: 40px; margin-top: 30px;">Locating Camera Poses and Triangulations</h3>
+                    <p class="paragraph-spacing">
+                      To sum up so far, the use of the Fundamental Matrix is predominant in uncalibrated methods, whereas the Essential Matrix is favored in calibrated methods. From the corresponding 3D points, the crucial step is to perform triangulation. By taking into account corresponding image points, x1 and x2, from two different viewpoints, and their respective camera projection matrices, P1 and P2, the computation of the 3D point X is achieved through solving a linear system. The Linear Triangulation method, which utilizes algorithms like the Direct Linear Transform (DLT), is commonly employed for this purpose, where a system of equations is established, and X is estimated through homogeneous coordinates.
+                    </p>
+                    <p class="paragraph-spacing">
+                      Once the E matrix is identified, it becomes possible to compute four potential camera pose configurations: (C1,R1), (C2,R2), (C3,R3), and (C4,R4), where C∈R3 represents the camera center and R∈SO(3) denotes the rotation matrix. However, it is essential to validate the accuracy of the camera poses by satisfying the "chierality constraint" or the "depth positivity constraint." These constraints ensure that the camera poses align with the correct spatial arrangement and maintain a positive depth relationship with the scene being captured.
+                    </p>
+                    <h3 style="margin-bottom: 40px; margin-top: 30px;">Optimization</h3>
+                    <p class="paragraph-spacing">
+                      Triangulation in Structure from Motion (SfM) involves two key steps: Linear Triangulation and Non-Linear Triangulation. Linear Triangulation aims to minimize the algebraic error by estimating the 3D positions of points based on their 2D projections and the known camera parameters. However, this method may still result in geometric errors due to noise in the feature matching process. To address this, Non-Linear Triangulation is performed, which further minimizes the geometric error or the reprojection error.
+                    </p>
+                    <p class="paragraph-spacing">
+                      In scenarios where multiple images are available, Perspective-n-Point (PnP) algorithms are employed. These algorithms optimize both linear and non-linear re-projection errors to accurately estimate camera poses and 3D points. By considering the 2D-3D correspondences and intrinsic camera parameters, PnP enables the determination of camera poses and scene geometry.
+                    </p>
+                    <p class="paragraph-spacing">
+                      To obtain the final refined output, Bundle Adjustment is conducted, leveraging the visibility matrix. Bundle Adjustment optimizes camera poses and 3D points by simultaneously minimizing the re-projection error across all parameters. This comprehensive optimization process ensures the best possible results by iteratively refining the camera poses and 3D point positions to achieve optimal alignment between the observed 2D projections and the reconstructed 3D points.
+                    </p>
+                    </div>
+                  </div>
+          
+                </div>
+              </section>
+          <!-- <h2>Structure from Motion</h2>
+          
+            <h3>The GitHub link is</h3>
+            <div class="portfolio-links">
+                <a href="https://github.com/venk221/Structure-from-Motion-NeRF" title="More Details"><i class="bx bx-link"></i></a>
+            </div> -->
+
+
+        </div>
+
+    <!-- End Resume Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>My other projects</h2>
+          <p>Find my projects on my github profile.</p>
+        </div>
+
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+
+                <a href="../test.html">        
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                    <h5> Neural  Radiance Fields </h5>
+                  </div>
+                </div>
+      
+                </a>
+      
+      
+      
+      
+                <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                  <a href="../sfm.html">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                    <h5> Structure from Motion </h5>
+                    <div class="portfolio-links">
+                    </div>
+                  </div>
+                </div>
+                </a> -->
+      
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                  <a href="../pc.html">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+                    <h5> Point cloud Semantic Segmentation </h5>
+                    <div class="portfolio-links">
+                    </div>
+                  </div>
+                </div>
+              </a>
+      
+                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                  <a href="../vio.html">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/VIO.png" class="img-fluid" alt="">
+                    <h5> Visual Inertial Odometry using MSCKF </h5>
+                    <div class="portfolio-links">
+                    </div>
+                  </div>
+                </div>
+              </a>
+      
+      
+                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                  <a href="../calib.html">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+                    <h5> Automatic Camera Calibration </h5>
+                    <div class="portfolio-links">
+                    </div>
+                  </div>
+                </div>
+              </a>
+      
+                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                  <a href="../pblite.html">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/portfolio-pb.jpg" class="img-fluid" alt="" >
+                    <h5> PBLite: The Kernel's way </h5>
+                    <div class="portfolio-links">
+                    </div>
+                  </div>
+                </div>
+              </a>
+      
+                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                    <a href="../deepfakes.html">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+                    <h5> DeepFakes</h5>
+                    <div class="portfolio-links">
+                    </div>
+                  </div>
+                </div>
+            </a>
+      
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    <a href="../pcjointkinematics.html">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+                    <h5> Point Cloud based Joint Kinematics Prediction on MRI </h5>
+                    <div class="portfolio-links">
+                    </div>
+                  </div>
+                </div>
+            </a>
+      
+                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                    <a href="../MP.html">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+                    <h5> Motion Planning of Robots in Adversarial Environments </h5>
+                    <div class="portfolio-links">
+                    </div>
+                  </div>
+                </div>
+            </a>
+      
+                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                    <a href="../Panaroma.html">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+                    <h5> Image Stitching using SIFT Features </h5>
+                    <div class="portfolio-links">
+                    </div>
+                  </div>
+                </div>
+            </a>
+      
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    <a href="../AI.html">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/output.jpg" class="img-fluid" alt="">
+                    <h5> Enhancing sign language to text conversion by integrating lip movement recognition. </h5>
+                    <div class="portfolio-links">
+                    </div>
+                  </div>
+                </div>
+            </a>
+      
+                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                    <a href="../C.html">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+                    <h5> Trajectory Tracking of Quadrotor </h5>
+                    <div class="portfolio-links">
+                    </div>
+                  </div>
+                </div>
+            </a>
+      
+                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                    <a href="../BE.html">
+                  <div class="portfolio-wrap">
+                    <img src="./assets/img/portfolio/FER.png" class="img-fluid" alt="">
+                    <h5> Facial Expression recognition </h5>
+                    <div class="portfolio-links">
+                    </div>
+                  </div>
+                </div>
+            </a>
+                                          
+              </div>
+            </div>
+          </section>
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+        </div>
+
+        <div class="row" data-aos="fade-in">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>37 William St, Worcester, MA 01609</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>vmullur@wpi.edu</p>
+              <!-- </div>
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+            </div> -->
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="./assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="./assets/vendor/aos/aos.js"></script>
+  <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="./assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="./assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="./assets/vendor/typed.js/typed.min.js"></script>
+  <script src="./assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="./assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="./assets/js/main.js"></script>
+
+</body>
+
+</html>
