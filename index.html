@@ -35,6 +35,74 @@
   <link rel="stylesheet" href="style.css">
 
 
+  <!-- <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Learning Journey Timeline</title>
+    <style>
+        /* Basic styling for the timeline */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .timeline {
+            position: relative;
+            width: 100%;
+            list-style: none;
+            padding: 0;
+        }
+        .timeline::before {
+            content: " ";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            border: 1px solid #ddd;
+            width: 100%;
+            height: 100px;
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            position: relative;
+            padding: 10px 20px;
+            background-color: #eee;
+            border-radius: 5px;
+            width: 80%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+        }
+        .timeline-item::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            border-style: solid;
+            border-width: 0 15px 15px 0;
+            border-color: transparent transparent #eee transparent;
+            transform: translateX(-50%);
+        }
+        .timeline-item .timeline-marker {
+            position: absolute;
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #ddd;
+            left: -10px;
+            top: 10px;
+        }
+        .timeline-item .timeline-content {
+            padding-left: 20px;
+        }
+        .timeline-item .timeline-content h3 {
+            margin-top: 0;
+        }
+        .timeline-item .timeline-content p {
+            margin-bottom: 0;
+        }
+    </style> -->
+
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -100,7 +168,24 @@
           <h2>About Me</h2>
           <h4>Passionate about computer vision, deep learning, and machine learning, seeking opportunities to utilize these skills in various domains like Robotics, Medical &
             Autonomous Vehicles.</h4>
+            <p id="quoted-text" class="fst">
+              <h7><i>"With every millisecond that ticks, the number of decisions to make is infinite. 
+                So how do human minds find the right decision so quickly?"</i></h7>
+          </p>
         </div>
+        <script>
+          function highlightQuote() {
+            var quoteParagraph = document.getElementById("quoted-text");
+        
+            // Add the "highlight" class to apply the yellow background
+            quoteParagraph.classList.add("highlight");
+        
+            // Remove the "highlight" class after 2 seconds
+            setTimeout(function() {
+              quoteParagraph.classList.remove("highlight");
+            }, 2000);
+          }
+        </script>
 
         <div class="row">
           <div class="col-lg-4" data-aos="fade-right">
@@ -109,34 +194,31 @@
           <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
             <p class="fst"> 
               Hello there!            
-            </p>  
+            </p>                  
             <p class="fst"> 
-              I am Venkatesh Mullur, a recently graduated Robotics Engineer from Worcester Polytechnic Institute. 
-              My passion lies in harnessing the power of cutting-edge computer vision, deep learning, and artificial intelligence to bridge the gap between humans and machines. 
-              I am particularly interested in empowering robots to perceive, understand, and interact with the world just as effectively as humans do.            
+              I'm Venkatesh Mullur, a 2023 Robotics Engineering graduate from Worcester Polytechnic Institute. Passionate about leveraging computer vision, deep learning, and artificial intelligence, I aim to bridge the gap between humans and machines. 
+              Witnessing <a href="https://youtu.be/BjZPvXKewFk?si=nvzF_hXmd61Ecesx" target="_blank">Yamaha's Motobot</a> struggle against Valentino Rossi in a race piqued my interest in the critical gap between perceiving the environment and real-world decision-making, especially in dynamic situations. 
+              Inspired from the above written<a href="javascript:void(0);" onclick="highlightQuote();"> quote</a>, I'm keen on empowering machines to perceive, understand, and interact with the world as effectively as humans. 
             </p>
+        
+          
             <p>
-              I am currently seeking full-time opportunities to leverage my skills and contribute to real-world applications of robotics. 
-              My experience as a <a href="https://github.com/venk221/human_pose_estimation-using-Zed2i-camera" target="_blank">Machine Vision Engineer</a> at CogniAux Lab with <a href="https://users.wpi.edu/~ayousefi/?_gl=1*1xo8ug4*_ga*MTUyMjI5ODAzOS4xNzA2MzEzMDA2*_ga_RE35PKQB7J*MTcwOTIzNjgwNC4yMC4xLjE3MDkyMzY5MzYuNjAuMC4w" target="_blank">Dr. Ali Yousefi</a> 
-              allowed me to develop a multi-modal framework for analyzing human  pose estimation in conditional environments using machine learning. 
-              This project highlights my ability to apply my expertise in computer vision and deep learning to impactful projects with the potential to improve people's lives.
+              I am actively pursuing full-time opportunities to apply my skills and contribute to real-world robotics applications. As a <a href="https://github.com/venk221/human_pose_estimation-using-Zed2i-camera" target="_blank">Machine Vision Engineer</a> at 
+              CogniAux Lab with <a href="https://users.wpi.edu/~ayousefi/?_gl=1*1xo8ug4*_ga*MTUyMjI5ODAzOS4xNzA2MzEzMDA2*_ga_RE35PKQB7J*MTcwOTIzNjgwNC4yMC4xLjE3MDkyMzY5MzYuNjAuMC4w" target="_blank">Dr. Ali Yousefi</a> , I developed a multi-modal framework for analyzing human emotions through pose estimation in dynamic environments using machine learning. 
+              This project underscores my proficiency in applying computer vision and deep learning to impactful endeavors with the potential to enhance people's lives.
             </p>
 
             
             
             <p>
-              My experience as a Perception Researcher under <a href="https://berkcalli.com/" target="_blank">Dr. Berk Calli</a>, involved applying computer vision and robotics to develop a real-time system for accurate keypoint detection and pose estimation on the Franka Panda Robot. 
-              This project encompassed tasks like <a href="https://github.com/venk221/Enhancing-Point-Tracking/blob/main/Enhancing_Point_Tracking__A_Comparative_Study_of_Occlusion_Free_and_Generative_Inpainting_Based_Keypoint_Tracking.pdf" target="_blank">enhancing point tracking</a>  and evaluating AI models for image inpainting. 
-              It exemplifies my ability to bridge the gap between theoretical knowledge and practical applications to tackle real-world challenges in robotics.
+              In my role as a Perception Researcher under <a href="https://berkcalli.com/" target="_blank">Dr. Berk Calli</a>, I applied computer vision and robotics to create a real-time system for precise keypoint detection and pose estimation on the Franka Panda Robot in cluttered and occluded environments. 
+              Tasks included improving <a href="https://github.com/venk221/Enhancing-Point-Tracking/blob/main/Enhancing_Point_Tracking__A_Comparative_Study_of_Occlusion_Free_and_Generative_Inpainting_Based_Keypoint_Tracking.pdf" target="_blank">enhancing point tracking</a> and assessing AI models for image inpainting.  
+              This project showcases my capacity to translate theoretical knowledge into practical solutions, addressing real-world challenges in robotics.
             </p>
             
             <p >
-              <!-- My dedication to continuous learning extends beyond my academic and professional pursuits. 
-              I actively pursue personal projects that push the boundaries of robotics, such as building a 
-              <a href="https://venk221.github.io/calib.html" target="_blank">robust camera calibration</a> pipeline and 
-              creating 3D models using <a href="https://venk221.github.io/test.html" target="_blank">Neural Radiance Fields</a>. 
-              These projects showcase my initiative, problem-solving skills, and commitment to staying at the forefront of technological advancements. -->
-              Furthermore, I worked as an Image Processing, Computer Vision Intern at <a href="https://digimsolution.com/" target="_blank">DigiM Solution</a>, where I honed my skills in noise reduction, 3D reconstruction, and image segmentation.
+              Experienced in industry dynamics, I served as an Image Processing and Computer Vision Intern at <a href="https://digimsolution.com/" target="_blank">DigiM Solution LLC</a>. 
+              Here, I honed skills in noise reduction, 3D reconstruction, & image segmentation while fostering teamwork.  
             </p>
             <p>
               I am eager to connect with individuals and organizations who share my passion for the future of robotics. 
@@ -148,102 +230,66 @@
       </div>
     </section>
 
-
-    
-    
-
-
     <!-- ======= Skills Section ======= -->
     <section id="skills" class="skills section-bg">
       <div class="container">
-
         <div class="section-title">
           <h2>Skills</h2>
-          <p>Being an Electronics Engineer and a Robotics Engineer, I have experience in python, C++ and Embedded C++. I have expertise in Machine Learning, Deep Learning and Computer vision.</p>
-        </div>
 
-        <div class="row skills-content">
-
-          <div class="col-lg-6" data-aos="fade-up">
-
-            <div class="progress">
-              <span class="skill">Python <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+          With the code you gave me when I add  more style indices, the previous ones are shifted to the left giving all the space to the newly added indice. That is not what I would want. 
+          <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css" rel="stylesheet" />
+            <div class="timeline" style="--items: 7;">
+              <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css" rel="stylesheet" />
+              <div class="timeline skills" style="--items: 7;">
+                <h1>Timeline</h1>
+                <ul>
+                  <li style="--index: 1">
+                    <h3>2018-2019 Dec-May</h3>
+                    <h5>Embedded Linux Intern at IoTIoT.in</h5>
+                    <p><u>Skills Learned:</u> Embedded Systems, Linux Kernel, Technical Skills like V4L2, I2C and Linux Filesystem, Networking, Version Control, Programming Languages like C++, Problem Solving.</p>
+                  </li>
+                  <li style="--index: 2">
+                    <h3>2020 Aug-Nov</h3>
+                    <h5>Embedded Systems and IoT Intern at Exa Mobility</h5>
+                    <p><u>Skills Learned:</u> Hardware Integration, Sensors and Safety Systems, Embedded Systems, Technical Research, Programming Languages like Python</p>
+                  </li>
+                  <li style="--index: 3">
+                    <h3>2020</h3>
+                    <h5>Graduated as Electronics and Telecommuncation Engineer</h5>
+                    <p><u>Skills learned:</u> Image Processing, Electronics, Signal Processing, Machine Learning, Robotics, Computer Networks, Deep Learning, Coding skills like python & C++.</p>
+                  </li>
+                  <li style="--index: 4">
+                    <h3>2021</h3>
+                    <h5>Started MS in Robotics Engineering at WPI</h5>
+                    <p><u>Skills Learned:</u> Linear algebra, computer vision, deep learning, Robot Manipulation, Robot Perception, Robot Control, Motion Planning, Reinforcement Learning, Biomedical Robotics, teamwork.</p>
+                  </li>
+                  <li style="--index: 5">
+                    <h3>2022-2023 Dec-April</h3>
+                    <h5>Image Processing, Data Analysis, Computer Vision at DigiM Solution LLC</h5>
+                    <p>
+                      <u>Skilles Learned:</u> Technical Skills and research, Quantitative Data Analysis, Teamwork and Collaboration, Critical Thinking, computer vision, CI/CD, version control, docker and AWS.
+                    </p>
+                  </li>
+                  <li style="--index: 6">
+                    <h3>2023 June-current</h3>
+                    <h5>Perception Researcher at Manipulation and Environmental Robotics Lab</h5>
+                    <p>
+                      <u>Skills Learned:</u> Vision based robot manipulation, robotics, deep learning, generative AI, Problem Solving & Optimization, Technical Research & Evaluation, Teamwork.
+                    </p>
+                  </li>
+                  <li style="--index: 7">
+                    <h3>2024 Jan</h3>
+                    <h5>Machine Vision Engineer at CogniAux Labs</h5>
+                    <p>
+                      <u>Skills Learned:</u> Multi-modal Framework Development, Sensor Fusion, Communication, Team Management, Adaptability.
+                    </p>
+                  </li>
+                </ul>
               </div>
             </div>
 
-            <div class="progress">
-              <span class="skill">C++ <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Embedded C++ <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Robot Controls<i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Motion Planning<i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="progress">
-              <span class="skill">Deep Learning <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Machine Learning <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Computer Vision <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Sensor Fusion <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">ADAS <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-
-          </div>
-
-        </div> 
+          
+          
 
         <section id="skills" class="section-bg">
           <table class="skills-table">
@@ -334,7 +380,7 @@
             <div class="resume-item pb-0">
               <h4>Venkatesh Mullur</h4>
               <p><em> 3+ years of experience 3D Computer Vision, Deep Learning and Machine Learning.</em></p>
-              <p><em> 2+ Trained Professional in Robotic Perception Systems</em></p>
+              <p><em> 2+ years Trained Professional in Robotic Perception Systems</em></p>
               <ul>
                 <li>vmullur@wpi.edu</li>
               </ul>
@@ -685,12 +731,57 @@
                 <img src="https://media.licdn.com/dms/image/C4E03AQGB9hkXPMuMfA/profile-displayphoto-shrink_800_800/0/1577770431749?e=1715212800&v=beta&t=XSzxlJ8P3pbrZ4TnHJN0g-6mcTK3ID7TfS6IwVNjxfs" class="testimonial-img" alt="">
                 <h3>Dr. Ali Yousefi</h3>
                 <h4>Assistant Professor,</h4>
-                <h4>Computer Science Department,</h4>
-                <h4>Worcester Polytechnic Institute</h4>
-                <h4>ayousefi@wpi.edu</h4>
               </div> 
             </div>
           </section> 
+            <!-- End testimonial item -->
+
+            <!-- <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Store Owner</h4>
+              </div> -->
+            <!-- </div>End testimonial item -->
+
+            <!-- <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Freelancer</h4>
+              </div> -->
+            <!-- </div>End testimonial item -->
+
+            <!-- <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <h4>Entrepreneur</h4>
+              </div> -->
+            <!-- </div>End testimonial item -->
+
+          <!-- </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+     </section> 
+     <!-- End Testimonials Section   -->
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
