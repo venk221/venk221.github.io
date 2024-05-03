@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Venkatesh Mullur - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/professional-portfolio.png" rel="professional-portfolio">
+  <link href="./assets/img/professional-portfolio.png" rel="professional-portfolio">
+  <link rel="icon" href="./assets/img/professional-portfolio.png">
+  <!-- <link rel="icon" href="./assets/img/portfolio.png"> -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="./assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="./assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="./assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="./assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="./assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: iPortfolio - v3.10.0
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+<style>
+  h5 {text-align: center;}
+</style>
+
+<body>
+
+
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
+      <div class="container">         
+
+        <div class="section-title d-flex">
+          <a href="../index.html#portfolio">
+                <img src="./assets/img/back.png" alt="Back" style="height: 20px; width: 20px; margin-top: 15px; margin-right: 10px;">
+              </a>
+              
+          <h2>Image Inpaining Based Keypoint Tracking</h2>
+
+          <a href="https://github.com/venk221/Enhancing-Point-Tracking">
+            <img src="./assets/img/github.png" alt="Back" style="height: 40px; width: 40px; margin-top: 0px; margin-right: 10px; margin-left: 25px;">
+          </a>
+        </div>
+
+        <h3>Abstract</h3>
+        <p>
+            This study introduces a sophisticated method for synthesizing authentic robot configurations within occluded environments, employing a hybrid framework that seamlessly integrates an Attention U-Net as a generator and a PatchNet as a discriminator in the context of the Wasserstein Generative Adversarial Network with Gradient Penalty (WGAN-GP). The primary objective is to address the challenges posed by occlusions in robotic environments, where joints may be partially or fully obscured. The significance of considering occluded images lies in their common occurrences within real-world robotic applications, where environmental clutter and obstacles often lead to partial or complete occlusion of robotic joints. Addressing this challenge is crucial for tasks such as motion planning, control, and manipulation, where accurate visual information is vital for successful operation. The proposed methodology contributes to overcoming the limitations posed by occluded images, thereby improving the robustness and reliability of robotic manipulation systems.
+        </p>
+          
+                  <div class="row">
+                    <div class="col-lg-4" data-aos="fade-right">
+                      <img src="./assets/img/image_inpainting/kp1.jpg" class="img-fluid" alt="" style="margin-top: 100px;">
+                      <p class="image-caption">This is a reconstructed image (occlusion was present on the
+                        end effector). The blue points on the joints of the robot represent
+                        the true joint positions (labels) and the red point represents the
+                        predicted keypoints in case of occlusions.</p>
+                      <img src="./assets/img/image_inpainting/contexual attention.png" class="img-fluid" alt="" style="margin-top: 250px;">
+                      <p class="image-caption">Showing inpainting results using contextual attention</p>
+                      <img src="./assets/img/image_inpainting/data.png" class="img-fluid" alt="" style="margin-top: 550px;">
+                      <p class="image-caption">YCB Dataset Objects are superimposed on the key point
+                        locations of the robot. </p>
+                      <img src="./assets/img/image_inpainting/o1.png" class="img-fluid" alt="" style="margin-top: 150px;">
+                      <p class="image-caption">Image Inpainting  </p>
+                      
+                      
+                      <div style="display: inline-block; width: 45%;">
+                        <img src="./assets/img/image_inpainting/ATT_UNet.png" class="img-fluid" alt="" style="margin-top: 350px;">
+                        <p class="image-caption">Attention Unet</p>
+                    </div>
+                    
+                    <div style="display: inline-block; width: 45%;">
+                        <img src="./assets/img/image_inpainting/wass.png" class="img-fluid" alt="" style="margin-top: 350px;">
+                        <p class="image-caption">Wasserstein Loss</p>
+                    </div>
+
+                    <img src="./assets/img/image_inpainting/res1.png" class="img-fluid" alt="" style="margin-top: 320px;">
+                      <p class="image-caption">Showing inpainting results</p>
+
+                        <img src="./assets/img/image_inpainting/res2.png" class="img-fluid" alt="" style="margin-top: 50px;">
+                        <p class="image-caption">Result table</p>
+
+
+                    </div>
+                    <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+                      <h3>Introduction</h3>
+                        <p class="paragraph-spacing">
+                              Image-based visual servoing (IBVS) algorithms have revolutionized robotic manipulation by enabling precise control based on visual feedback. These algorithms offer robustness to calibration errors but their success hinges on the selection of reliable visual features. Accurate keypoint detection, which identifies and localizes specific points of interest in an image, is crucial for various robotic tasks such as navigation, manipulation, and object recognition. While this approach proves effective in numerous scenarios, it contains an inherent flaw—control relies upon the camera maintaining an unobstructed perspective of the robot's complete structure. This restricts applicability in scenarios with occlusions, limited visibility and variable lighting conditions.
+                        </p>
+                        <p class="paragraph-spacing">
+                              In practice, robots often operate in environments with occlusions caused by objects, shadows, or even their own bodies. These occlusions significantly hinder the performance of traditional keypoint detection algorithms, leading to inaccurate localization and ultimately impacting the robot's ability to perform its tasks effectively.
+                        </p>
+                        <p class="paragraph-spacing">
+                              This research investigates the application of the Wasserstein Generative Adversarial Network with Gradient Penalty (WGAN-GP) for keypoint detection on robots operating in occluded environments. A novel two-stage approach is proposed that leverages the powerful capabilities of WGAN-GP.
+                        </p>
+                    <h3 style="margin-bottom: 40px; margin-top: 30px;">Previous methodologies</h3>
+                        <p class="paragraph-spacing">
+                              Existing works for image inpainting can be mainly divided into two groups. The first group represents traditional diffusion-based or patch-based methods with low-level features. The second group attempts to solve the inpainting problem by a learning-based approach, e.g. training deep convolutional neural networks to predict pixels for the missing regions. Recently, image inpainting systems based on deep learning are proposed to directly predict pixel values inside masks.
+                        </p>
+                        <p class="paragraph-spacing">
+                              Among the various methods, techniques like contextual attention layers, partial convolutions, and fast Fourier convolutions have shown improvements in inpainting quality and addressed limitations of standard encoder-decoder networks.
+                        </p>
+                        <p class="paragraph-spacing">
+                              The contextual attention layer is a differentiable and fully-convolutional module that enables the network to exploit long-range dependencies and improve reconstruction quality while remaining compatible with arbitrary image resolutions. The only limitation using this method is that it requires the exact location information of the occlusion. Whereas in realtime applications this is impossible to extract.
+                        </p>
+                        <p class="paragraph-spacing">
+                              Partial convolution incorporates a masking and re-normalization step that restricts the convolution operation to valid pixels, demonstrating improved inpainting quality on irregular masks. However, it has limitations like heuristic pixel classification, limited user interaction, progressive mask vanishing, and limited channel flexibility.
+                        </p>
+                        <p class="paragraph-spacing">
+                              Fast Fourier Convolutions (FFCs) enable an image-wide effective receptive field even in early layers, improving perceptual quality and parameter efficiency while exhibiting generalization to unseen high resolutions.
+                        </p>
+
+                    <h3 style="margin-bottom: 40px; margin-top: 30px;">Approach</h3>
+                        <p class="paragraph-spacing">
+                              To ensure the best possible representation of occluded elements, we considered both simulated and real images. Ultimately, real images emerged as the ideal choice, allowing for more accurate and nuanced reconstruction processes. The input images comprised
+                              occluded scenes, while the corresponding labels were derived from occlusion-free images. For the real images, we captured scenes featuring the Franka Panda Robot using an Intel RealSense Camera, relying on meticu-
+                              lously annotated data provided by the DREAM calibration. These annotations included the pixel locations of the robot’s six joints and bounding boxes outlining the robot, enhancing the accuracy of key point detection.                                     
+                        </p>
+                        <p class="paragraph-spacing"> 
+                              For the real images, we captured scenes featuring the Franka Panda Robot using an Intel RealSense Camera, relying on meticu-
+                              lously annotated data provided by the DREAM calibration. These annotations included the pixel locations of the robot’s six joints
+                              and bounding boxes outlining the robot, enhancing the accuracy of key point detection.
+                        </p>   
+                        <p class="paragraph-spacing"> 
+                              The dataset contains around 80K images including a variety of occlusions as mentioned above. Each image is of the size
+                              (640, 480, 3) and due to the limitation of compute powers, this project assumes a batch size of 4.
+                              The dataset preparation includes segmenting the YCB objects from the YCB dataset, removing the background of the segmented image and superimpos-
+                              ing the objects on our required image (robot keypoint)
+                        <p class="paragraph-spacing"> 
+                              The proposed methodology involves a two-stage approach that leverages the powerful capabilities of WGAN-GP:
+                        </p>
+                        <div class="paragraph-spacing">
+                              <h4>1) Image Reconstruction:</h4>
+                              <ul>
+                                <li>A WGAN-GP model is utilized to reconstruct occluded images. The occluded image is fed as input, and the WGAN-GP is trained to generate an output image where the occlusions are effectively removed, essentially "seeing through" the obstructions.</li>
+                                <li>This reconstructed image reveals the underlying keypoints that were previously hidden, enabling their accurate detection.</li>
+                              </ul>
+                              <h4>2) Keypoint Detection:</h4>
+                              <ul>
+                                    <li>Keypoint RCNN algorithm is applied to the reconstructed image. This algorithm analyzes the image features and identifies keypoints based on specific criteria, such as corners, edges, or blobs.</li>
+                                    <li>By using the reconstructed image instead of the original occluded image, the keypoint detection process is not affected by the occlusions, leading to more accurate and reliable results.</li>
+                              </ul>
+                            </div>
+
+                        <h3 style="margin-bottom: 40px; margin-top: 30px;">Model Architecture and GANs'</h3>
+                        <div class="paragraph-spacing">
+                              <p class="paragraph-spacing">
+                                    The WGAN-GP architecture employed in this project combines an Attention U-Net as the generator and a PatchNet as the discriminator. The Attention U-Net comprises encoder and decoder blocks, incorporating attention mechanisms to enhance feature selection. The PatchNet discriminator consists of multiple convolutional layers with leaky ReLU activations and a linear layer with sigmoid activation for binary classification.
+                              </p>  
+                              <p class="paragraph-spacing">
+                                    The advantages of the WGAN-GP structure lie in its ability to introduce a competitive dynamic between the generator and discriminator, promoting the generation of realistic images. The discriminator learns to distinguish authentic images from generated ones, driving the generator to produce more convincing results. This adversarial training process encourages the generator to capture intricate details and structures in the inpainted images, leading to visually pleasing and coherent outputs.
+                              </p> 
+                              <p class="paragraph-spacing">
+                                    The Wasserstein distance, a crucial component in WGAN-GP, is defined as the expected value of the distance between two distributions, where they follow the optimal choice of a joint distribution. The Wasserstein distance offers advantages over traditional divergence metrics like KL divergence and JS divergence, ensuring stable and meaningful training by incorporating a gradient penalty term as a regularization mechanism during optimization.
+  
+                              </p>      
+                        </div>
+
+                        <h3 style="margin-bottom: 40px; margin-top: 30px;">Results</h3>
+                        <div class="paragraph-spacing">
+                              <p class="paragraph-spacing">
+                                    After constructing the model, occluded images serve as the input, and the model generates the inpainted counterparts as output. The resulting images can then be inputted into a keypoint detection model, allowing for the identification of joint locations within the image. This approach proves particularly effective for tracking joint positions in scenarios involving occlusions. The visual servoing technique benefits from this method, enabling robust performance even when parts of the scene are obstructed.
+                              </p> 
+                              <p class="paragraph-spacing">
+                                    Figure at the side demonstrates the inpainted image being fed into a keypoint detection model (Keypoint RCNN) for joint location identification. The result table shows the success of this model, with detailed error metrics in keypoint detection for the inpainted images. The table highlights the accurate keypoint tracking achieved by the proposed method, even in the presence of occlusions, demonstrating its robustness and reliability for robotic manipulation systems.    
+                              </p>
+
+
+
+                    </div>
+                  </div>
+          
+                </div>
+              </section>
+        </div>
+
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+      <div class="container">
+    
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <p>Find my projects on my github profile.</p>
+        </div>
+    
+        <div class="portfolio-grid">
+    
+            <div class="portfolio-item">
+              <a href="../test.html">
+                <div class="portfolio-wrap">
+                  <img src="./assets/img/portfolio/sfm.gif" class="img-fluid" alt="">
+                  <h5> Neural  Radiance Fields </h5>
+                </div>
+              </a>
+            </div>
+    
+            <div class="portfolio-item">
+              <a href="../sfm.html">
+                <div class="portfolio-wrap">
+                  <img src="./assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                  <h5> Structure from Motion </h5>
+                  <div class="portfolio-links">
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- portfolio/portfolio-3.jpg -->
+            <div class="portfolio-item">
+              <a href="../pc.html">
+              <div class="portfolio-wrap">
+                <img src="./assets/img/hero-bg.gif" class="img-fluid" alt="">
+                <h5> Point cloud Semantic Segmentation </h5>
+                <div class="portfolio-links">
+                </div>
+              </div>
+            </a>
+            </div>
+
+          
+            <!-- <div class="portfolio-item">
+              <a href="../thesis_DR.html">
+              <div class="portfolio-wrap">
+                <img src="./assets/img/portfolio/o1.png" class="img-fluid" alt="" >
+                <h5> Image Inpaining Based Keypoint Tracking</h5>
+                <div class="portfolio-links">
+                </div>
+              </div>
+            </a>
+            </div> -->
+
+
+            <div class="portfolio-item">
+              <a href="../Machine_vision_engineer.html">
+              <div class="portfolio-wrap">
+                <img src="./assets/img/portfolio/output_video.gif" class="img-fluid" alt="" >
+                <h5>Tailoring Room Conditions for Optimal Stress Reduction using Machine Learning </h5>
+                <div class="portfolio-links">
+                </div>
+              </div>
+            </a>
+            </div>
+          
+
+          <div class="portfolio-item">
+            <a href="../vio.html">
+            <div class="portfolio-wrap">
+              <img src="./assets/img/portfolio/VIO.png" class="img-fluid" alt="">
+              <h5> Visual Inertial Odometry using MSCKF </h5>
+              <div class="portfolio-links">
+              </div>
+            </div>
+          </a>
+          </div>
+
+          <div class="portfolio-item">
+            <a href="../calib.html">
+            <div class="portfolio-wrap">
+              <img src="./assets/img/portfolio/calib.png" class="img-fluid" alt="">
+              <h5> Automatic Camera Calibration </h5>
+              <div class="portfolio-links">
+              </div>
+            </div>
+          </a>
+          </div>
+          
+
+          <div class="portfolio-item">
+            <a href="../deepfakes.html">
+            <div class="portfolio-wrap">
+              <img src="./assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+              <h5> DeepFakes</h5>
+              <div class="portfolio-links">
+              </div>
+            </div>
+          </a>
+          </div>
+
+          <div class="portfolio-item">
+            <a href="../bert.html">
+            <div class="portfolio-wrap">
+              <img src="./assets/img/portfolio/bert_finetune.jpeg" class="img-fluid" alt="">
+              <h5> BERT and LoraBERT fine-tuning for Sentiment Analysis</h5>
+              <div class="portfolio-links">
+              </div>
+            </div>
+          </a>
+          </div>
+
+
+          <div class="portfolio-item">
+            <a href="../Panaroma.html">
+            <div class="portfolio-wrap">
+              <img src="./assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+              <h5> Image Stitching using SIFT Features </h5>
+              <div class="portfolio-links">
+              </div>
+            </div>
+          </a>
+          </div>
+
+          <div class="portfolio-item">
+            <a href="../lstm.html">
+            <div class="portfolio-wrap">
+              <img src="./assets/img/portfolio/lstm_img1.jpeg" class="img-fluid" alt="">
+              <h5> Time-Series Analysis using LSTM </h5>
+              <div class="portfolio-links">
+              </div>
+            </div>
+          </a>
+          </div>
+
+          <div class="portfolio-item">
+            <a href="../fake_news.html">
+            <div class="portfolio-wrap">
+              <img src="./assets/img/portfolio/nltk.png" class="img-fluid" alt="">
+              <h5> Fake News Detection using NLP and Machine Learning Techniques </h5>
+              <div class="portfolio-links">
+              </div>
+            </div>
+          </a>
+          </div>
+
+
+
+          <div class="portfolio-item">
+            <a href="../C.html">
+            <div class="portfolio-wrap">
+              <img src="./assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+              <h5> Trajectory Tracking of Quadrotor </h5>
+              <div class="portfolio-links">
+              </div>
+            </div>
+          </a>
+          </div>
+
+          <div class="portfolio-item">
+            <a href="../MP.html">
+            <div class="portfolio-wrap">
+              <img src="./assets/img/portfolio/portfolio-9.gif" class="img-fluid" alt="">
+              <h5> Motion Planning of Robots in Adversarial Environments </h5>
+              <div class="portfolio-links">
+              </div>
+            </div>
+          </a>
+          </div>
+
+          <div class="portfolio-item">
+            <a href="../pcjointkinematics.html">
+            <div class="portfolio-wrap">
+              <img src="./assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+              <h5> Point Cloud based Joint Kinematics Prediction on MRI </h5>
+              <div class="portfolio-links">
+              </div>
+            </div>
+          </a>
+          </div>
+
+          <div class="portfolio-item">
+            <a href="../AI.html">
+            <div class="portfolio-wrap">
+              <img src="./assets/img/portfolio/output.jpg" class="img-fluid" alt="">
+              <h5> Enhancing sign language to text conversion by integrating lip movement recognition. </h5>
+              <div class="portfolio-links">
+              </div>
+            </div>
+          </a>
+          </div>
+
+          <div class="portfolio-item">
+            <a href="../pblite.html">
+            <div class="portfolio-wrap">
+              <img src="./assets/img/portfolio/portfolio-pb.jpg" class="img-fluid" alt="" >
+              <h5> PBLite: The Kernel's way </h5>
+              <div class="portfolio-links">
+              </div>
+            </div>
+          </a>
+          </div>
+
+          <div class="portfolio-item">
+            <a href="../BE.html">
+            <div class="portfolio-wrap">
+              <img src="./assets/img/portfolio/FER.png" class="img-fluid" alt="">
+              <h5> Facial Expression recognition </h5>
+              <div class="portfolio-links">
+              </div>
+            </div>
+          </a>
+          </div>
+          </div>
+    
+      </div>
+    </section>
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+        </div>
+
+        <div class="row" data-aos="fade-in">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>37 William St, Worcester, MA 01609</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>vmullur@wpi.edu</p>
+              <!-- </div>
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+            </div> -->
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="./assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="./assets/vendor/aos/aos.js"></script>
+  <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="./assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="./assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="./assets/vendor/typed.js/typed.min.js"></script>
+  <script src="./assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="./assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="./assets/js/main.js"></script>
+
+</body>
+
+</html>

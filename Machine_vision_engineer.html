@@ -43,123 +43,101 @@
 <body>
 
 
-    <!-- ======= Resume Section ======= -->
+    <!-- ======= Resume Section =======  ../index.html -->
     <section id="resume" class="resume">
       <div class="container">         
 
         <div class="section-title d-flex">
-          <a href="../index.html#portfolio">
+            <a href="../index.html#portfolio"> 
                 <img src="./assets/img/back.png" alt="Back" style="height: 20px; width: 20px; margin-top: 15px; margin-right: 10px;">
               </a>
               
-          <h2>Visual Inertial Odometry</h2>
+          <h2>Tailoring Room Conditions for Optimal Stress Reduction using Machine Learning</h2>
 
-          <a href="https://github.com/venk221/Visual-Inertial-Odometry-using-MSCKF">
+          <a href="https://github.com/venk221/human_pose_estimation-using-Zed2i-camera">
             <img src="./assets/img/github.png" alt="Back" style="height: 40px; width: 40px; margin-top: 0px; margin-right: 10px; margin-left: 25px;">
           </a>
         </div>
 
         <h3>Abstract</h3>
         <p>
-          Accurate ego-motion estimation is a crucial capability for autonomous robots and vehicles operating in GPS-denied environments. This project presents a robust and efficient Visual Inertial Odometry (VIO) system that fuses measurements from a stereo camera and an inertial measurement unit (IMU) to estimate the 6DOF pose of the platform. The proposed solution employs a novel filtering approach called the Multi-State Constraint Kalman Filter (MSCKF), which tightly integrates the visual and inertial data streams within a computationally tractable recursive estimation framework. By exploiting the complementary strengths of both sensing modalities, our VIO system achieves precise localization robust to challenging perceptual conditions such as rapid motions, featureless environments, and varied lighting conditions. Extensive evaluations on the EuRoC dataset demonstrate the superior accuracy and efficiency of our approach compared to existing state-of-the-art VIO methods.
+            This project investigates the correlation between self-reported emotional states and observed behaviors and physiological signals in personalized environment control rooms. Participants undergo emotional assessments using PANAS questionnaires before and after experiencing various room conditions. During their time in the room, activities are recorded via video and EEG signals, while facial emotion detection and human pose estimation techniques are employed to analyze behavior. The aim is to identify optimal room configurations that induce relaxation and reduce stress levels based on individual emotional responses. Results demonstrate the potential for tailored interventions to enhance stress reduction experiences in controlled environments.
         </p>
           
-                  <div class="row">
+            <div class="row">
                     <div class="col-lg-4" data-aos="fade-right">
-                      <img src="./assets/img/vio/1.png" class="img-fluid" alt="" style="margin-top: 75px;">
-                      <p class="image-caption"></p>
-                      <img src="./assets/img/vio/2.png" class="img-fluid" alt="" style="margin-top: 75px;">
-                      <p class="image-caption"></p>
-                      <img src="./assets/img/vio/3.png" class="img-fluid" alt="" style="margin-top: 75px;">
-                      <p class="image-caption"> </p>
-                      <img src="./assets/img/vio/4.png" class="img-fluid" alt="" style="margin-top: 75px;">
-                      <p class="image-caption"></p>
-                      <img src="./assets/img/vio/5.png" class="img-fluid" alt="" style="margin-top: 75px;">
-                      <p class="image-caption"></p>
-                      <img src="./assets/img/vio/6.png" class="img-fluid" alt="" style="margin-top: 50px;">
-                      <p class="image-caption"> </p>
-                      <img src="./assets/img/vio/7.png" class="img-fluid" alt="" style="margin-top: 50px;">
-                      <p class="image-caption"></p>
-                      <!-- <img src="./assets/img/vio/vio-.gif" class="img-fluid" alt="" style="margin-top: 50px;">
-                      <p class="image-caption"> </p> -->
-
-
+                      <img src="./assets/img/Tailoring Room Conditions for Optimal Stress Reduction using Machine Learning/room.jpeg" class="img-fluid" alt="" style="margin-top: 200px;">
+                      <p class="image-caption">Personalized Environmental Control Room</p>
+                      <img src="./assets/img/Tailoring Room Conditions for Optimal Stress Reduction using Machine Learning/output_video.gif" class="img-fluid" alt="" style="margin-top: 100px;">
+                      <p class="image-caption">Previously recorded Human Pose Estimation</p>
+                      <img src="./assets/img/Tailoring Room Conditions for Optimal Stress Reduction using Machine Learning/PANAS_gui.png" class="img-fluid" alt="" style="margin-top: 150px;">
+                      <p class="image-caption">GUI for integration of all sensors</p>
+                      <img src="./assets/img/Tailoring Room Conditions for Optimal Stress Reduction using Machine Learning/output_mve.png" class="img-fluid" alt="" style="margin-top: 300px;">
+                      <p class="image-caption">Human Pose Estimation using Zed 2i Camera</p>
                     </div>
                     <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
                       <h3>Introduction</h3>
                         <p class="paragraph-spacing">
-                          Robust localization is an essential requirement for autonomous robots and vehicles operating in GPS-denied environments such as indoors, urban canyons, or underground mines. In such scenarios, visual and inertial sensors provide a compelling alternative to global positioning systems for tracking the 6DOF pose (position and orientation) of a mobile platform. Visual odometry techniques estimate motion by detecting and tracking visual features across consecutive camera frames, while inertial sensors directly measure the platform's linear accelerations and angular velocities.
+                              This project explores the correlation between changes in environmental factors and human emotions by analyzing data from a personalized environment control room. Utilizing a questionnaire (Positive and Negative Affect Schedule - PANAS) and audio recordings, participants' emotional states are assessed before and after their experiences in the room. Various sensors, including EEG and video capture, monitor participants' responses, while interactive activities aim to reduce stress levels. Through facial emotion detection and human pose estimation, the project aims to map these physiological responses to emotional changes indicated by PANAS scores. The ultimate objective is to identify room conditions that induce relaxation and reduce stress for individuals based on their initial emotional states.
                         </p>
                         <p class="paragraph-spacing">
-                          While visual odometry offers accurate pose updates when sufficient visual features are available, it remains susceptible to failure in poorly textured environments or during periods of rapid motion when visual tracking becomes unreliable. Conversely, inertial navigation relies on numerical integration of noisy sensor data, causing rapid drift in estimated poses over time. By tightly integrating these complementary sensing modalities, Visual Inertial Odometry (VIO) can leverage their respective strengths to yield a robust and drift-free localization solution suitable for long-term autonomous operation.
-                        </p>
-                        
-                        
-                        <h3 style="margin-bottom: 40px; margin-top: 30px;">Previous Methodologies</h3>
-                        <p class="paragraph-spacing">
-                          Traditional VIO methods can be broadly classified into two main categories: filtering-based and optimization-based approaches. Filtering methods, such as the Extended Kalman Filter (EKF), maintain a probabilistic state estimate that is recursively updated as new sensor measurements arrive. While computationally efficient, the standard EKF formulation linearizes the system dynamics around the current state, introducing errors that can lead to inconsistent and divergent state estimates.
+                              Understanding the impact of environmental stimuli on human emotions is crucial for designing spaces conducive to well-being and productivity. This project investigates the complex relationship between environmental factors and emotional responses through a controlled experiment conducted in a personalized environment control room. By integrating multi-modal data collection techniques and advanced analytics, the study aims to uncover patterns linking environmental adjustments to changes in emotional states.
                         </p>
 
-                        <p class="paragraph-spacing">
-                          In contrast, optimization-based techniques frame VIO as a nonlinear least-squares problem and solve for the maximum a posteriori (MAP) estimate of the camera poses and scene structure directly, using iterative minimization methods. While achieving higher accuracies, these batch optimization methods scale poorly to large problems due to increasing computational load and memory footprint as more measurements are processed.
-                        </p>
-                          
+                    <h3 style="margin-bottom: 40px; margin-top: 30px;">Problem Statement</h3>
+                    <p class="paragraph-spacing">
+                        Despite advancements in sensor technology, accurately quantifying human emotions in real-time remains challenging. Traditional machine learning approaches are hindered by the lack of labeled data for emotion recognition, necessitating innovative methods that can capture emotional dynamics without relying on pre-defined categories. Additionally, noise and occlusions in sensor data, such as those from facial and pose detection systems, further complicate emotion inference. This project seeks to address these challenges by developing unsupervised learning algorithms capable of discerning emotional patterns from multi-modal sensor data, thereby facilitating the identification of environmental conditions conducive to relaxation.
+                    </p>
 
-                        <h3 style="margin-bottom: 40px; margin-top: 30px;">Proposed Approach</h3>
-                        <p class="paragraph-spacing"> Our VIO system employs the Multi-State Constraint Kalman Filter (MSCKF), a novel filtering strategy that combines the efficiency of recursive estimation with the accuracy of full-state nonlinear optimization. The MSCKF maintains a sliding window of recent camera pose states that are constrained by both inertial measurements and visual feature observations. By applying appropriate motion model constraints within the filter, the MSCKF formulation avoids accumulating linearization errors over time while remaining computationally tractable.
-                        </p>
-                          
-                          <p class="paragraph-spacing">
-                            The core components of our VIO pipeline are:
-                          <ul>
-                            <li> 
-                                  <h4>IMU Preprocessing:</h4>
-                                  Raw IMU data is calibrated and bias-corrected to improve downstream state estimation accuracy.
-                            </li>
-                            <li> 
-                                  <h4>Feature Detection & Tracking:</h4>
-                                  Visual features are detected in the stereo image stream and robustly tracked across frames using ORB descriptors and an outlier rejection scheme.
-
-                            </li>
-                            <li> 
-                                  <h4>State Augmentation:</h4>
-                                  When new stereo frames arrive, the MSCKF state vector is augmented with states representing the new camera pose and any newly observed 3D features.
-                            </li>
-                            <li> 
-                                  <h4>MSCKF Prediction: </h4>
-                                  Between camera frames, batches of IMU data are processed to propagate the filter state using an inertial error-state motion model.
-
-                            </li>
-                            <li> 
-                                  <h4>MSCKF Update:</h4>
-                                  Observations of tracked visual features are used to correct the predicted state via an EKF update, ensuring accurate 6DOF pose tracking over time.
-
-                            </li>
-                          </ul>
-                          The MSCKF implementation includes techniques to maintain consistency, such as observability-constrained updates, state marginalization to control computational complexity, and a robust measurement model that explicitly handles correlations between 3D feature positions and camera poses.
-                          </p>
-                          <h3>Results:</h3>
-                            <p class="paragraph-spacing">
-                              We evaluated our VIO system on the EuRoC MAV dataset, which contains synchronized stereo camera images and IMU data collected onboard a micro aerial vehicle, along with accurate ground truth poses from a VICON motion capture system.
-                            </p>
-                            <p class="paragraph-spacing">
-                              On the challenging machine hall (MH) sequences, our MSCKF-based VIO implementation achieved impressive localization accuracy, closely tracking the ground truth trajectories. For the MH_01_easy sequence, the RMS translational drift error was only 0.14m, and the rotational error stayed below 0.05rad over a 40m trajectory. The translational drift remained below 0.5% of the total distance traveled, a significant improvement over pure visual odometry methods which tend to accumulate large drift errors over time.
-                            </p>
-                            <p class="paragraph-spacing">
-                              Furthermore, the proposed solution successfully handled several perceptually-challenging conditions encountered in the dataset, including rapid motions, aggressive rotations, and traversals through poorly lit and featureless regions. The filter maintained consistent performance, demonstrating the robustness benefits derived from fusing visual measurements with stability-enhancing inertial data.
-                            </p>
-                            <p class="paragraph-spacing">
-                              These results validate our VIO system's effectiveness and accuracy in real-world scenarios, positioning it as a compelling solution for enabling robust and precise localization capabilities for next-generation autonomous robots and vehicles operating in GPS-denied environments.
-                            </p>
-                        
-
+                    <h3 style="margin-bottom: 30px; margin-top: 30px;">Methodology</h3>
+                    <p class="paragraph-spacing">
+                        The project employs a combination of data collection methods, including PANAS questionnaires, audio recordings, video capture, EEG sensors, and environmental control interfaces. Facial emotion detection and human pose estimation algorithms analyze video data, while unsupervised learning techniques, such as CNN and LSTM autoencoders, process keypoint information extracted from pose data. Gaussian Mixture Models (GMM) and Kalman filtering are utilized to mitigate noise and enhance the accuracy of keypoint detection. Augmentation techniques are applied to address data scarcity and preserve spatial constraints inherent in keypoint representations. Integration challenges, such as interfacing the Zed 2i camera with the graphical user interface (GUI), are also addressed to ensure seamless data acquisition.
+                        <ul1>
+                              <h5>Data Collection Methods:</h5>
+                              The project employs a comprehensive approach to data collection, utilizing various instruments to capture different aspects of participant experiences. The PANAS questionnaire provides self-reported emotional states, while audio recordings offer additional insight into vocal cues and tonal variations. Video capture serves to visually record participants' behaviors and expressions, while EEG sensors monitor physiological responses associated with emotional arousal. Environmental control interfaces allow researchers to manipulate factors such as lighting, music, and spatial layout, enabling precise control over experimental conditions.
+                              <h5>Facial Emotion Detection and Human Pose Estimation:</h5>
+                              Advanced algorithms for facial emotion detection and human pose estimation play a crucial role in analyzing video data. These algorithms automatically identify facial expressions and body postures, providing quantitative measures of emotional responses and physical activities. By extracting keypoint information from video frames, researchers can track participants' movements and facial expressions over time, facilitating the analysis of emotional dynamics during their interaction with the environment.
+                              <h5>Noise Mitigation and Data Augmentation:</h5>
+                              To address noise and enhance the accuracy of keypoint detection, Gaussian Mixture Models (GMM) and Kalman filtering techniques are applied. GMM helps identify outliers and suppress noise in keypoint data, while Kalman filtering provides a recursive estimation of keypoint trajectories, improving tracking accuracy. Augmentation techniques are utilized to expand the dataset and preserve spatial constraints inherent in keypoint representations. These augmentation strategies ensure robust model training and generalization, despite limited data availability.
+                              <h5>Integration Challenges:</h5>
+                              Integration efforts are focused on overcoming technical hurdles, such as interfacing the Zed 2i camera with the graphical user interface (GUI). Seamless integration of hardware and software components ensures smooth data acquisition and real-time monitoring of participant interactions. By addressing integration challenges, researchers can streamline the experimental process and facilitate comprehensive data analysis, ultimately advancing our understanding of the relationship between environmental stimuli and human emotions.
+                        </ul1>
+                  </p>
+                  In summary, the project employs a multidisciplinary approach, integrating diverse data collection methods, advanced algorithms, and integration solutions to investigate the intricate interplay between environmental factors and human emotions. Through rigorous experimentation and data analysis, researchers aim to uncover actionable insights for designing environments that promote emotional well-being and stress reduction.
                     
-                    </div>
+
+
+                  <h3 style="margin-bottom: 40px; margin-top: 30px;">Results</h3>
+                  <p class="paragraph-spacing">
+                        The preliminary findings of the project present compelling evidence of correlations between environmental adjustments and changes in participant emotions. Through meticulous analysis of multi-modal sensor data, including inputs from PANAS questionnaires, audio recordings, video capture, EEG sensors, and environmental control interfaces, researchers have begun to uncover intricate relationships between environmental stimuli and emotional responses.
+                  </p>
+                  <p class="paragraph-spacing">
+                        One key takeaway from the initial analysis is the potential of developed unsupervised learning algorithms in capturing nuanced emotional dynamics. These algorithms, trained to discern patterns within the diverse streams of sensor data, exhibit promising capabilities in identifying subtle shifts in emotional states. Despite the presence of noise and occlusions inherent in real-world data, the algorithms demonstrate robustness in detecting and interpreting emotional cues, contributing to the reliability of emotion inference.
+                  </p>
+                  <p class="paragraph-spacing">
+                        To further enhance the effectiveness of emotion inference models, ongoing efforts focus on refining data processing techniques. Augmentation strategies are being explored to expand the dataset and improve model generalization. By synthetically generating additional data points, researchers aim to address data scarcity issues and enhance the robustness of trained models. Additionally, sensor fusion approaches are being investigated to integrate information from multiple modalities, such as facial expressions, body movements, and physiological signals, into a cohesive framework for emotion analysis.
+                  </p>
+                  <p class="paragraph-spacing">
+                        Integration efforts are also underway to streamline data collection and analysis processes. Challenges related to interfacing hardware components, such as the Zed 2i camera, with the graphical user interface (GUI) are being addressed to ensure seamless data acquisition. By optimizing data collection workflows and enhancing system interoperability, researchers aim to facilitate comprehensive insights into the complex interplay between environmental factors and human emotions.
+                  </p>
+                  <p class="paragraph-spacing">
+                        Overall, the preliminary findings underscore the potential of leveraging multi-modal sensor data and unsupervised learning techniques to gain deeper insights into the relationship between environmental stimuli and human emotions. As the project progresses, continued refinement of data processing methods and integration efforts will contribute to the development of robust emotion inference models, ultimately informing the design of personalized environments conducive to emotional well-being and stress reduction.
+                  </p>
                   </div>
+            </div>
           
                 </div>
               </section>
+          <!-- <h2>Structure from Motion</h2>
+          
+            <h3>The GitHub link is</h3>
+            <div class="portfolio-links">
+                <a href="https://github.com/venk221/Structure-from-Motion-NeRF" title="More Details"><i class="bx bx-link"></i></a>
+            </div> -->
+
+
         </div>
+
     <!-- End Resume Section -->
 
     <!-- ======= Portfolio Section ======= -->
@@ -217,7 +195,7 @@
             </div>
 
 
-            <div class="portfolio-item">
+            <!-- <div class="portfolio-item">
               <a href="../Machine_vision_engineer.html">
               <div class="portfolio-wrap">
                 <img src="./assets/img/portfolio/output_video.gif" class="img-fluid" alt="" >
@@ -226,10 +204,10 @@
                 </div>
               </div>
             </a>
-            </div>
+            </div> -->
           
 
-          <!-- <div class="portfolio-item">
+          <div class="portfolio-item">
             <a href="../vio.html">
             <div class="portfolio-wrap">
               <img src="./assets/img/portfolio/VIO.png" class="img-fluid" alt="">
@@ -238,7 +216,7 @@
               </div>
             </div>
           </a>
-          </div> -->
+          </div>
 
           <div class="portfolio-item">
             <a href="../calib.html">
@@ -379,7 +357,6 @@
     
       </div>
     </section>
-
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container">
