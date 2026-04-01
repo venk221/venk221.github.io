@@ -1,881 +1,1440 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Venkatesh Mullur — Robotics Researcher</title>
+  <meta name="description" content="PhD candidate in Robotics Engineering at WPI. Robot perception, grasping, and physical AI systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;1,9..144,300;1,9..144,400&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 
-  <title>Venkatesh Mullur - Index</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <!-- Favicons -->
-  <link href="assets/img/professional-portfolio.png" rel="professional-portfolio">
-  <link href="./assets/img/professional-portfolio.png" rel="professional-portfolio">
-  <link rel="icon" href="./assets/img/professional-portfolio.png">
-  <!-- <link rel="icon" href="./assets/img/portfolio.png"> -->
+    :root {
+      --ink: #e8e2d6;
+      --paper: #131210;
+      --paper-2: #1a1916;
+      --paper-3: #201f1c;
+      --paper-4: #252320;
+      --muted: #7a7468;
+      --muted-2: #9e9890;
+      --accent: #c84b2f;
+      --accent-2: #4a9070;
+      --rule: rgba(232,226,214,0.08);
+      --rule-2: rgba(232,226,214,0.04);
+      --mono: 'DM Mono', monospace;
+      --serif: 'Fraunces', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    html { scroll-behavior: smooth; }
 
-  <!-- Vendor CSS Files -->
-  <link href="./assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="./assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="./assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="./assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="./assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="./assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Portfolio</title>
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.028;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 180px;
+    }
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    a { color: inherit; text-decoration: none; }
 
-  <link rel="stylesheet" href="style.css">
+    /* ─── TOPBAR ─── */
+    .topbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 52px;
+      border-bottom: 1px solid var(--rule);
+      background: rgba(19,18,16,0.92);
+      backdrop-filter: blur(14px);
+    }
+    .topbar-left {
+      font-family: var(--mono);
+      font-size: 1rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .topbar-nav {
+      display: flex;
+      gap: 32px;
+      font-family: var(--mono);
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .topbar-nav a { transition: color 0.2s; }
+    .topbar-nav a:hover { color: var(--ink); }
+    .topbar-cta {
+      font-family: var(--mono);
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid rgba(232,226,214,0.2);
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .topbar-cta:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
 
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      padding: 0 52px;
+      display: grid;
+      /* reduced top padding so content sits higher */
+      grid-template-rows: 1fr auto;
+      border-bottom: 1px solid var(--rule);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg-text {
+      position: absolute;
+      font-family: var(--serif);
+      font-size: clamp(200px, 28vw, 380px);
+      font-weight: 700;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(232,226,214,0.04);
+      line-height: 0.85;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-54%);
+      user-select: none;
+      pointer-events: none;
+      letter-spacing: -0.04em;
+    }
+    .hero-inner {
+      display: flex;
+      align-items: flex-end;
+      /* reduced top padding so content sits higher on large monitors */
+      padding-bottom: 48px;
+      padding-top: 88px;
+      position: relative;
+      z-index: 1;
+      gap: 40px;
+    }
+    .hero-left { flex: 1; }
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: var(--muted);
+    }
+    h1.hero-name {
+      font-family: var(--serif);
+      font-size: clamp(5rem, 9vw, 9rem);
+      font-weight: 300;
+      line-height: 0.93;
+      letter-spacing: -0.035em;
+      max-width: 9ch;
+    }
+    h1.hero-name em { font-style: italic; color: var(--accent); }
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+    .hero-desc {
+      max-width: 520px;
+      color: var(--muted-2);
+      margin-top: 28px;
+      font-size: 1.2rem;
+      line-height: 1.78;
+    }
+    .hero-desc strong { color: var(--ink); font-weight: 400; }
 
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+    .btn-solid {
+      font-family: var(--mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 28px;
+      border: 1px solid var(--accent);
+      border-radius: 2px;
+      transition: background 0.22s;
+    }
+    .btn-solid:hover { background: #a83a20; border-color: #a83a20; }
+    .btn-ghost {
+      font-family: var(--mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      border: 1px solid var(--rule);
+      padding: 14px 28px;
+      border-radius: 2px;
+      color: var(--muted);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { border-color: rgba(232,226,214,0.3); color: var(--ink); }
+
+    /* profile photo */
+    .hero-photo {
+      width: 220px;
+      flex-shrink: 0;
+      align-self: flex-end;
+      padding-bottom: 48px;
+    }
+    .hero-photo-frame {
+      width: 100%;
+      aspect-ratio: 3/4;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--rule);
+      background: var(--paper-3);
+      position: relative;
+    }
+    .hero-photo-frame img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(15%);
+    }
+    .photo-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .photo-placeholder .ph-icon { font-size: 2rem; opacity: 0.15; color: var(--muted); }
+    .photo-placeholder .ph-text {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0.35;
+      text-align: center;
+      padding: 0 12px;
+      line-height: 1.6;
+    }
+    .hero-photo-label {
+      font-family: var(--mono);
+      font-size: 1rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    /* hero stats */
+    .hero-right {
+      width: 210px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      padding-bottom: 48px;
+      align-items: flex-end;
+    }
+    .stat-block { text-align: right; }
+    .stat-block .num {
+      font-family: var(--serif);
+      font-size: 3.4rem;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+    .stat-block .num.red { color: var(--accent); }
+    .stat-block .num.green { color: var(--accent-2); }
+    .stat-block .num.plain { color: var(--ink); }
+    .stat-block .label {
+      font-family: var(--mono);
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-top: 2px;
+      line-height: 1.5;
+    }
+    .stat-block.hobby .num { font-size: 1.8rem; color: var(--muted-2); }
+    .stat-block.hobby .label { color: var(--muted); }
+
+    /* ─── STATUS BAR — with links, bigger text ─── */
+    .hero-statusbar {
+      border-top: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      position: relative;
+      z-index: 1;
+    }
+    .status-item {
+      padding: 20px 0;
+      border-right: 1px solid var(--rule);
+      transition: background 0.2s;
+    }
+    .status-item:last-child { border-right: none; }
+    .status-item.has-link:hover { background: var(--paper-2); }
+    .status-item .s-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 6px;
+    }
+    .status-item .s-value {
+      font-family: var(--sans);
+      font-size: 1.08rem;
+      font-weight: 400;
+      color: var(--ink);
+    }
+    /* linked status items get a subtle underline on hover */
+    .status-item.has-link .s-value {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .status-item.has-link:hover .s-value { color: var(--accent-2); }
+    .status-item.has-link .s-arrow {
+      font-size: 0.7rem;
+      opacity: 0;
+      transform: translate(0, 0);
+      transition: opacity 0.2s, transform 0.2s;
+      font-family: var(--mono);
+    }
+    .status-item.has-link:hover .s-arrow { opacity: 1; transform: translate(3px, -3px); }
+
+    .dot-live {
+      display: inline-block;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      margin-left: 7px;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.25; }
+    }
+
+    /* ─── SECTION COMMON ─── */
+    section { border-bottom: 1px solid var(--rule); }
+    .wrap { padding: 0 52px; }
+    .sec-header {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      border-bottom: 1px solid var(--rule);
+      padding: 36px 0;
+      align-items: end;
+      gap: 24px;
+    }
+    .sec-num {
+      font-family: var(--mono);
+      /* bumped up from 0.7rem */
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .sec-title {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 4.5vw, 4.4rem);
+      font-weight: 300;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .sec-title em { font-style: italic; color: var(--accent); }
+
+    /* ─── ABOUT ─── */
+    .about-body {
+      display: grid;
+      grid-template-columns: 220px 1fr 1fr;
+      padding: 54px 0;
+    }
+    .spacer { }
+    .about-para {
+      padding-right: 60px;
+      font-size: 1.1rem;
+      color: var(--muted-2);
+      line-height: 1.82;
+    }
+    .about-para strong { color: var(--ink); font-weight: 400; }
+    .about-para p + p { margin-top: 22px; }
+
+    .day-one-list {
+      padding-left: 44px;
+      border-left: 1px solid var(--rule);
+    }
+    .day-one-heading {
+      font-family: var(--mono);
+      /* bumped up */
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .day-one-heading::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 1px;
+      background: var(--muted);
+    }
+    .day-one-item {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--rule-2);
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .day-one-item:last-child { border-bottom: none; }
+    .day-one-icon { font-size: 1rem; min-width: 24px; padding-top: 2px; opacity: 0.6; }
+    .day-one-text { font-size: 1rem; line-height: 1.58; }
+    .day-one-text strong { display: block; font-weight: 500; margin-bottom: 3px; font-size: 1rem; }
+    .day-one-text span { color: var(--muted); font-size: 0.9rem; }
+
+    /* ─── PROJECTS ─── */
+    .project-row {
+      display: grid;
+      grid-template-columns: 220px 1fr auto;
+      border-bottom: 1px solid var(--rule);
+      padding: 54px 0;
+      transition: background 0.2s;
+    }
+    .project-row:hover { background: var(--paper-2); }
+    .project-row:last-child { border-bottom: none; }
+
+    .proj-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-right: 28px;
+      padding-top: 4px;
+    }
+    .proj-tag {
+      font-family: var(--mono);
+      /* bumped up from 0.66rem */
+      font-size: 0.8rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--muted-2);
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .proj-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .proj-dot.green { background: var(--accent-2); }
+
+    .proj-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 300;
+      letter-spacing: -0.025em;
+      line-height: 1.08;
+      margin-bottom: 16px;
+    }
+    .proj-desc {
+      color: var(--muted-2);
+      font-size: 1.1rem;
+      max-width: 640px;
+      line-height: 1.76;
+      margin-bottom: 22px;
+    }
+    .proj-media {
+      margin-bottom: 22px;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--rule);
+      background: var(--paper-3);
+      max-width: 640px;
+    }
+    .proj-media img,
+    .proj-media video { width: 100%; display: block; }
+    .proj-media .media-placeholder {
+      aspect-ratio: 16/9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--muted);
+    }
+    .proj-media .media-placeholder .mp-icon { font-size: 1.8rem; opacity: 0.2; }
+    .proj-media .media-placeholder .mp-text {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.3;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .proj-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      color: var(--muted);
+      background: var(--paper-3);
+    }
+    .proj-link {
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      transition: opacity 0.2s;
+    }
+    .proj-link:hover { opacity: 0.7; }
+
+    /* metrics — pulled closer to project body */
+    .proj-metrics {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      /* reduced padding so metrics sit closer to the video */
+      padding-left: 36px;
+      min-width: 150px;
+      align-items: flex-end;
+      padding-top: 0;
+      /* align to top of the media */
+      justify-content: flex-start;
+    }
+    .metric-item { text-align: right; }
+    .metric-val {
+      font-family: var(--serif);
+      font-size: 2.4rem;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+    .metric-val.red { color: var(--accent); }
+    .metric-val.green { color: var(--accent-2); }
+    .metric-label {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ─── SECONDARY PROJECTS ─── */
+    .sec-proj-intro {
+      padding: 32px 0;
+      border-bottom: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+    .sec-proj-intro p {
+      font-size: 1.2rem;
+      color: var(--muted-2);
+      max-width: 60ch;
+      line-height: 1.72;
+    }
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule);
+    }
+    .mini-card {
+      background: var(--paper);
+      padding: 32px;
+      transition: background 0.2s;
+    }
+    .mini-card:hover { background: var(--paper-2); }
+    .mini-card-media {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 3px;
+      overflow: hidden;
+      border: 1px solid var(--rule);
+      background: var(--paper-3);
+      margin-bottom: 18px;
+    }
+    .mini-card-media img,
+    .mini-card-media video {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .mini-card-media .media-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--muted);
+    }
+    .mini-card-media .media-placeholder .mp-icon { font-size: 1.4rem; opacity: 0.18; }
+    .mini-card-media .media-placeholder .mp-text {
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      opacity: 0.28;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .mini-tag {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .mini-title {
+      font-family: var(--serif);
+      font-size: 1.22rem;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .mini-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.68;
+    }
+    .mini-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 14px;
+    }
+    .mini-chip {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 4px 9px;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      color: var(--muted);
+    }
+    .mini-link {
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 12px;
+      transition: opacity 0.2s;
+    }
+    .mini-link:hover { opacity: 0.7; }
+
+    /* ─── SKILLS ─── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 220px repeat(4, 1fr);
+    }
+    .skill-col {
+      padding: 50px 0;
+      border-right: 1px solid var(--rule);
+      padding-right: 36px;
+    }
+    .skill-col:last-child { border-right: none; }
+    .skill-col:not(:first-child) { padding-left: 36px; }
+    .skill-heading {
+      font-family: var(--serif);
+      font-size: 2.18rem;
+      font-weight: 300;
+      font-style: italic;
+      margin-bottom: 22px;
+      color: var(--accent);
+    }
+    .skill-items { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .skill-items li {
+      font-family: var(--mono);
+      font-size: 1.0rem;
+      letter-spacing: 0.04em;
+      color: var(--muted-2);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .skill-items li::before {
+      content: '';
+      display: inline-block;
+      width: 14px;
+      height: 1px;
+      background: var(--rule);
+      flex-shrink: 0;
+    }
+
+    /* ─── PUBLICATIONS ─── */
+    .pub-row {
+      display: grid;
+      grid-template-columns: 220px 1fr auto;
+      border-bottom: 1px solid var(--rule);
+      padding: 40px 0;
+      align-items: start;
+    }
+    .pub-row:last-child { border-bottom: none; }
+    .pub-badge {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      border: 1px solid;
+      border-radius: 2px;
+      display: inline-block;
+      width: fit-content;
+    }
+    .pub-badge.review { border-color: var(--accent); color: var(--accent); }
+    .pub-badge.published { border-color: var(--accent-2); color: var(--accent-2); }
+    .pub-title {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+    .pub-venue {
+      font-family: var(--mono);
+      font-size: 1.0rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+    .pub-year {
+      font-family: var(--serif);
+      font-size: 2.8rem;
+      font-weight: 300;
+      color: rgba(232,226,214,0.05);
+      letter-spacing: -0.04em;
+      padding-left: 36px;
+    }
+
+    /* ─── CONTACT ─── */
+    .contact-section {
+      background: var(--paper-2);
+      border-bottom: none;
+    }
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 500px;
+    }
+    .contact-left {
+      padding: 80px 52px;
+      border-right: 1px solid var(--rule);
+    }
+    .contact-left h2 {
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 5vw, 5rem);
+      font-weight: 300;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+      max-width: 9ch;
+      margin-bottom: 36px;
+    }
+    .contact-left h2 em { font-style: italic; color: var(--accent); }
+    .contact-left p {
+      color: var(--muted-2);
+      max-width: 46ch;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+    .contact-right {
+      padding: 80px 52px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .contact-links { display: flex; flex-direction: column; }
+    .contact-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--rule);
+      color: var(--ink);
+      font-size: 1.1rem;
+      font-weight: 300;
+      transition: color 0.2s;
+    }
+    .contact-link:first-child { border-top: 1px solid var(--rule); }
+    .contact-link:hover { color: var(--accent); }
+    .c-arrow {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      opacity: 0.22;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .contact-link:hover .c-arrow { opacity: 1; transform: translate(4px, -4px); }
+    .contact-bottom {
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.07em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    footer {
+      background: var(--paper);
+      color: var(--muted);
+      padding: 20px 52px;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid var(--rule);
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { opacity: 0; animation: fadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+    .d1 { animation-delay: 0.08s; }
+    .d2 { animation-delay: 0.22s; }
+    .d3 { animation-delay: 0.38s; }
+    .d4 { animation-delay: 0.54s; }
+    .d5 { animation-delay: 0.7s; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1200px) {
+      .topbar { padding: 16px 32px; }
+      .hero, .wrap { padding: 0 32px; }
+      .hero-right { width: 170px; }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .skills-grid .skill-col:first-child { display: none; }
+      .about-body { grid-template-columns: 1fr 1fr; }
+      .about-body .spacer { display: none; }
+    }
+
+    @media (max-width: 900px) {
+      .topbar-nav { display: none; }
+      .hero, .wrap { padding: 0 20px; }
+      .topbar { padding: 14px 20px; }
+      .hero-right, .hero-photo { display: none; }
+      .hero-statusbar { grid-template-columns: repeat(2, 1fr); }
+      .sec-header { grid-template-columns: 1fr; }
+      .sec-num { display: none; }
+      .about-body { grid-template-columns: 1fr; }
+      .about-para { padding-right: 0; }
+      .day-one-list { padding-left: 0; border-left: none; border-top: 1px solid var(--rule); padding-top: 28px; margin-top: 28px; }
+      .project-row { grid-template-columns: 1fr; gap: 24px; }
+      .proj-meta { flex-direction: row; flex-wrap: wrap; }
+      .proj-metrics { align-items: flex-start; padding-left: 0; flex-direction: row; flex-wrap: wrap; gap: 24px; }
+      .metric-item { text-align: left; }
+      .mini-grid { grid-template-columns: repeat(2, 1fr); }
+      .pub-row { grid-template-columns: auto 1fr; gap: 18px; }
+      .pub-year { display: none; }
+      .sec-proj-intro { grid-template-columns: 1fr; }
+      .contact-inner { grid-template-columns: 1fr; }
+      .contact-right { padding-top: 0; }
+      footer { flex-direction: column; gap: 6px; padding: 20px; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ─── PHONE ─── */
+    @media (max-width: 580px) {
+      .topbar { padding: 12px 16px; }
+      .hero, .wrap { padding: 0 16px; }
+      .hero-inner { padding-top: 80px; padding-bottom: 32px; flex-direction: column; align-items: flex-start; gap: 24px; }
+      h1.hero-name { font-size: clamp(3.2rem, 14vw, 5rem); }
+      .hero-desc { margin-top: 20px; font-size: 1rem; }
+      .hero-actions { margin-top: 24px; }
+      .hero-actions .btn-solid, .hero-actions .btn-ghost { padding: 12px 18px; font-size: 0.7rem; }
+      .hero-statusbar { grid-template-columns: 1fr 1fr; }
+      .status-item { padding: 16px 0; }
+      .status-item .s-value { font-size: 0.92rem; }
+      .mini-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .contact-left, .contact-right { padding: 44px 16px; }
+      .contact-left h2 { font-size: clamp(2rem, 10vw, 3rem); }
+      .project-row { padding: 36px 0; }
+      .pub-row { grid-template-columns: 1fr; gap: 12px; }
+      footer { padding: 16px; }
+      .sec-header { padding: 28px 0; }
+      .sec-title { font-size: clamp(3rem, 6vw, 5rem); }
+    }
+
+    /* very small phones */
+    @media (max-width: 380px) {
+      h1.hero-name { font-size: 2.8rem; }
+      .hero-statusbar { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
-<style>
-  h5 {text-align: center;}
-</style>
-
 <body>
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+  <header class="topbar">
+    <div class="topbar-left">V. Mullur — Robotics Researcher</div>
+    <nav class="topbar-nav">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#coursework">Coursework</a>
+      <a href="#research">Research</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="topbar-cta" href="#contact">Available for roles</a>
+  </header>
 
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
-
-      <div class="profile">
-        <img src="./assets/img/profile-img2.jpg" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Venkatesh Mullur</a></h1>
-        <div class="social-links mt-3 text-center">
-          <!-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> -->
-          <a href="https://github.com/venk221" class="github"><i class="bx bxl-github"></i></a>
-          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="venkmullur@gmail.com" class="gmail"><i class="bx bxl-gmail"></i></a>
-          <!-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a> -->
-          <a href="https://www.linkedin.com/in/vmullur/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+  <!-- ══════════ HERO ══════════ -->
+  <section class="hero" id="top">
+    <div class="hero-bg-text" aria-hidden="true">VM</div>
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-eyebrow fade-up d1">PhD Candidate · WPI Robotics Engineering · Worcester, MA</div>
+        <h1 class="hero-name fade-up d2">Venkatesh<br><em>Mullur</em></h1>
+        <p class="hero-desc fade-up d3">
+          Seeking research and engineering roles in <strong>robotic manipulation, robot perception, and physical AI</strong> — where the goal is systems that deploy, not just papers that publish.
+        </p>
+        <div class="hero-actions fade-up d4">
+          <a class="btn-solid" href="#projects">View Research Work</a>
+          <a class="btn-ghost" href="#research">Publications</a>
+          <a class="btn-ghost" href="https://github.com/venk221" target="_blank">GitHub ↗</a>
         </div>
       </div>
 
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Skills</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-          <li><a href="#testimonials" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Testimonials</span></a></li>
-          <!-- <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li> -->
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
+      <div class="hero-photo fade-up d3">
+        <div class="hero-photo-frame">
+          <img src="assets/profile_picture.png" alt="Venkatesh Mullur">
+        </div>
+        <div class="hero-photo-label">Venkatesh Mullur</div>
+      </div>
+
+      <div class="hero-right fade-up d4">
+        <div class="stat-block">
+          <div class="num plain">4+</div>
+          <div class="label">Years in CV &<br>Robotics Research</div>
+        </div>
+        <div class="stat-block">
+          <div class="num red">3</div>
+          <div class="label">Publications &<br>Conferences</div>
+        </div>
+        <div class="stat-block">
+          <div class="num green">2</div>
+          <div class="label">Robot Platforms<br>Deployed On</div>
+        </div>
+        <div class="stat-block hobby">
+          <div class="num">🏊</div>
+          <div class="label">National-level<br>competitive swimmer</div>
+        </div>
+      </div>
     </div>
-  </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Venkatesh Mullur</h1>
-      <p>I'm <span class="typed" data-typed-items="a Robotics Engineer,a Computer Vision Engineer,an Electronics Engineer,a Swimmer"></span></p>
+    <!-- Status bar — with clickable links -->
+    <div class="hero-statusbar fade-up d5">
+      <div class="status-item">
+        <span class="s-label">Role</span>
+        <span class="s-value">Robotics Researcher</span>
+      </div>
+      <a class="status-item has-link" href="https://wp.wpi.edu/merlab/" target="_blank" rel="noreferrer">
+        <span class="s-label">Lab</span>
+        <span class="s-value">MER Lab, WPI <span class="s-arrow">↗</span></span>
+      </a>
+      <a class="status-item has-link" href="https://scholar.google.com/citations?user=HxJTHvMAAAAJ&hl=en" target="_blank" rel="noreferrer">
+        <span class="s-label">Advisor</span>
+        <span class="s-value">Prof. Berk Calli <span class="s-arrow">↗</span></span>
+      </a>
+      <div class="status-item">
+        <span class="s-label">Status</span>
+        <span class="s-value">Open to opportunities<span class="dot-live"></span></span>
+      </div>
     </div>
-  </section><!-- End Hero -->
+  </section>
 
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      
-      <div class="container">
-
-        <div class="section-title">
-          <h2>About Me</h2>
-          <h4>Passionate about computer vision, deep learning, and machine learning, seeking opportunities to utilize these skills in various domains like Robotics, Medical &
-            Autonomous Vehicles.</h4>
-            <p id="quoted-text" class="fst">
-              <h7><i>"With every millisecond that ticks, the number of decisions to make is infinite. 
-                So how do human minds find the right decision so quickly?"</i></h7>
-          </p>
-        </div>
-        <script>
-          function highlightQuote() {
-            var quoteParagraph = document.getElementById("quoted-text");
-        
-            // Add the "highlight" class to apply the yellow background
-            quoteParagraph.classList.add("highlight");
-        
-            // Remove the "highlight" class after 2 seconds
-            setTimeout(function() {
-              quoteParagraph.classList.remove("highlight");
-            }, 2000);
-          }
-        </script>
-
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="./assets/img/profile-img.jpg" class="img-fluid" alt="" style="margin-top: 20px;">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <p class="fst"> 
-              Hello there!            
-            </p>                  
-            <p class="fst"> 
-              I'm Venkatesh Mullur, a 2023 Robotics Engineering graduate from Worcester Polytechnic Institute. Passionate about leveraging computer vision, deep learning, and artificial intelligence, I aim to bridge the gap between humans and machines. 
-              Witnessing <a href="https://youtu.be/BjZPvXKewFk?si=nvzF_hXmd61Ecesx" target="_blank">Yamaha's Motobot</a> struggle against Valentino Rossi in a race piqued my interest in the critical gap between perceiving the environment and real-world decision-making, especially in dynamic situations. 
-              Inspired from the above written<a href="javascript:void(0);" onclick="highlightQuote();"> quote</a>, I'm keen on empowering machines to perceive, understand, and interact with the world as effectively as humans. 
-            </p>
-        
-          
-            <p>
-              I am actively pursuing full-time opportunities to apply my skills and contribute to real-world robotics applications. As a <a href="https://github.com/venk221/human_pose_estimation-using-Zed2i-camera" target="_blank">Machine Vision Engineer</a> at 
-              CogniAux Lab with <a href="https://users.wpi.edu/~ayousefi/?_gl=1*1xo8ug4*_ga*MTUyMjI5ODAzOS4xNzA2MzEzMDA2*_ga_RE35PKQB7J*MTcwOTIzNjgwNC4yMC4xLjE3MDkyMzY5MzYuNjAuMC4w" target="_blank">Dr. Ali Yousefi</a> , I developed a multi-modal framework for analyzing human emotions through pose estimation in dynamic environments using machine learning. 
-              This project underscores my proficiency in applying computer vision and deep learning to impactful endeavors with the potential to enhance people's lives.
-            </p>
-
-            
-            
-            <p>
-              In my role as a Perception Researcher under <a href="https://berkcalli.com/" target="_blank">Dr. Berk Calli</a>, I applied computer vision and robotics to create a real-time system for precise keypoint detection and pose estimation on the Franka Panda Robot in cluttered and occluded environments. 
-              Tasks included improving <a href="https://github.com/venk221/Enhancing-Point-Tracking/blob/main/Enhancing_Point_Tracking__A_Comparative_Study_of_Occlusion_Free_and_Generative_Inpainting_Based_Keypoint_Tracking.pdf" target="_blank">enhancing point tracking</a> and assessing AI models for image inpainting.  
-              This project showcases my capacity to translate theoretical knowledge into practical solutions, addressing real-world challenges in robotics.
-            </p>
-            
-            <p >
-              Experienced in industry dynamics, I served as an Image Processing and Computer Vision Intern at <a href="https://digimsolution.com/" target="_blank">DigiM Solution LLC</a>. 
-              Here, I honed skills in noise reduction, 3D reconstruction, & image segmentation while fostering teamwork.  
-            </p>
-            <p>
-              I am eager to connect with individuals and organizations who share my passion for the future of robotics. 
-              Let's explore the possibilities of how we can collaborate to create a more intelligent and interactive world!
-            </p>
-          </div>
-        </div>
-
+  <!-- ══════════ ABOUT ══════════ -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-header">
+        <div class="sec-num">01 / About</div>
+        <h2 class="sec-title">Perception, grasping, and manipulation for robots that handle <em>uncertainty</em></h2>
       </div>
-    </section>
-
-    <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills section-bg">
-      <div class="container">
-        <div class="section-title">
-          <h2>Skills</h2>
-
-          <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css" rel="stylesheet" />
-            <div class="timeline" style="--items: 7;">
-              <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css" rel="stylesheet" />
-              <div class="timeline skills" style="--items: 7;">
-                <h1>Timeline</h1>
-                <ul>
-                  <li style="--index: 1">
-                    <h3>2018-2019 Dec-May</h3>
-                    <h5>Embedded Linux Intern at IoTIoT.in</h5>
-                    <p><u>Skills Learned:</u> Embedded Systems, Linux Kernel, Technical Skills like V4L2, I2C and Linux Filesystem, Networking, Version Control, Programming Languages like C++, Problem Solving.</p>
-                  </li>
-                  <li style="--index: 2">
-                    <h3>2020 Aug-Nov</h3>
-                    <h5>Embedded Systems and IoT Intern at Exa Mobility</h5>
-                    <p><u>Skills Learned:</u> Hardware Integration, Sensors and Safety Systems, Embedded Systems, Technical Research, Programming Languages like Python</p>
-                  </li>
-                  <li style="--index: 3">
-                    <h3>2020</h3>
-                    <h5>Graduated as Electronics and Telecommuncation Engineer</h5>
-                    <p><u>Skills learned:</u> Image Processing, Electronics, Signal Processing, Machine Learning, Robotics, Computer Networks, Deep Learning, Coding skills like python & C++.</p>
-                  </li>
-                  <li style="--index: 4">
-                    <h3>2021</h3>
-                    <h5>Started MS in Robotics Engineering at WPI</h5>
-                    <p><u>Skills Learned:</u> Linear algebra, computer vision, deep learning, Robot Manipulation, Robot Perception, Robot Control, Motion Planning, Reinforcement Learning, Biomedical Robotics, teamwork.</p>
-                  </li>
-                  <li style="--index: 5">
-                    <h3>2022-2023 Dec-April</h3>
-                    <h5>Image Processing, Data Analysis, Computer Vision at DigiM Solution LLC</h5>
-                    <p>
-                      <u>Skilles Learned:</u> Technical Skills and research, Quantitative Data Analysis, Teamwork and Collaboration, Critical Thinking, computer vision, CI/CD, version control, docker and AWS.
-                    </p>
-                  </li>
-                  <li style="--index: 6">
-                    <h3>2023 June-current</h3>
-                    <h5>Perception Researcher at Manipulation and Environmental Robotics Lab</h5>
-                    <p>
-                      <u>Skills Learned:</u> Vision based robot manipulation, robotics, deep learning, generative AI, Problem Solving & Optimization, Technical Research & Evaluation, Teamwork.
-                    </p>
-                  </li>
-                  <li style="--index: 7">
-                    <h3>2024 Jan</h3>
-                    <h5>Machine Vision Engineer at CogniAux Labs</h5>
-                    <p>
-                      <u>Skills Learned:</u> Multi-modal Framework Development, Sensor Fusion, Communication, Team Management, Adaptability.
-                    </p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-          
-          
-
-        <section id="skills" class="section-bg">
-          <table class="skills-table">
-            <thead>
-              <tr>
-                <th>Skills</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="skill-name">Computer Vision</td>
-                <td>
-                  <ul class="skill-list">
-                    <li>3D computer vision techniques (spatial transformation)</li>
-                    <li>Keypoint detection and pose estimation</li>
-                    <li>Image inpainting for occlusion handling</li>
-                    <li>2D and 3D image processing (noise reduction, edge enhancement, segmentation)</li>
-                    <li>Camera calibration</li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td class="skill-name">Deep Learning</td>
-                <td>
-                  <ul class="skill-list">
-                    <li>Generative Adversarial Networks (GANs) for image inpainting</li>
-                    <li>Vision Transformers (ViTs) for pose estimation</li>
-                    <li>Variational Autoencoders (VAEs) for image reconstruction</li>
-                    <li>Temporal Attention Models for emotion recognition</li>
-                    <li>Deep Image Prior (DIP) for noise reduction</li>
-                    <li>PointNet++ for point cloud segmentation and detection</li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td class="skill-name">Robotics</td>
-                <td>
-                  <ul class="skill-list">
-                    <li>Sensor fusion for robot perception and control</li>
-                    <li>Visual servoing with enhanced robustness</li>
-                    <li>Robot motion planning (RRT-APF) in dynamic environments</li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td class="skill-name">Programming Skills</td>
-                <td>
-                  <ul class="skill-list">
-                    <li>Programming Languages: Python, C++</li>
-                    <li>Software & Tools: ROS, MoveIt!, Gazebo, Rviz, Matlab</li>
-                    <li>Libraries: PyTorch, TensorFlow, OpenCV, PCL, NumPy, Scikit-learn, Open3D, CUDA, Keras</li>
-                    <li>Other: AWS, GCP, Git, Docker, CI/CD</li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td class="skill-name">Project Experience</td>
-                <td>
-                  <ul class="skill-list">
-                    <li>Successfully led projects encompassing 3D point cloud segmentation, camera calibration, and realistic facial manipulation using advanced deep learning methodologies.</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        
-        
-
-      <!-- </div> -->
-    <!-- </section>End Skills Section
-
-     ======= Resume Section ======= -->
-    <section id="resume" class="resume">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Resume</h2>
-          <p>I am actively looking for Full-Time opportunities in Medical Computer Vision, Autonomous Driving Assistant System (ADAS), Machine Learning and Image Processing.</p>
-          <p>A pdf version of my resume is <a href="https://drive.google.com/file/d/1jETvJYs0r4BrGMRyHrNuam2iMZDaqiin/view?usp=sharing" target="_blank">here</a>.</p>
-      </div>
-      
-
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up">
-            <h3 class="resume-title">Summary</h3>
-            <div class="resume-item pb-0">
-              <h4>Venkatesh Mullur</h4>
-              <p><em> 3+ years of experience 3D Computer Vision, Deep Learning and Machine Learning.</em></p>
-              <p><em> 2+ years Trained Professional in Robotic Perception Systems</em></p>
-              <ul>
-                <li>vmullur@wpi.edu</li>
-              </ul>
-            </div>
-
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Master of Science in Robotics Engineering</h4>
-              <h5>2021 - 2023</h5>
-              <p><em>Worcester Polytechnic Institute, Worcester, MA</em></p>
-              <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><strong>Artificial Intelligence:</strong> <span>CS534</span></li>
-                  <li><strong>Robot Dynamics:</strong> <span>RBE501</span></li>
-                  <li><strong>Robot Controls:</strong> <span>RBE502</span></li>
-                  <li><strong>Motion Planning:</strong> <span>RBE550</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li> <strong>Biomedical Robotics:</strong> <span>RBE580</span></li>
-                  <li> <strong>Classical and Deep Learning Approaches for Geometric Computer Vision:</strong> <span>RBE549</span></li>
-                  <li> <strong>Reinforcement Learning:</strong> <span>RBE525</span></li>
-                </ul>
-              </div>
-            </div>
-            </div>
-            <div class="resume-item">
-              <h4>Bachelor of Engineering in Electronics and Telecommunication</h4>
-              <h5>2016 - 2020</h5>
-              <p><em>Savitribai Phule Pune University (formerly Pune University), Pune, India</em></p>
-              <div class="row">
-                <div class="col-lg-6">
-                  <ul>
-                    <li><strong>Machine Learning</strong></li>
-                    <li><strong>Image and Video Processing</strong></li>
-                  </ul>
-                </div>
-                <div class="col-lg-6">
-                  <ul>
-                    <li><strong>Fundamentals of Robotics</strong></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="resume-item">
-              <h4>Research</h4>
-              <h5>Deep Learning based Side-Channel Analysis</h5>
-              <h6>April 2022 - Sept 2022</h6>
-              <p><em>Vernam Lab, WPI, Worcester, MA</em></p>
-                  <ul>
-                    <li>Performed PCA to improve the feature extraction and integrated it with Learning to Rank models for analyzing
-                      side-channel attacks, AES vulnerabilities and it's countermeasures.</li>
-                    <li>Implemented ListNet and ListMLE on the ASCAD Dataset to find the ranking of the AES sub-keys using
-                      Pytorch. Improved the model by tuning hyperparameters to get optimal nDCG gains(0.67 nDCG).</li>
-                  </ul>
-              <h5>Teaching Experience</h5>
-              <p><em>WPI</em></p>
-                  <ul>
-                    <li><strong>Teacher's Assistant: Machine Learning, Prof. Ali Yousefi</strong>  <span>Jan 2023 - Jan 2024 </span></li>
-                    <li><strong>Graduate Tutor: Contemporary Electric Power Systems, Prof. Gregory Noetscher</strong> <span>Aug 2022 - Nov 2022</span></li>
-                    <li><strong>Graduate Teaching Assistant: Calculus III, Prof. Duncan Wright </strong> <span>Jan 2022 - April 2022</span></li>
-                  </ul>
-
-            </div>
-            <h3 class="resume-title">Publications</h3>
-            <div class="resume-item">
-              Venkatesh Mullur, Sreejani Chatterjee, Berk Calli. ”Enhancing Point Tracking: A Comparative Study of
-              Occlusion-Free and Generative Inpainting-Based Keypoint Tracking ”, IJCVR, 2024, (Manuscript in Preparation)
+      <div class="about-body">
+        <div class="spacer"></div>
+        <div class="about-para">
+          <p>I'm a PhD candidate in Robotics Engineering at Worcester Polytechnic Institute, advised by Prof. Berk Calli. I work on robot perception, grasp detection, and vision-language systems for manipulation in cluttered and uncertain environments.</p>
+          <p>My background is in Electronics Engineering from Savitribai Phule Pune University, which gave me a strong foundation in embedded systems and low-level signal processing before I moved into robotics and deep learning at WPI. That path from hardware to software shapes how I think — I care about the full stack, not just the model.</p>
+          <p>I'm actively looking for roles in <strong>robotic manipulation, robot perception, and physical AI</strong> at companies building systems that need to work outside a controlled lab setting. Also affiliated with CogniAux, a faculty-founded computer vision startup.</p>
+        </div>
+        <div class="day-one-list">
+          <div class="day-one-heading">What I can do from day one</div>
+          <div class="day-one-item">
+            <div class="day-one-icon">⚙️</div>
+            <div class="day-one-text">
+              <strong>Deploy perception pipelines on real robots</strong>
+              <span>Franka Panda, Yale OpenHand, ROS2 — I've taken systems from training to hardware execution, not just simulation</span>
             </div>
           </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            
-
-            <h3 class="resume-title">Experience</h3>
-            <div class="resume-item">
-              <h4>Perception Researcher</h4>
-              <h5>June 2023 - Present</h5>
-              <p><em>Manipulation and Environmental Robotics Lab (MERL, WPI)</em></p>
-              <ul>
-                <li>Developed a real-time system for accurate keypoint detection and pose estimation on Franka Panda Robot
-                  despite occlusions to achieve an IOU of 0.76.</li>
-                <li>Evaluated the performance of Vision Transformers (ViTs), LaMa, Contextual Encoders, and Generative
-                  Adversarial Networks (GANs) and chose WGAN-GP for Image Inpainting.</li>
-                <li>Enhanced robustness in occluded scenarios by employing Keypoint RCNNs incorporating Graph Neural Networks
-                  (GNNs), thereby elevating visual servoing & robot perception capabilities.</li>
-                <li>Leveraged Generative Adversarial Networks (GANs) with attention for image inpainting, achieving 91.6%
-                  real-time accuracy, minimizing camera calibration and surpassing existing methods.</li>
-              </ul>
+          <div class="day-one-item">
+            <div class="day-one-icon">🧠</div>
+            <div class="day-one-text">
+              <strong>Train and evaluate deep learning models end-to-end</strong>
+              <span>From dataset curation and architecture design to benchmark evaluation and ablations — PyTorch, CUDA, HPC clusters</span>
             </div>
-            <div class="resume-item">
-              <h4>Machine Vision Engineer</h4>
-              <h5>December 2023 - Present</h5>
-              <p><em>Cogni-Aux Labs</em></p>
-              <ul>
-                <li>Developed a multi-modal framework to perform sentimental analysis in personalized environment control (PEACE)
-                  rooms using videos & depth images from Zed 2i cameras, audio, physiological, and text data.</li>
-                <li>Leveraged 3D computer vision techniques to determine the spatial transformation between two cameras,
-                  facilitating seamless integration of depth and pose estimation.</li>
-                <li>Extracted human pose & activity indicators from video for real-time stress estimation using OpenPose; Analyzed
-                  facial features and voice tone to estimate emotion levels using Temporal Attention Models.</li>
-                <li>Performed sensor fusion to identify optimal room configurations that maximizes individual stress reduction.</li>
-              </ul>
+          </div>
+          <div class="day-one-item">
+            <div class="day-one-icon">📐</div>
+            <div class="day-one-text">
+              <strong>Design rigorous evaluations and benchmarks</strong>
+              <span>Not just best-case numbers — I quantify failure modes, diversity, and complementarity across datasets and conditions</span>
             </div>
-            <div class="resume-item">
-              <h4>Image Processing, Image Data Analysis (computer vision) Intern</h4>
-              <h5>Jan 2023 - May 2023</h5>
-              <p><em>DigiM LLC, Woburn, MA </em></p>
-              <ul>
-                <li>Implementing machine learning, deep learning and 3D segmentation solutions on 3D microscopic images to
-                  perform quantitative analysis, reconstructing 3D materials achieving predictive property simulation.</li>
-              </ul>
+          </div>
+          <div class="day-one-item">
+            <div class="day-one-icon">📄</div>
+            <div class="day-one-text">
+              <strong>Contribute to both research and engineering</strong>
+              <span>Comfortable writing papers and shipping code — I've done both under deadline across three publications</span>
             </div>
-            <div class="resume-item">
-              <h4>Embedded Systems and IoT Intern</h4>
-              <h5>Aug 2020 - Nov 2020</h5>
-              <p><em>Exa Mobility, Pune, India</em></p>
-              <ul>
-                <li>Efficiently interfaced Cavli GPS & GSM system to ESP32 by using UART, I2C & SPI to check the upstream and
-                  downstream speeds through https.</li>
-                <li>Implemented Safety Features in the Electric Vehicle using ESP32, IMU sensor and Ultrasonic sensor module HCSR04
-                  & proximity sensors by determining the physical speed of the EV.</li>
-              </ul>
-            </div>
-            <!-- <div class="resume-item">
-              <h4>Embedded Linux Intern</h4>
-              <h5>Dec 2018 - April 2019</h5>
-              <p><em>IOTIOT.In, Pune, India</em></p>
-              <ul>
-                <li>Built a Bootable Kernel Image from scratch. Researched the architecture, boot process and file system of Linux Kernel and Achieved camera and video capture by configuring V4L2 Drivers to interface AR0130 Camera Driver in Linux Kernel
-                  using IOCTL & I2C interfaces in C++.</li>
-              </ul>
-            </div> -->
-            
           </div>
         </div>
       </div>
-    </section><!-- End Resume Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container">
-    
-        <div class="section-title">
-          <h2>Portfolio</h2>
-          <p>Find my projects on my github profile.</p>
-        </div>
-    
-        <div class="portfolio-grid">
-    
-            <div class="portfolio-item">
-              <a href="../test.html">
-                <div class="portfolio-wrap">
-                  <img src="./assets/img/portfolio/sfm.gif" class="img-fluid" alt="">
-                  <h5> Neural  Radiance Fields </h5>
-                </div>
-              </a>
-            </div>
-    
-            <div class="portfolio-item">
-              <a href="../sfm.html">
-                <div class="portfolio-wrap">
-                  <img src="./assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                  <h5> Structure from Motion </h5>
-                  <div class="portfolio-links">
-                  </div>
-                </div>
-              </a>
-            </div>
-            <!-- portfolio/portfolio-3.jpg -->
-            <div class="portfolio-item">
-              <a href="../pc.html">
-              <div class="portfolio-wrap">
-                <img src="./assets/img/hero-bg.gif" class="img-fluid" alt="">
-                <h5> Point cloud Semantic Segmentation </h5>
-                <div class="portfolio-links">
-                </div>
-              </div>
-            </a>
-            </div>
-
-          
-            <div class="portfolio-item">
-              <a href="../thesis_DR.html">
-              <div class="portfolio-wrap">
-                <img src="./assets/img/portfolio/o1.png" class="img-fluid" alt="" >
-                <h5> Image Inpaining Based Keypoint Tracking</h5>
-                <div class="portfolio-links">
-                </div>
-              </div>
-            </a>
-            </div>
-
-
-            <div class="portfolio-item">
-              <a href="../Machine_vision_engineer.html">
-              <div class="portfolio-wrap">
-                <img src="./assets/img/portfolio/output_video.gif" class="img-fluid" alt="" >
-                <h5>Tailoring Room Conditions for Optimal Stress Reduction using Machine Learning </h5>
-                <div class="portfolio-links">
-                </div>
-              </div>
-            </a>
-            </div>
-          
-
-          <div class="portfolio-item">
-            <a href="../vio.html">
-            <div class="portfolio-wrap">
-              <img src="./assets/img/portfolio/VIO.gif" class="img-fluid" alt="">
-              <h5> Visual Inertial Odometry using MSCKF </h5>
-              <div class="portfolio-links">
-              </div>
-            </div>
-          </a>
-          </div>
-
-          
-
-
-
-          <div class="portfolio-item">
-            <a href="../calib.html">
-            <div class="portfolio-wrap">
-              <img src="./assets/img/portfolio/calib.png" class="img-fluid" alt="">
-              <h5> Automatic Camera Calibration </h5>
-              <div class="portfolio-links">
-              </div>
-            </div>
-          </a>
-          </div>
-          
-
-          <div class="portfolio-item">
-            <a href="../deepfakes.html">
-            <div class="portfolio-wrap">
-              <img src="./assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-              <h5> DeepFakes</h5>
-              <div class="portfolio-links">
-              </div>
-            </div>
-          </a>
-          </div>
-
-          <div class="portfolio-item">
-            <a href="../bert.html">
-            <div class="portfolio-wrap">
-              <img src="./assets/img/portfolio/bert_finetune.jpeg" class="img-fluid" alt="">
-              <h5> BERT and LoraBERT fine-tuning for Sentiment Analysis</h5>
-              <div class="portfolio-links">
-              </div>
-            </div>
-          </a>
-          </div>
-
-
-          <div class="portfolio-item">
-            <a href="../Panaroma.html">
-            <div class="portfolio-wrap">
-              <img src="./assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-              <h5> Image Stitching using SIFT Features </h5>
-              <div class="portfolio-links">
-              </div>
-            </div>
-          </a>
-          </div>
-
-          <div class="portfolio-item">
-            <a href="../lstm.html">
-            <div class="portfolio-wrap">
-              <img src="./assets/img/portfolio/lstm_img1.jpeg" class="img-fluid" alt="">
-              <h5> Time-Series Analysis using LSTM </h5>
-              <div class="portfolio-links">
-              </div>
-            </div>
-          </a>
-          </div>
-
-          <div class="portfolio-item">
-            <a href="../fake_news.html">
-            <div class="portfolio-wrap">
-              <img src="./assets/img/portfolio/nltk.png" class="img-fluid" alt="">
-              <h5> Fake News Detection using NLP and Machine Learning Techniques </h5>
-              <div class="portfolio-links">
-              </div>
-            </div>
-          </a>
-          </div>
-
-
-
-          <div class="portfolio-item">
-            <a href="../C.html">
-            <div class="portfolio-wrap">
-              <img src="./assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-              <h5> Trajectory Tracking of Quadrotor </h5>
-              <div class="portfolio-links">
-              </div>
-            </div>
-          </a>
-          </div>
-
-          <div class="portfolio-item">
-            <a href="../MP.html">
-            <div class="portfolio-wrap">
-              <img src="./assets/img/portfolio/portfolio-9.gif" class="img-fluid" alt="">
-              <h5> Motion Planning of Robots in Adversarial Environments </h5>
-              <div class="portfolio-links">
-              </div>
-            </div>
-          </a>
-          </div>
-
-          <div class="portfolio-item">
-            <a href="../pcjointkinematics.html">
-            <div class="portfolio-wrap">
-              <img src="./assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-              <h5> Point Cloud based Joint Kinematics Prediction on MRI </h5>
-              <div class="portfolio-links">
-              </div>
-            </div>
-          </a>
-          </div>
-
-          <div class="portfolio-item">
-            <a href="../AI.html">
-            <div class="portfolio-wrap">
-              <img src="./assets/img/portfolio/output.jpg" class="img-fluid" alt="">
-              <h5> Enhancing sign language to text conversion by integrating lip movement recognition. </h5>
-              <div class="portfolio-links">
-              </div>
-            </div>
-          </a>
-          </div>
-
-          <div class="portfolio-item">
-            <a href="../pblite.html">
-            <div class="portfolio-wrap">
-              <img src="./assets/img/portfolio/portfolio-pb.jpg" class="img-fluid" alt="" >
-              <h5> PBLite: The Kernel's way </h5>
-              <div class="portfolio-links">
-              </div>
-            </div>
-          </a>
-          </div>
-
-          <div class="portfolio-item">
-            <a href="../BE.html">
-            <div class="portfolio-wrap">
-              <img src="./assets/img/portfolio/FER.png" class="img-fluid" alt="">
-              <h5> Facial Expression recognition </h5>
-              <div class="portfolio-links">
-              </div>
-            </div>
-          </a>
-          </div>
-          </div>
-    
-      </div>
-    </section>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    
-    <!-- End Portfolio Section  -->
-
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Testimonials</h2>
-        </div>
-
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  It has been a pleasure to work with Venkatesh. He is very easy to communicate. He is
-                  thorough and systematic in his work. He is kind and respectful. He might seem a bit too quiet
-                  at first glance, but he is not afraid to engage in in-depth discussions. He has a solid work ethic.
-                  He has been getting more independent throughout his study.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="https://media.licdn.com/dms/image/C4D03AQHVZ5mTQikZiQ/profile-displayphoto-shrink_800_800/0/1516842178342?e=1715212800&v=beta&t=MKydaIbRB91-NK-_UtrsDXBvi3k3gViSok3uoC9U4hw" class="testimonial-img" alt="">
-                <h3>Dr. Berk Calli</h3>
-                <h4>Assistant Professor,</h4>
-                <h4>Robotics Engineering Program,</h4>
-                <h4>Worcester Polytechnic Institute</h4>
-                <h4>+1-508-831-5448</h4>
-                <h4>bcalli@wpi.edu</h4>
-              </div> 
-            </div>
-            <!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Venkatesh has proven himself to be an astute, dedicated, and capable individual with exceptional critical thinking and teamwork skills. 
-                  Based on his commendable attributes and achievements outlined above, I am confident that Venkatesh is an exceptionally competitive candidate 
-                  at your institution
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="https://media.licdn.com/dms/image/C4E03AQGB9hkXPMuMfA/profile-displayphoto-shrink_800_800/0/1577770431749?e=1715212800&v=beta&t=XSzxlJ8P3pbrZ4TnHJN0g-6mcTK3ID7TfS6IwVNjxfs" class="testimonial-img" alt="">
-                <h3>Dr. Ali Yousefi</h3>
-                <h4>Assistant Professor,</h4>
-              </div> 
-            </div>
-          </section> 
-            <!-- End testimonial item -->
-
-            <!-- <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-              </div> -->
-            <!-- </div>End testimonial item -->
-
-            <!-- <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-              </div> -->
-            <!-- </div>End testimonial item -->
-
-            <!-- <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-              </div> -->
-            <!-- </div>End testimonial item -->
-
-          <!-- </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-     </section> 
-     <!-- End Testimonials Section   -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-        </div>
-
-        <div class="row" data-aos="fade-in">
-
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>Boston, MA 01609</p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>vmullur@wpi.edu</p>
-              <!-- </div>
-
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
-            </div> -->
-
-          </div>
-
-          <!-- <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" required>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div> -->
-
-        </div>
-
-      </div>
-    </section>
-    <!-- End Contact Section -->
-
-  </main>
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">  
-    <div class="container">
-      <div class="copyright">
-
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade </a>
-      </div>
-      <div class = "credits"> Adapted by Venkatesh Mullur </div>
     </div>
-  </footer><!-- End  Footer -->
+  </section>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- ══════════ RESEARCH PROJECTS ══════════ -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-header">
+        <div class="sec-num">02 / Research Projects</div>
+        <h2 class="sec-title">Research<br><em>Work</em></h2>
+      </div>
 
-  <!-- Vendor JS Files -->
-  <script src="./assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="./assets/vendor/aos/aos.js"></script>
-  <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="./assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="./assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="./assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="./assets/vendor/typed.js/typed.min.js"></script>
-  <script src="./assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="./assets/vendor/php-email-form/validate.js"></script>
+      <!-- Project 1 -->
+      <div class="project-row">
+        <div class="proj-meta">
+          <span class="proj-tag"><span class="proj-dot green"></span>Flagship · MER Lab</span>
+          <span class="proj-tag">2023 – 2024</span>
+          <span class="proj-tag" style="color:var(--accent-2); margin-top:4px;">IJRR Submission</span>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">Occlusion-Robust Robot Perception Pipeline</h3>
+          <p class="proj-desc">Real-time perception stack for encoderless Franka Panda. WGAN-GP inpainting reconstructs occluded joints from markerless images; keypoint detection with UKF temporal smoothing feeds Image-Based Visual Servoing, enabling stable control under severe occlusion. Outperforms LaMa with 11.7 FID, 0.91 precision.</p>
+          <div class="proj-media">
+            <video src="assets/real_life_cup_stacking_under_occlusion.mp4" autoplay muted loop playsinline></video>
+          </div>
+          <div class="proj-chips">
+            <span class="chip">WGAN-GP</span>
+            <span class="chip">Keypoint RCNN</span>
+            <span class="chip">GNN Tracking</span>
+            <span class="chip">UKF</span>
+            <span class="chip">IBVS</span>
+            <span class="chip">Franka Panda</span>
+            <span class="chip">PyTorch</span>
+          </div>
+        </div>
+        <div class="proj-metrics">
+          <div class="metric-item">
+            <div class="metric-val green">91.6%</div>
+            <div class="metric-label">Occlusion accuracy</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-val">&lt;2%</div>
+            <div class="metric-label">Pixel error</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-val red">26%</div>
+            <div class="metric-label">Settling time ↓</div>
+          </div>
+        </div>
+      </div>
 
-  <!-- Template Main JS File -->
-  <script src="./assets/js/main.js"></script>
+      <!-- Project 2 -->
+      <div class="project-row">
+        <div class="proj-meta">
+          <span class="proj-tag"><span class="proj-dot"></span>Grasping Research</span>
+          <span class="proj-tag">2024 – 2026</span>
+          <span class="proj-tag" style="color:var(--accent); margin-top:4px;">IROS 2026 Submission</span>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">Feature-Level Mixture-of-Experts for Grasping</h3>
+          <p class="proj-desc">Feature-level fusion across multiple grasp expert networks. Complementarity quantified via Q-statistics and error correlation — proving mid-accuracy moderately-correlated ensembles outperform SOTA individual models. Evaluated on Cornell, Jacquard, and GraspNet-1B; validated on Franka Panda.</p>
+          <div class="proj-media">
+            <img src="assets/Conceptual.jpg" alt="MoE Architecture">
+          </div>
+          <div class="proj-chips">
+            <span class="chip">Mixture-of-Experts</span>
+            <span class="chip">Feature Fusion</span>
+            <span class="chip">GR-ConvNet</span>
+            <span class="chip">GG-CNN</span>
+            <span class="chip">Q-Statistics</span>
+            <span class="chip">GraspNet-1B</span>
+            <span class="chip">PyTorch</span>
+          </div>
+        </div>
+        <div class="proj-metrics">
+          <div class="metric-item">
+            <div class="metric-val red">13%</div>
+            <div class="metric-label">Fewer grasp failures</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-val">+7%</div>
+            <div class="metric-label">Over individual models</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-row">
+        <div class="proj-meta">
+          <span class="proj-tag"><span class="proj-dot green"></span>Physical AI</span>
+          <span class="proj-tag">2026 – Present</span>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">Vision-Language-Action Robotic Grasping</h3>
+          <p class="proj-desc">Proposal-conditioned VLA framework for cluttered tabletop grasping with Yale OpenHand gripper. RGB-D Mask R-CNN generates object proposals; confidence-based skill selection chooses the best planner across known, unknown, and occluded multi-object scenarios. Deployed end-to-end on real hardware.</p>
+          <div class="proj-media">
+            <img src="assets/vla.png" alt="VLA Grasping">
+          </div>
+          <div class="proj-chips">
+            <span class="chip">VLA</span>
+            <span class="chip">Mask R-CNN</span>
+            <span class="chip">RGB-D</span>
+            <span class="chip">Skill Selection</span>
+            <span class="chip">Yale OpenHand</span>
+            <span class="chip">ROS2</span>
+          </div>
+        </div>
+        <div class="proj-metrics">
+          <div class="metric-item">
+            <div class="metric-val green">92%</div>
+            <div class="metric-label">Grasp success in clutter</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-row">
+        <div class="proj-meta">
+          <span class="proj-tag"><span class="proj-dot"></span>Industry · CogniAux</span>
+          <span class="proj-tag">2024</span>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">Multimodal Human Activity Tracking</h3>
+          <p class="proj-desc">Real-time fusion of RGB-D, EEG, and audio for human activity tracking and attention estimation. Led a three-person team to full deployment: OpenPose, temporal attention, GMM, and optical flow as a full-stack GUI — not just a research prototype.</p>
+          <div class="proj-media">
+            <img src="assets/output_video.gif" alt="CogniAux demo">
+          </div>
+          <div class="proj-chips">
+            <span class="chip">Sensor Fusion</span>
+            <span class="chip">OpenPose</span>
+            <span class="chip">Vision-Language</span>
+            <span class="chip">GMM</span>
+            <span class="chip">Optical Flow</span>
+            <span class="chip">RGB-D + EEG</span>
+          </div>
+          <!-- <a class="proj-link" href="https://venk221.github.io/Machine_vision_engineer.html" target="_blank">View project page ↗</a> -->
+        </div>
+        <div class="proj-metrics">
+          <div class="metric-item">
+            <div class="metric-val red">+17%</div>
+            <div class="metric-label">mAP improvement</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-val">43%</div>
+            <div class="metric-label">Error rate ↓</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════ COURSEWORK / SIDE PROJECTS ══════════ -->
+  <section id="coursework">
+    <div class="wrap">
+      <div class="sec-header">
+        <div class="sec-num">03 / Coursework & Side Projects</div>
+        <h2 class="sec-title">More<br><em>Projects</em></h2>
+      </div>
+      <div class="sec-proj-intro">
+        <div></div>
+        <p>Coursework and independent projects spanning 3D vision, robotics systems, and deep learning.</p>
+      </div>
+      <div class="mini-grid">
+
+        <div class="mini-card">
+          <div class="mini-card-media">
+            <img src="assets/nerf.png" alt="NeRF">
+          </div>
+          <span class="mini-tag">3D Vision</span>
+          <h4 class="mini-title">Neural Radiance Fields</h4>
+          <p class="mini-desc">Enhanced NeRF with improved rendering and sampling strategies for photorealistic novel view synthesis.</p>
+          <div class="mini-chips">
+            <span class="mini-chip">PyTorch</span><span class="mini-chip">NeRF</span><span class="mini-chip">3D Rendering</span>
+          </div>
+          <a class="mini-link" href="https://github.com/venk221/Neural-Radiance-Fields-NeRF" target="_blank">View ↗</a>
+        </div>
+
+        <div class="mini-card">
+          <div class="mini-card-media">
+            <img src="assets/sfm.png" alt="SfM">
+          </div>
+          <span class="mini-tag">3D Reconstruction</span>
+          <h4 class="mini-title">Structure from Motion</h4>
+          <p class="mini-desc">Full SfM pipeline with epipolar geometry and bundle adjustment for monocular depth estimation.</p>
+          <div class="mini-chips">
+            <span class="mini-chip">OpenCV</span><span class="mini-chip">Epipolar Geometry</span><span class="mini-chip">Bundle Adjustment</span>
+          </div>
+          <a class="mini-link" href="https://github.com/venk221/Structure-from-Motion-NeRF" target="_blank">View ↗</a>
+        </div>
+
+        <div class="mini-card">
+          <div class="mini-card-media">
+            <video src="assets/fused_web.mp4" autoplay muted loop playsinline></video>
+          </div>
+          <span class="mini-tag">3D Perception</span>
+          <h4 class="mini-title">Point Cloud Semantic Segmentation</h4>
+          <p class="mini-desc">3.2% IoU improvement via voxel grid filtering and bird's-eye-view representation with PointNet++.</p>
+          <div class="mini-chips">
+            <span class="mini-chip">PointNet++</span><span class="mini-chip">PCL</span><span class="mini-chip">Open3D</span>
+          </div>
+          <a class="mini-link" href="https://github.com/venk221/Point-Cloud_Semantic-Segmentation-Point-Painting" target="_blank">View ↗</a>
+        </div>
+
+        <div class="mini-card">
+          <div class="mini-card-media">
+            <img src="assets/VIO.gif" alt="VIO">
+          </div>
+          <span class="mini-tag">SLAM & Odometry</span>
+          <h4 class="mini-title">Visual-Inertial Odometry (MSCKF)</h4>
+          <p class="mini-desc">VIO at 29 FPS via stereo camera and IMU fusion for real-time 6-DOF pose estimation.</p>
+          <div class="mini-chips">
+            <span class="mini-chip">MSCKF</span><span class="mini-chip">IMU Fusion</span><span class="mini-chip">ROS</span>
+          </div>
+          <a class="mini-link" href="https://github.com/venk221/Visual-Inertial-Odometry-using-MSCKF" target="_blank">View ↗</a>
+        </div>
+
+        <div class="mini-card">
+          <div class="mini-card-media">
+            <img src="assets/motion_planning.gif" alt="Motion Planning">
+          </div>
+          <span class="mini-tag">Robotics</span>
+          <h4 class="mini-title">Motion Planning in Adversarial Environments</h4>
+          <p class="mini-desc">RRT-APF hybrid planner for robot navigation in dynamic environments with moving obstacles.</p>
+          <div class="mini-chips">
+            <span class="mini-chip">RRT</span><span class="mini-chip">APF</span><span class="mini-chip">Motion Planning</span>
+          </div>
+          <a class="mini-link" href="https://github.com/venk221/Motion-Planning-of-Robots-in-Adversarial-Environments." target="_blank">View ↗</a>
+        </div>
+
+        <div class="mini-card">
+          <div class="mini-card-media">
+            <img src="assets/calib.png" alt="Calibration">
+          </div>
+          <span class="mini-tag">Computer Vision</span>
+          <h4 class="mini-title">Automatic Camera Calibration</h4>
+          <p class="mini-desc">Automated multi-view calibration pipeline with robust homography estimation and distortion correction.</p>
+          <div class="mini-chips">
+            <span class="mini-chip">OpenCV</span><span class="mini-chip">Homography</span><span class="mini-chip">Camera Models</span>
+          </div>
+          <a class="mini-link" href="https://github.com/venk221/Robust-Automatic-Camera-Calibration" target="_blank">View ↗</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ SKILLS ══════════ -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-header">
+        <div class="sec-num">04 / Skills</div>
+        <h2 class="sec-title">Technical<br><em>Depth</em></h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-col"></div>
+        <div class="skill-col">
+          <div class="skill-heading">Robotics & Systems</div>
+          <ul class="skill-items">
+            <li>ROS1 / ROS2</li>
+            <li>MoveIt! · RViz</li>
+            <li>Gazebo · Isaac Sim</li>
+            <li>Franka Panda</li>
+            <li>Yale OpenHand</li>
+            <li>Visual Servoing (IBVS)</li>
+            <li>Visual SLAM</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <div class="skill-heading">Perception & Vision</div>
+          <ul class="skill-items">
+            <li>RGB-D · Point Clouds</li>
+            <li>Keypoint Detection</li>
+            <li>Pose Estimation</li>
+            <li>Occlusion Handling</li>
+            <li>OpenCV · Open3D · PCL</li>
+            <li>Epipolar Geometry</li>
+            <li>Sensor Fusion</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <div class="skill-heading">Deep Learning</div>
+          <ul class="skill-items">
+            <li>PyTorch · TensorFlow</li>
+            <li>GANs · GNNs</li>
+            <li>Vision-Language Models</li>
+            <li>Mixture-of-Experts</li>
+            <li>Mask R-CNN</li>
+            <li>CUDA · HuggingFace</li>
+            <li>Few-shot Learning</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <div class="skill-heading">Engineering</div>
+          <ul class="skill-items">
+            <li>Python · C/C++</li>
+            <li>Docker · AWS</li>
+            <li>Git · CI/CD</li>
+            <li>Bash · SQL · MATLAB</li>
+            <li>HPC Clusters</li>
+            <li>Lidar / Radar</li>
+            <li>Kubernetes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ PUBLICATIONS ══════════ -->
+  <section id="research">
+    <div class="wrap">
+      <div class="sec-header">
+        <div class="sec-num">05 / Research</div>
+        <h2 class="sec-title">Publications<br>& <em>Research</em></h2>
+      </div>
+      <div>
+        <div class="pub-row">
+          <div><span class="pub-badge review">Under Review</span></div>
+          <div>
+            <h3 class="pub-title">Feature-Level Mixture-of-Experts for Robust Robotic Grasp Detection</h3>
+            <div class="pub-authors">
+              <a><strong>Venkatesh Mullur</strong></a>, 
+              <a href="https://vinayakkapoor12.wixsite.com/vinayakapoor">Vinayak Kapoor</a>, 
+              <a href="https://robotics.wpi.edu/people/berk-calli/">Prof. Berk Calli</a>
+            </div>
+            <div class="pub-venue">IEEE IROS 2026 · Under review</div>
+          </div>
+          <div class="pub-year">26</div>
+        </div>
+        <div class="pub-row">
+          <div><span class="pub-badge review">Under Review</span></div>
+          <div>
+            <h3 class="pub-title">Utilizing Inpainting for Keypoint Detection for Vision-Based Control of Robotic Manipulators</h3>
+            <div class="pub-authors">
+              <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=6eaRyWwAAAAJ">Sreejani Chatterjee</a>,
+              <a><strong>Venkatesh Mullur</strong></a>, 
+              <a href="https://scholar.google.com/citations?user=vLOu8OQAAAAJ&hl=en">Abhinav Gandhi</a>, 
+              <a href="https://robotics.wpi.edu/people/berk-calli/">Prof. Berk Calli</a>
+            </div>
+            <div class="pub-venue">IJRR 2025 · Under review</div>
+          </div>
+          <div class="pub-year">25</div>
+        </div>
+        <div class="pub-row">
+          <div><span class="pub-badge published">Presented</span></div>
+          <div>
+            <h3 class="pub-title">Novel Sweeping Methods for Robotic Rearrangement of Object Piles</h3>
+            <div class="pub-authors">Abhijeet Sanjay Rathi, Filip Radil, Hrishikesh Dhairyasheel Pawar, Prof. Berk Calli  </div>
+            <div class="pub-venue">IEEE CASE 2025 · Los Angeles · August 2025 · Presenter</div>
+          </div>
+          <div class="pub-year">25</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CONTACT ══════════ -->
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <h2>Let's build robots that <em>survive</em> the real world.</h2>
+        <p>Actively seeking roles in robotic manipulation, robot perception, and deep learning for physical AI. If your system needs to work in clutter, occlusion, and real deployment conditions — let's talk.</p>
+      </div>
+      <div class="contact-right">
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:vmullur@wpi.edu">
+            <span>vmullur@wpi.edu</span>
+            <span class="c-arrow">↗</span>
+          </a>
+          <a class="contact-link" href="https://www.linkedin.com/in/vmullur/" target="_blank" rel="noreferrer">
+            <span>LinkedIn — @vmullur</span>
+            <span class="c-arrow">↗</span>
+          </a>
+          <a class="contact-link" href="https://github.com/venk221" target="_blank" rel="noreferrer">
+            <span>GitHub — venk221</span>
+            <span class="c-arrow">↗</span>
+          </a>
+          <a class="contact-link" href="tel:+15083042824">
+            <span>+1 (508) 304-2824</span>
+            <span class="c-arrow">↗</span>
+          </a>
+        </div>
+        <div class="contact-bottom">
+          Worcester, MA · Open to relocation · PhD exp. 2028
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Venkatesh Mullur — Robotics Researcher</span>
+    <span>WPI · MER Lab · 2026</span>
+  </footer>
 
 </body>
-
 </html>
