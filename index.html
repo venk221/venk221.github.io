@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Venkatesh Mullur — Robotics Researcher</title>
+  <title>Venkatesh Mullur - Robotics Researcher</title>
   <meta name="description" content="PhD candidate in Robotics Engineering at WPI. Robot perception, grasping, and physical AI systems." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=DM+Mono:wght@300;400&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&family=Bebas+Neue&display=swap" rel="stylesheet" />
@@ -82,7 +82,7 @@
     }
     .nav-brand {
       font-family: var(--mono);
-      font-size: 0.75rem;
+      font-size: 0.85rem;
       letter-spacing: 0.07em;
       text-transform: uppercase;
       color: var(--muted);
@@ -91,7 +91,7 @@
       display: flex;
       gap: 28px;
       font-family: var(--mono);
-      font-size: 0.72rem;
+      font-size: 0.80rem;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--muted);
@@ -152,8 +152,8 @@
     h1.hero-title em { font-style: italic; color: var(--accent); }
 
     /*
-      "real hardware." — Bebas Neue gives it a bold, industrial,
-      stencil-plate feel — like something stamped on equipment.
+      "real hardware." - Bebas Neue gives it a bold, industrial,
+      stencil-plate feel - like something stamped on equipment.
       Kept in accent red so it pops, with slight tracking.
     */
     .hardware-word {
@@ -199,7 +199,7 @@
     .btn-line { color: var(--muted); border-color: var(--rule); }
     .btn-line:hover { color: var(--ink); border-color: var(--ink); }
 
-    /* ── STATUS STRIP — now inside left column, below buttons ── */
+    /* ── STATUS STRIP - now inside left column, below buttons ── */
     .hero-strip {
       display: flex;
       border: 1px solid var(--rule);
@@ -844,12 +844,17 @@
       <a href="#" class="nav-brand">Venkatesh Mullur</a>
       <nav class="nav-links">
         <a href="#about">About</a>
-        <a href="#projects">Projects</a>
+        <a href="#projects">Research</a>
         <a href="#publications">Publications</a>
-        <a href="#coursework">Coursework</a>
+        <a href="#coursework">Projects</a>
         <a href="#contact">Contact</a>
+        <a href="https://www.linkedin.com/in/vmullur/" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;gap:6px;color:var(--muted);transition:color 0.18s;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--muted)'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      </a>
       </nav>
-      <a class="nav-cta" href="#contact">Available for roles</a>
+      <a class="btn btn-fill" href="#contact">Open for opportunities ↗</a>
     </div>
   </header>
 
@@ -867,16 +872,17 @@
             <span style="color: var(--accent);">gets messy.</span>   
           </h1>
           <p class="hero-sub fu fu-3">
-            I build <strong>perception and learning systems for robotics</strong> — from grasp detection and occlusion-robust vision to vision-language models, validated end-to-end on physical robots.
+            I build <strong>perception and learning systems for robotics</strong> - from grasp detection and occlusion-robust vision to vision-language models, validated end-to-end on physical robots.
           </p>
           <div class="hero-actions fu fu-4">
             <a class="btn btn-fill" href="#projects">View Research Work ↗</a>
             <a class="btn btn-fill" href="https://github.com/venk221" target="_blank">GitHub ↗</a>
             <a class="btn btn-fill" href="mailto:vmullur@wpi.edu">Email Me ↗</a>
             <a class="btn btn-fill" href="https://drive.google.com/file/d/1z2FwzGn_ZhDpQt_76yTka_xXbu33ayWn/view?usp=sharing">Resume ↗</a>
+            <a class="btn btn-fill" href="https://www.linkedin.com/in/vmullur/" target="_blank">LinkedIn ↗</a>
           </div>
 
-          <!-- STATUS STRIP — inside left col, fits under buttons -->
+          <!-- STATUS STRIP - inside left col, fits under buttons -->
           <div class="hero-strip fu fu-5">
             <div class="strip-item">
               <span class="strip-label">Role</span>
@@ -890,10 +896,10 @@
               <span class="strip-label">Advisor</span>
               <span class="strip-value">Prof. Berk Calli <span class="strip-arrow">↗</span></span>
             </a>
-            <div class="strip-item">
+            <a class="strip-item linkable" href="https://www.linkedin.com/in/vmullur/" target="_blank" rel="noreferrer">
               <span class="strip-label">Status</span>
-              <span class="strip-value">Open to roles<span class="dot-live"></span></span>
-            </div>
+              <span class="strip-value">Open to roles<span class="dot-live"></span><span class="strip-arrow">↗</span></span>
+            </a>
           </div>
         </div>
 
@@ -932,11 +938,11 @@
       <!-- <div class="section-label">01 / About</div> -->
       <h2 class="section-title">A little about <em>who I am</em></h2>
       <div class="about-body">
-        <p>I'm a second-year PhD student in Robotics Engineering at WPI, working in the <a href="https://wp.wpi.edu/merlab/" target="_blank">Manipulation and Environmental Robotics Lab</a> with Prof. Berk Calli.</p>
-        <p>Watching <a href="https://youtu.be/BjZPvXKewFk?si=nvzF_hXmd61Ecesx" target="_blank">Yamaha's Motobot</a> struggle against Valentino Rossi got me thinking about the gap between perceiving an environment and making the right decision in it — in conditions the system wasn't built for. That question has shaped most of my research.</p>
-        <p>I came to robotics through Electronics Engineering in Pune, India, which means I think about systems from the hardware up. My work spans <strong>robot perception, deep learning for manipulation, and vision-language reasoning</strong> — all validated on real robots, not just in simulation.</p>
-        <p>Outside the lab I'm a competitive swimmer and a die hard soccer fan (Glory Glory Man United!). The early-morning training discipline has been useful. Especially when a model training run fails at 3am.</p>
-        <p>I'm looking for internship roles in <strong>robot perception, computer vision, deep learning, and physical AI</strong> — at teams building things that need to work when the situation changes.</p>
+        <p>I am a second-year PhD student in Robotics Engineering at WPI, working in the <a href="https://wp.wpi.edu/merlab/" target="_blank">Manipulation and Environmental Robotics Lab</a> with Prof. Berk Calli.</p>
+        <p>Watching <a href="https://youtu.be/BjZPvXKewFk?si=nvzF_hXmd61Ecesx" target="_blank">Yamaha's Motobot</a> struggle against Valentino Rossi got me thinking about the gap between perceiving an environment and making the right decision in it - in conditions the system wasn't built for. That question has shaped most of my research.</p>
+        <p>I came to robotics through Electronics Engineering in Pune, India, which means I think about systems from the hardware up. My work spans <strong>robot perception, deep learning for manipulation, and vision-language reasoning</strong> - all validated on real robots, not just in simulation.</p>
+        <p>Outside the lab I am a competitive swimmer and a die hard soccer fan (Glory Glory Man United!). The early-morning training discipline has been useful. Especially when a model training run fails at 3am.</p>
+        <p>I am looking for internship roles in <strong>robot perception, computer vision, deep learning, and physical AI</strong> - at teams building things that need to work when the situation changes.</p>
       </div>
       <div class="day-one">
         <div class="day-one-heading">What I can contribute from day one</div>
@@ -945,28 +951,28 @@
             <div class="doi-icon">⚙️</div>
             <div class="doi-text">
               <strong>Deploy perception pipelines on real robots</strong>
-              <span>Franka Panda, Yale OpenHand, ROS2 — I've taken systems from training to hardware execution, not just simulation</span>
+              <span>Franka Panda, Yale OpenHand, ROS2 - I've taken systems from training to hardware execution, not just simulation</span>
             </div>
           </div>
           <div class="day-one-item">
             <div class="doi-icon">🧠</div>
             <div class="doi-text">
               <strong>Train and evaluate deep learning models end-to-end</strong>
-              <span>Dataset curation, architecture design, benchmark evaluation, ablations — PyTorch, CUDA, HPC clusters</span>
+              <span>Dataset curation, architecture design, benchmark evaluation, ablations - PyTorch, CUDA, HPC clusters</span>
             </div>
           </div>
           <div class="day-one-item">
             <div class="doi-icon">📐</div>
             <div class="doi-text">
               <strong>Design rigorous evaluations and benchmarks</strong>
-              <span>Not just best-case numbers — I quantify failure modes, diversity, and complementarity across datasets</span>
+              <span>Not just best-case numbers - I quantify failure modes, diversity, and complementarity across datasets</span>
             </div>
           </div>
           <div class="day-one-item">
             <div class="doi-icon">📄</div>
             <div class="doi-text">
               <strong>Contribute to both research and engineering</strong>
-              <span>Comfortable writing papers and shipping code — I've done both under deadline across three publications</span>
+              <span>Comfortable writing papers and shipping code - I've done both under deadline across three publications</span>
             </div>
           </div>
         </div>
@@ -978,7 +984,7 @@
   <div class="section" id="projects">
     <div class="col">
       <!-- <div class="section-label">02 / Research Projects</div> -->
-      <h2 class="section-title">The work that <em>matters most</em></h2>
+      <h2 class="section-title">Selected <em>Projects</em></h2>
       <div class="project-list">
 
         <div class="project-card">
@@ -1017,7 +1023,7 @@
             <span class="proj-year">2024 – 2026</span>
           </div>
           <h3 class="proj-title">Feature-Level Mixture-of-Experts for Grasping</h3>
-          <p class="proj-desc">Feature-level fusion across multiple grasp expert networks. Complementarity quantified via Q-statistics and error correlation — proving mid-accuracy moderately-correlated ensembles outperform SOTA individual models. Evaluated on Cornell, Jacquard, GraspNet-1B and Franka Panda System.</p>
+          <p class="proj-desc">Feature-level fusion across multiple grasp expert networks. Complementarity quantified via Q-statistics and error correlation - proving mid-accuracy moderately-correlated ensembles outperform SOTA individual models. Evaluated on Cornell, Jacquard, GraspNet-1B and Franka Panda System.</p>
           <div class="proj-media">
             <img src="assets/Conceptual.jpg" alt="MoE Architecture">
           </div>
@@ -1060,7 +1066,7 @@
             <span class="proj-year">2024</span>
           </div>
           <h3 class="proj-title">Multimodal Human Activity Tracking</h3>
-          <p class="proj-desc">Real-time fusion of RGB-D, EEG, and audio for human activity tracking and attention estimation. Led a three-person team to full deployment — OpenPose, temporal attention, GMM, and optical flow as a full-stack GUI, not just a research prototype.</p>
+          <p class="proj-desc">Real-time fusion of RGB-D, EEG, and audio for human activity tracking and attention estimation. Led a three-person team to full deployment - OpenPose, temporal attention, GMM, and optical flow as a full-stack GUI, not just a research prototype.</p>
           <div class="proj-media">
             <img src="assets/output_video.gif" alt="CogniAux demo">
           </div>
@@ -1249,7 +1255,7 @@
       <div class="contact-wrap">
         <div class="contact-left">
           <h2>Let's build robots that <em>survive</em> the real world.</h2>
-          <p>Looking for research and engineering internship roles in robot perception, computer vision, deep learning, and physical AI. If your team cares about what happens when the system meets the real world — let's talk.</p>
+          <p>Looking for research and engineering internship roles in robot perception, computer vision, deep learning, and physical AI. If your team cares about what happens when the system meets the real world - let's talk.</p>
         </div>
         <div class="contact-right">
           <div class="contact-links">
@@ -1257,10 +1263,10 @@
               <span>vmullur@wpi.edu</span><span class="c-arr">↗</span>
             </a>
             <a class="contact-link" href="https://www.linkedin.com/in/vmullur/" target="_blank">
-              <span>LinkedIn — @vmullur</span><span class="c-arr">↗</span>
+              <span>LinkedIn - @vmullur</span><span class="c-arr">↗</span>
             </a>
             <a class="contact-link" href="https://github.com/venk221" target="_blank">
-              <span>GitHub — venk221</span><span class="c-arr">↗</span>
+              <span>GitHub - venk221</span><span class="c-arr">↗</span>
             </a>
             <a class="contact-link" href="tel:+15083042824">
               <span>+1 (508) 304-2824</span><span class="c-arr">↗</span>
@@ -1274,7 +1280,7 @@
 
   <footer>
     <div class="footer-inner">
-      <span>Venkatesh Mullur — Robotics Researcher</span>
+      <span>Venkatesh Mullur - Robotics Researcher</span>
       <span>WPI · MER Lab · 2026</span>
     </div>
   </footer>
