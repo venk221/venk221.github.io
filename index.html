@@ -6,668 +6,513 @@
   <title>Venkatesh Mullur — Robotics Researcher</title>
   <meta name="description" content="PhD candidate in Robotics Engineering at WPI. Robot perception, grasping, and physical AI systems." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;1,9..144,300;1,9..144,400&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="assets/coding.png">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=DM+Mono:wght@300;400&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&family=Bebas+Neue&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --ink: #e8e2d6;
-      --paper: #131210;
-      --paper-2: #1a1916;
-      --paper-3: #201f1c;
-      --paper-4: #252320;
-      --muted: #7a7468;
-      --muted-2: #9e9890;
-      --accent: #c84b2f;
-      --accent-2: #4a9070;
-      --rule: rgba(232,226,214,0.08);
-      --rule-2: rgba(232,226,214,0.04);
-      --mono: 'DM Mono', monospace;
-      --serif: 'Fraunces', Georgia, serif;
-      --sans: 'DM Sans', sans-serif;
-    }
-
     html { scroll-behavior: smooth; }
 
+    :root {
+      --bg:       #f7f4ef;
+      --bg-2:     #f0ece4;
+      --bg-3:     #e8e3d9;
+      --ink:      #1a1916;
+      --ink-2:    #3d3a35;
+      --muted:    #7a7468;
+      --rule:     rgba(26,25,22,0.1);
+      --rule-2:   rgba(26,25,22,0.05);
+      --accent:   #c84b2f;
+      --accent-2: #3d7a5e;
+      --serif:    'Fraunces', Georgia, serif;
+      --sans:     'Instrument Sans', sans-serif;
+      --mono:     'DM Mono', monospace;
+      --col:       860px;
+      --col-hero:  1100px;
+    }
+
     body {
-      background: var(--paper);
+      background: var(--bg);
       color: var(--ink);
       font-family: var(--sans);
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1.6;
       overflow-x: hidden;
     }
 
-    body::before {
+    body::after {
       content: '';
       position: fixed;
       inset: 0;
       pointer-events: none;
-      z-index: 9999;
-      opacity: 0.028;
+      z-index: 9998;
+      opacity: 0.018;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      background-size: 180px;
+      background-size: 160px;
     }
 
     a { color: inherit; text-decoration: none; }
+    img, video { display: block; max-width: 100%; }
 
-    /* ─── TOPBAR ─── */
-    .topbar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
+    .col {
+      width: min(var(--col), calc(100% - 48px));
+      margin: 0 auto;
+    }
+    .col-hero {
+      width: min(var(--col-hero), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky;
+      top: 0;
       z-index: 100;
+      background: rgba(247,244,239,0.93);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav-inner {
+      width: min(var(--col-hero), calc(100% - 32px));
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 52px;
-      border-bottom: 1px solid var(--rule);
-      background: rgba(19,18,16,0.92);
-      backdrop-filter: blur(14px);
+      padding: 15px 0;
+      gap: 16px;
     }
-    .topbar-left {
+    .nav-brand {
       font-family: var(--mono);
-      font-size: 1rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
       color: var(--muted);
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-family: var(--mono);
+      font-size: 0.72rem;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-    }
-    .topbar-nav {
-      display: flex;
-      gap: 32px;
-      font-family: var(--mono);
-      font-size: 1rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
       color: var(--muted);
     }
-    .topbar-nav a { transition: color 0.2s; }
-    .topbar-nav a:hover { color: var(--ink); }
-    .topbar-cta {
+    .nav-links a { transition: color 0.18s; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta {
       font-family: var(--mono);
-      font-size: 1rem;
+      font-size: 0.7rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      border: 1px solid rgba(232,226,214,0.2);
-      padding: 10px 22px;
+      border: 1px solid var(--ink);
+      padding: 7px 16px;
       border-radius: 2px;
-      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      transition: background 0.18s, color 0.18s;
     }
-    .topbar-cta:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .nav-cta:hover { background: var(--ink); color: var(--bg); }
 
-    /* ─── HERO ─── */
+    /* ── HERO ── */
     .hero {
-      min-height: 100vh;
-      padding: 0 52px;
-      display: grid;
-      /* reduced top padding so content sits higher */
-      grid-template-rows: 1fr auto;
       border-bottom: 1px solid var(--rule);
-      position: relative;
-      overflow: hidden;
+      padding: 15px 0 52px;
     }
-    .hero-bg-text {
-      position: absolute;
-      font-family: var(--serif);
-      font-size: clamp(200px, 28vw, 380px);
-      font-weight: 700;
-      color: transparent;
-      -webkit-text-stroke: 1px rgba(232,226,214,0.04);
-      line-height: 0.85;
-      right: -20px;
-      top: 50%;
-      transform: translateY(-54%);
-      user-select: none;
-      pointer-events: none;
-      letter-spacing: -0.04em;
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 56px;
+      align-items: start;
     }
-    .hero-inner {
-      display: flex;
-      align-items: flex-end;
-      /* reduced top padding so content sits higher on large monitors */
-      padding-bottom: 48px;
-      padding-top: 88px;
-      position: relative;
-      z-index: 1;
-      gap: 40px;
-    }
-    .hero-left { flex: 1; }
+
     .hero-eyebrow {
       font-family: var(--mono);
-      font-size: 1rem;
+      font-size: 0.72rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 28px;
+      margin-bottom: 22px;
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
     }
     .hero-eyebrow::before {
       content: '';
       display: inline-block;
-      width: 32px;
-      height: 1px;
+      width: 24px; height: 1px;
       background: var(--muted);
     }
-    h1.hero-name {
-      font-family: var(--serif);
-      font-size: clamp(5rem, 9vw, 9rem);
-      font-weight: 300;
-      line-height: 0.93;
-      letter-spacing: -0.035em;
-      max-width: 9ch;
-    }
-    h1.hero-name em { font-style: italic; color: var(--accent); }
 
-    .hero-desc {
-      max-width: 520px;
-      color: var(--muted-2);
-      margin-top: 28px;
-      font-size: 1.2rem;
-      line-height: 1.78;
+    h1.hero-title {
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 5vw, 4.4rem);
+      font-weight: 300;
+      letter-spacing: -0.035em;
+      line-height: 1.04;
+      margin-bottom: 22px;
     }
-    .hero-desc strong { color: var(--ink); font-weight: 400; }
+    h1.hero-title em { font-style: italic; color: var(--accent); }
+
+    /*
+      "real hardware." — Bebas Neue gives it a bold, industrial,
+      stencil-plate feel — like something stamped on equipment.
+      Kept in accent red so it pops, with slight tracking.
+    */
+    .hardware-word {
+      font-family: 'Bebas Neue', var(--serif);
+      font-style: normal;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      /* subtle bottom rule like a spec-sheet underline */
+      border-bottom: 2.5px solid var(--accent);
+      padding-bottom: 2px;
+      line-height: 1;
+      display: inline-block;
+    }
+
+    .hero-sub {
+      font-size: 1.08rem;
+      color: var(--ink-2);
+      max-width: 54ch;
+      line-height: 1.76;
+      margin-bottom: 28px;
+    }
+    .hero-sub strong { font-weight: 500; color: var(--ink); }
 
     .hero-actions {
       display: flex;
-      gap: 14px;
-      margin-top: 32px;
+      gap: 10px;
       flex-wrap: wrap;
+      margin-bottom: 20px;
     }
-    .btn-solid {
+    .btn {
       font-family: var(--mono);
-      font-size: 0.74rem;
-      letter-spacing: 0.09em;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      background: var(--accent);
-      color: #fff;
-      padding: 14px 28px;
-      border: 1px solid var(--accent);
-      border-radius: 2px;
-      transition: background 0.22s;
+      padding: 11px 20px;
+      border-radius: 4px;
+      border: 1px solid var(--ink);
+      transition: background 0.18s, color 0.18s;
     }
-    .btn-solid:hover { background: #a83a20; border-color: #a83a20; }
-    .btn-ghost {
-      font-family: var(--mono);
-      font-size: 0.74rem;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      border: 1px solid var(--rule);
-      padding: 14px 28px;
-      border-radius: 2px;
-      color: var(--muted);
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .btn-ghost:hover { border-color: rgba(232,226,214,0.3); color: var(--ink); }
+    .btn-fill { background: var(--ink); color: var(--bg); }
+    .btn-fill:hover { background: var(--accent); border-color: var(--accent); }
+    .btn-line { color: var(--muted); border-color: var(--rule); }
+    .btn-line:hover { color: var(--ink); border-color: var(--ink); }
 
-    /* profile photo */
-    .hero-photo {
-      width: 220px;
+    /* ── STATUS STRIP — now inside left column, below buttons ── */
+    .hero-strip {
+      display: flex;
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--bg-2);
+      margin-top: 80px;
+      /* width: fit-content; */
+      width: 620px;
+    }
+    .strip-item {
+      flex: 1;
+      padding: 10px 10px;
+      border-right: 1px solid var(--rule);
+      transition: background 0.18s;
+      min-width: 0;
+    }
+    .strip-item:last-child { border-right: none; }
+    .strip-item.linkable:hover { background: var(--bg-3); }
+    .strip-label {
+      font-family: var(--mono);
+      font-size: 0.64rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 3px;
+    }
+    .strip-value {
+      font-family: var(--sans);
+      font-size: 0.84rem;
+      font-weight: 500;
+      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .strip-arrow {
+      font-family: var(--mono);
+      font-size: 0.56rem;
+      color: var(--muted);
+      opacity: 0;
       flex-shrink: 0;
-      align-self: flex-end;
-      padding-bottom: 48px;
+      transition: opacity 0.18s, transform 0.18s;
+    }
+    .strip-item.linkable:hover .strip-arrow { opacity: 1; transform: translate(2px,-2px); }
+    .dot-live {
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      margin-left: 4px;
+      flex-shrink: 0;
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+    /* RIGHT COLUMN: photo on top, stats below */
+    .hero-right-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
     .hero-photo-frame {
       width: 100%;
       aspect-ratio: 3/4;
-      border-radius: 4px;
+      border-radius: 10px;
       overflow: hidden;
       border: 1px solid var(--rule);
-      background: var(--paper-3);
-      position: relative;
+      background: var(--bg-2);
     }
     .hero-photo-frame img {
       width: 100%; height: 100%;
       object-fit: cover;
       display: block;
-      filter: grayscale(15%);
+      filter: grayscale(10%);
     }
-    .photo-placeholder {
-      width: 100%; height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-    .photo-placeholder .ph-icon { font-size: 2rem; opacity: 0.15; color: var(--muted); }
-    .photo-placeholder .ph-text {
-      font-family: var(--mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      opacity: 0.35;
-      text-align: center;
-      padding: 0 12px;
-      line-height: 1.6;
-    }
-    .hero-photo-label {
+    .hero-photo-caption {
       font-family: var(--mono);
       font-size: 1rem;
-      color: var(--muted);
-      letter-spacing: 0.06em;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
-      margin-top: 10px;
+      color: var(--muted);
       text-align: center;
+      margin-top: -10px;
     }
-
-    /* hero stats */
-    .hero-right {
-      width: 210px;
-      flex-shrink: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 22px;
-      padding-bottom: 48px;
-      align-items: flex-end;
+    .hero-stats-col {
+      display: grid;
+      grid-template-columns: 2fr 2fr;
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      overflow: hidden;
     }
-    .stat-block { text-align: right; }
-    .stat-block .num {
+    .hs-item {
+      background: var(--bg-2);
+      padding: 14px 14px;
+    }
+    .hs-num {
       font-family: var(--serif);
-      font-size: 3.4rem;
+      font-size: 2.2rem;
       font-weight: 300;
       line-height: 1;
-      letter-spacing: -0.04em;
-    }
-    .stat-block .num.red { color: var(--accent); }
-    .stat-block .num.green { color: var(--accent-2); }
-    .stat-block .num.plain { color: var(--ink); }
-    .stat-block .label {
-      font-family: var(--mono);
-      font-size: 1rem;
-      letter-spacing: 0.06em;
-      color: var(--muted);
-      text-transform: uppercase;
-      margin-top: 2px;
-      line-height: 1.5;
-    }
-    .stat-block.hobby .num { font-size: 1.8rem; color: var(--muted-2); }
-    .stat-block.hobby .label { color: var(--muted); }
-
-    /* ─── STATUS BAR — with links, bigger text ─── */
-    .hero-statusbar {
-      border-top: 1px solid var(--rule);
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      position: relative;
-      z-index: 1;
-    }
-    .status-item {
-      padding: 20px 0;
-      border-right: 1px solid var(--rule);
-      transition: background 0.2s;
-    }
-    .status-item:last-child { border-right: none; }
-    .status-item.has-link:hover { background: var(--paper-2); }
-    .status-item .s-label {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: var(--muted);
-      display: block;
-      margin-bottom: 6px;
-    }
-    .status-item .s-value {
-      font-family: var(--sans);
-      font-size: 1.08rem;
-      font-weight: 400;
+      letter-spacing: -0.03em;
       color: var(--ink);
     }
-    /* linked status items get a subtle underline on hover */
-    .status-item.has-link .s-value {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: color 0.2s;
-    }
-    .status-item.has-link:hover .s-value { color: var(--accent-2); }
-    .status-item.has-link .s-arrow {
-      font-size: 0.7rem;
-      opacity: 0;
-      transform: translate(0, 0);
-      transition: opacity 0.2s, transform 0.2s;
+    .hs-num.red { color: var(--accent); }
+    .hs-num.green { color: var(--accent-2); }
+    .hs-label {
       font-family: var(--mono);
-    }
-    .status-item.has-link:hover .s-arrow { opacity: 1; transform: translate(3px, -3px); }
-
-    .dot-live {
-      display: inline-block;
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: var(--accent-2);
-      margin-left: 7px;
-      animation: pulse 2s ease-in-out infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.25; }
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 4px;
+      line-height: 1.45;
     }
 
-    /* ─── SECTION COMMON ─── */
-    section { border-bottom: 1px solid var(--rule); }
-    .wrap { padding: 0 52px; }
-    .sec-header {
-      display: grid;
-      grid-template-columns: 220px 1fr;
+    /* ── SECTION COMMON ── */
+    .section {
       border-bottom: 1px solid var(--rule);
-      padding: 36px 0;
-      align-items: end;
-      gap: 24px;
+      padding: 64px 0;
     }
-    .sec-num {
+    .section-label {
       font-family: var(--mono);
-      /* bumped up from 0.7rem */
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-      text-transform: uppercase;
-    }
-    .sec-title {
-      font-family: var(--serif);
-      font-size: clamp(2.4rem, 4.5vw, 4.4rem);
-      font-weight: 300;
-      letter-spacing: -0.03em;
-      line-height: 1;
-    }
-    .sec-title em { font-style: italic; color: var(--accent); }
-
-    /* ─── ABOUT ─── */
-    .about-body {
-      display: grid;
-      grid-template-columns: 220px 1fr 1fr;
-      padding: 54px 0;
-    }
-    .spacer { }
-    .about-para {
-      padding-right: 60px;
-      font-size: 1.1rem;
-      color: var(--muted-2);
-      line-height: 1.82;
-    }
-    .about-para strong { color: var(--ink); font-weight: 400; }
-    .about-para p + p { margin-top: 22px; }
-
-    .day-one-list {
-      padding-left: 44px;
-      border-left: 1px solid var(--rule);
-    }
-    .day-one-heading {
-      font-family: var(--mono);
-      /* bumped up */
-      font-size: 0.82rem;
-      letter-spacing: 0.1em;
+      font-size: 1.5rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 28px;
+      margin-bottom: 10px;
       display: flex;
       align-items: center;
       gap: 12px;
     }
-    .day-one-heading::before {
+    .section-label::before {
       content: '';
       display: inline-block;
-      width: 20px;
-      height: 1px;
+      width: 24px; height: 1px;
       background: var(--muted);
     }
-    .day-one-item {
-      padding: 22px 0;
-      border-bottom: 1px solid var(--rule-2);
-      display: flex;
-      gap: 18px;
-      align-items: flex-start;
-    }
-    .day-one-item:last-child { border-bottom: none; }
-    .day-one-icon { font-size: 1rem; min-width: 24px; padding-top: 2px; opacity: 0.6; }
-    .day-one-text { font-size: 1rem; line-height: 1.58; }
-    .day-one-text strong { display: block; font-weight: 500; margin-bottom: 3px; font-size: 1rem; }
-    .day-one-text span { color: var(--muted); font-size: 0.9rem; }
-
-    /* ─── PROJECTS ─── */
-    .project-row {
-      display: grid;
-      grid-template-columns: 220px 1fr auto;
-      border-bottom: 1px solid var(--rule);
-      padding: 54px 0;
-      transition: background 0.2s;
-    }
-    .project-row:hover { background: var(--paper-2); }
-    .project-row:last-child { border-bottom: none; }
-
-    .proj-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      padding-right: 28px;
-      padding-top: 4px;
-    }
-    .proj-tag {
-      font-family: var(--mono);
-      /* bumped up from 0.66rem */
-      font-size: 0.8rem;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: var(--muted-2);
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-    }
-    .proj-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-    }
-    .proj-dot.green { background: var(--accent-2); }
-
-    .proj-title {
+    .section-title {
       font-family: var(--serif);
-      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-size: clamp(2rem, 4vw, 3.2rem);
       font-weight: 300;
-      letter-spacing: -0.025em;
-      line-height: 1.08;
-      margin-bottom: 16px;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 20px;
     }
-    .proj-desc {
-      color: var(--muted-2);
-      font-size: 1.1rem;
-      max-width: 640px;
-      line-height: 1.76;
+    .section-title em { font-style: italic; color: var(--accent); }
+
+    /* ── ABOUT ── */
+    .about-body {
+      font-size: 1.05rem;
+      line-height: 1.82;
+      color: var(--ink-2);
+    }
+    .about-body p + p { margin-top: 18px; }
+    .about-body strong { color: var(--ink); font-weight: 500; }
+    .about-body a {
+      color: var(--accent-2);
+      border-bottom: 1px solid currentColor;
+      transition: opacity 0.18s;
+    }
+    .about-body a:hover { opacity: 0.65; }
+
+    .day-one {
+      margin-top: 48px;
+      border-top: 1px solid var(--rule);
+      padding-top: 36px;
+    }
+    .day-one-heading {
+      font-family: var(--mono);
+      font-size: 1.3rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
       margin-bottom: 22px;
     }
-    .proj-media {
-      margin-bottom: 22px;
+    .day-one-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
       border-radius: 4px;
       overflow: hidden;
+    }
+    .day-one-item {
+      background: var(--bg);
+      padding: 22px;
+      display: flex;
+      gap: 14px;
+    }
+    .doi-icon { font-size: 1.05rem; flex-shrink: 0; padding-top: 1px; }
+    .doi-text strong {
+      display: block;
+      font-weight: 500;
+      font-size: 0.96rem;
+      margin-bottom: 4px;
+      color: var(--ink);
+    }
+    .doi-text span {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── PROJECTS ── */
+    .project-list { display: flex; flex-direction: column; }
+    .project-card {
+      border-bottom: 1px solid var(--rule);
+      padding: 48px 0;
+    }
+    .project-card:last-child { border-bottom: none; padding-bottom: 0; }
+    .proj-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .proj-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+    .badge {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 5px 11px;
+      border-radius: 2px;
       border: 1px solid var(--rule);
-      background: var(--paper-3);
-      max-width: 640px;
+      color: var(--muted);
+      background: var(--bg-2);
+    }
+    .badge.green { border-color: var(--accent-2); color: var(--accent-2); background: rgba(61,122,94,0.07); }
+    .badge.red   { border-color: var(--accent);   color: var(--accent);   background: rgba(200,75,47,0.07); }
+    .proj-year {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      padding-top: 4px;
+    }
+    .proj-title {
+      font-family: var(--serif);
+      font-size: clamp(1.55rem, 3vw, 2.2rem);
+      font-weight: 300;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      margin-top: 10px;
+    }
+    .proj-desc {
+      font-size: 1.02rem;
+      color: var(--ink-2);
+      line-height: 1.76;
+      margin-bottom: 20px;
+    }
+    .proj-media {
+      width: 100%;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--rule);
+      background: var(--bg-2);
+      margin-bottom: 20px;
     }
     .proj-media img,
     .proj-media video { width: 100%; display: block; }
-    .proj-media .media-placeholder {
-      aspect-ratio: 16/9;
+    .proj-metrics-row {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      color: var(--muted);
-    }
-    .proj-media .media-placeholder .mp-icon { font-size: 1.8rem; opacity: 0.2; }
-    .proj-media .media-placeholder .mp-text {
-      font-family: var(--mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      opacity: 0.3;
-      text-align: center;
-      line-height: 1.6;
-    }
-    .proj-chips { display: flex; flex-wrap: wrap; gap: 8px; }
-    .chip {
-      font-family: var(--mono);
-      font-size: 0.8rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      padding: 8px 16px;
-      border: 1px solid var(--rule);
-      border-radius: 2px;
-      color: var(--muted);
-      background: var(--paper-3);
-    }
-    .proj-link {
-      font-family: var(--mono);
-      font-size: 0.66rem;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: var(--accent-2);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 14px;
-      transition: opacity 0.2s;
-    }
-    .proj-link:hover { opacity: 0.7; }
-
-    /* metrics — pulled closer to project body */
-    .proj-metrics {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      /* reduced padding so metrics sit closer to the video */
-      padding-left: 36px;
-      min-width: 150px;
+      gap: 32px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
       align-items: flex-end;
-      padding-top: 0;
-      /* align to top of the media */
-      justify-content: flex-start;
     }
-    .metric-item { text-align: right; }
-    .metric-val {
+    .pm-val {
       font-family: var(--serif);
-      font-size: 2.4rem;
+      font-size: 3rem;
       font-weight: 300;
       line-height: 1;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.03em;
+      color: var(--ink);
     }
-    .metric-val.red { color: var(--accent); }
-    .metric-val.green { color: var(--accent-2); }
-    .metric-label {
+    .pm-val.red { color: var(--accent); }
+    .pm-val.green { color: var(--accent-2); }
+    .pm-label {
       font-family: var(--mono);
-      font-size: 0.8rem;
+      font-size: 0.72rem;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-top: 2px;
+      margin-top: 3px;
     }
-
-    /* ─── SECONDARY PROJECTS ─── */
-    .sec-proj-intro {
-      padding: 32px 0;
-      border-bottom: 1px solid var(--rule);
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 24px;
-      align-items: center;
-    }
-    .sec-proj-intro p {
-      font-size: 1.2rem;
-      color: var(--muted-2);
-      max-width: 60ch;
-      line-height: 1.72;
-    }
-    .mini-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--rule);
-    }
-    .mini-card {
-      background: var(--paper);
-      padding: 32px;
-      transition: background 0.2s;
-    }
-    .mini-card:hover { background: var(--paper-2); }
-    .mini-card-media {
-      width: 100%;
-      aspect-ratio: 16/9;
-      border-radius: 3px;
-      overflow: hidden;
-      border: 1px solid var(--rule);
-      background: var(--paper-3);
-      margin-bottom: 18px;
-    }
-    .mini-card-media img,
-    .mini-card-media video {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .mini-card-media .media-placeholder {
-      width: 100%; height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      color: var(--muted);
-    }
-    .mini-card-media .media-placeholder .mp-icon { font-size: 1.4rem; opacity: 0.18; }
-    .mini-card-media .media-placeholder .mp-text {
-      font-family: var(--mono);
-      font-size: 0.58rem;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      opacity: 0.28;
-      text-align: center;
-      line-height: 1.6;
-    }
-    .mini-tag {
+    .proj-chips { display: flex; flex-wrap: wrap; gap: 7px; }
+    .chip {
       font-family: var(--mono);
       font-size: 0.72rem;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 8px;
-      display: block;
-    }
-    .mini-title {
-      font-family: var(--serif);
-      font-size: 1.22rem;
-      font-weight: 300;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      margin-bottom: 10px;
-    }
-    .mini-desc {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.68;
-    }
-    .mini-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 14px;
-    }
-    .mini-chip {
-      font-family: var(--mono);
-      font-size: 0.6rem;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      padding: 4px 9px;
+      padding: 6px 12px;
       border: 1px solid var(--rule);
       border-radius: 2px;
       color: var(--muted);
+      background: var(--bg-2);
     }
-    .mini-link {
+    .proj-link {
       font-family: var(--mono);
-      font-size: 0.66rem;
+      font-size: 0.72rem;
       letter-spacing: 0.07em;
       text-transform: uppercase;
       color: var(--accent-2);
@@ -675,126 +520,224 @@
       align-items: center;
       gap: 5px;
       margin-top: 12px;
-      transition: opacity 0.2s;
+      transition: opacity 0.18s;
     }
-    .mini-link:hover { opacity: 0.7; }
+    .proj-link:hover { opacity: 0.65; }
 
-    /* ─── SKILLS ─── */
-    .skills-grid {
+    /* ── PUBLICATIONS ── */
+    .pub-list { display: flex; flex-direction: column; }
+    .pub-card {
+      border-bottom: 1px solid var(--rule);
+      padding: 32px 0;
       display: grid;
-      grid-template-columns: 220px repeat(4, 1fr);
+      grid-template-columns: 120px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .pub-card:last-child { border-bottom: none; padding-bottom: 0; }
+    .pub-status { display: flex; flex-direction: column; gap: 5px; }
+    .pub-badge {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 2px;
+      border: 1px solid;
+      display: inline-block;
+      width: fit-content;
+    }
+    .pub-badge.review    { border-color: var(--accent);   color: var(--accent);   background: rgba(200,75,47,0.06); }
+    .pub-badge.published { border-color: var(--accent-2); color: var(--accent-2); background: rgba(61,122,94,0.06); }
+    .pub-year {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+    .pub-title {
+      font-family: var(--serif);
+      font-size: 1.22rem;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .pub-venue {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+    .pub-authors {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .pub-authors a {
+      color: var(--ink-2);
+      border-bottom: 1px solid rgba(26,25,22,0.15);
+      transition: color 0.18s;
+    }
+    .pub-authors a:hover { color: var(--accent-2); }
+    .pub-authors strong { color: var(--ink); font-weight: 500; }
+
+    /* ── MINI GRID ── */
+    .mini-intro {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+      max-width: 70ch;
+      line-height: 1.72;
+    }
+    .mini-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .mini-card {
+      background: var(--bg);
+      padding: 22px;
+      transition: background 0.18s;
+    }
+    .mini-card:hover { background: var(--bg-2); }
+    .mini-media {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 3px;
+      overflow: hidden;
+      border: 1px solid var(--rule);
+      background: var(--bg-2);
+      margin-bottom: 14px;
+    }
+    .mini-media img,
+    .mini-media video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .mini-tag {
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 5px;
+      display: block;
+    }
+    .mini-title {
+      font-family: var(--serif);
+      font-size: 1.08rem;
+      font-weight: 300;
+      letter-spacing: -0.015em;
+      line-height: 1.25;
+      margin-bottom: 7px;
+    }
+    .mini-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.62;
+    }
+    .mini-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 10px;
+    }
+    .mini-chip {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 4px 8px;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      color: var(--muted);
+    }
+    .mini-link {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 10px;
+      transition: opacity 0.18s;
+    }
+    .mini-link:hover { opacity: 0.65; }
+
+    /* ── SKILLS ── */
+    .skills-cols {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      overflow: hidden;
     }
     .skill-col {
-      padding: 50px 0;
+      padding: 26px 22px;
       border-right: 1px solid var(--rule);
-      padding-right: 36px;
+      background: var(--bg);
     }
     .skill-col:last-child { border-right: none; }
-    .skill-col:not(:first-child) { padding-left: 36px; }
     .skill-heading {
       font-family: var(--serif);
-      font-size: 2.18rem;
-      font-weight: 300;
+      font-size: 1rem;
+      font-weight: 400;
       font-style: italic;
-      margin-bottom: 22px;
       color: var(--accent);
+      margin-bottom: 14px;
     }
-    .skill-items { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .skill-items li {
+    .skill-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .skill-list li {
       font-family: var(--mono);
-      font-size: 1.0rem;
-      letter-spacing: 0.04em;
-      color: var(--muted-2);
+      font-size: 0.74rem;
+      letter-spacing: 0.03em;
+      color: var(--ink-2);
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
-    .skill-items li::before {
+    .skill-list li::before {
       content: '';
       display: inline-block;
-      width: 14px;
-      height: 1px;
+      width: 10px; height: 1px;
       background: var(--rule);
       flex-shrink: 0;
     }
 
-    /* ─── PUBLICATIONS ─── */
-    .pub-row {
+    /* ── CONTACT ── */
+    .contact-wrap {
+      background: var(--ink);
+      color: var(--bg);
+      border-radius: 6px;
+      overflow: hidden;
       display: grid;
-      grid-template-columns: 220px 1fr auto;
-      border-bottom: 1px solid var(--rule);
-      padding: 40px 0;
-      align-items: start;
-    }
-    .pub-row:last-child { border-bottom: none; }
-    .pub-badge {
-      font-family: var(--mono);
-      font-size: 0.8rem;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      padding: 5px 10px;
-      border: 1px solid;
-      border-radius: 2px;
-      display: inline-block;
-      width: fit-content;
-    }
-    .pub-badge.review { border-color: var(--accent); color: var(--accent); }
-    .pub-badge.published { border-color: var(--accent-2); color: var(--accent-2); }
-    .pub-title {
-      font-family: var(--serif);
-      font-size: 1.45rem;
-      font-weight: 300;
-      letter-spacing: -0.02em;
-      margin-bottom: 8px;
-      line-height: 1.25;
-    }
-    .pub-venue {
-      font-family: var(--mono);
-      font-size: 1.0rem;
-      color: var(--muted);
-      letter-spacing: 0.05em;
-    }
-    .pub-year {
-      font-family: var(--serif);
-      font-size: 2.8rem;
-      font-weight: 300;
-      color: rgba(232,226,214,0.05);
-      letter-spacing: -0.04em;
-      padding-left: 36px;
-    }
-
-    /* ─── CONTACT ─── */
-    .contact-section {
-      background: var(--paper-2);
-      border-bottom: none;
-    }
-    .contact-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 500px;
+      grid-template-columns: 1.1fr 0.9fr;
     }
     .contact-left {
-      padding: 80px 52px;
-      border-right: 1px solid var(--rule);
+      padding: 52px 44px;
+      border-right: 1px solid rgba(247,244,239,0.08);
     }
     .contact-left h2 {
       font-family: var(--serif);
-      font-size: clamp(2.6rem, 5vw, 5rem);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
       font-weight: 300;
-      letter-spacing: -0.04em;
-      line-height: 0.95;
-      max-width: 9ch;
-      margin-bottom: 36px;
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      margin-bottom: 18px;
     }
-    .contact-left h2 em { font-style: italic; color: var(--accent); }
+    .contact-left h2 em { font-style: italic; color: #e08a6e; }
     .contact-left p {
-      color: var(--muted-2);
-      max-width: 46ch;
-      font-size: 1.05rem;
-      line-height: 1.8;
+      font-size: 0.96rem;
+      color: rgba(247,244,239,0.58);
+      line-height: 1.76;
     }
     .contact-right {
-      padding: 80px 52px;
+      padding: 52px 36px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -804,240 +747,224 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 24px 0;
-      border-bottom: 1px solid var(--rule);
-      color: var(--ink);
-      font-size: 1.1rem;
-      font-weight: 300;
-      transition: color 0.2s;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(247,244,239,0.07);
+      color: rgba(247,244,239,0.82);
+      font-size: 1rem;
+      transition: color 0.18s;
     }
-    .contact-link:first-child { border-top: 1px solid var(--rule); }
-    .contact-link:hover { color: var(--accent); }
-    .c-arrow {
+    .contact-link:first-child { border-top: 1px solid rgba(247,244,239,0.07); }
+    .contact-link:hover { color: #fff; }
+    .c-arr {
       font-family: var(--mono);
-      font-size: 0.85rem;
-      opacity: 0.22;
-      transition: opacity 0.2s, transform 0.2s;
+      font-size: 0.7rem;
+      opacity: 0.2;
+      transition: opacity 0.18s, transform 0.18s;
     }
-    .contact-link:hover .c-arrow { opacity: 1; transform: translate(4px, -4px); }
-    .contact-bottom {
+    .contact-link:hover .c-arr { opacity: 1; transform: translate(4px,-4px); }
+    .contact-note {
       font-family: var(--mono);
-      font-size: 0.66rem;
+      font-size: 0.68rem;
       letter-spacing: 0.07em;
-      color: var(--muted);
       text-transform: uppercase;
+      color: rgba(247,244,239,0.35);
+      margin-top: 22px;
     }
 
-    footer {
-      background: var(--paper);
-      color: var(--muted);
-      padding: 20px 52px;
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+    /* ── FOOTER ── */
+    .footer-inner {
+      width: min(var(--col-hero), calc(100% - 32px));
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
+      padding: 20px 0;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
       border-top: 1px solid var(--rule);
     }
 
-    /* ─── ANIMATIONS ─── */
+    /* ── ANIMATIONS ── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
-    .fade-up { opacity: 0; animation: fadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-    .d1 { animation-delay: 0.08s; }
-    .d2 { animation-delay: 0.22s; }
-    .d3 { animation-delay: 0.38s; }
-    .d4 { animation-delay: 0.54s; }
-    .d5 { animation-delay: 0.7s; }
+    .fu { opacity: 0; animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) forwards; }
+    .fu-1 { animation-delay: 0.05s; }
+    .fu-2 { animation-delay: 0.16s; }
+    .fu-3 { animation-delay: 0.28s; }
+    .fu-4 { animation-delay: 0.4s; }
+    .fu-5 { animation-delay: 0.52s; }
 
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 1200px) {
-      .topbar { padding: 16px 32px; }
-      .hero, .wrap { padding: 0 32px; }
-      .hero-right { width: 170px; }
-      .skills-grid { grid-template-columns: repeat(2, 1fr); }
-      .skills-grid .skill-col:first-child { display: none; }
-      .about-body { grid-template-columns: 1fr 1fr; }
-      .about-body .spacer { display: none; }
-    }
-
+    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      .topbar-nav { display: none; }
-      .hero, .wrap { padding: 0 20px; }
-      .topbar { padding: 14px 20px; }
-      .hero-right, .hero-photo { display: none; }
-      .hero-statusbar { grid-template-columns: repeat(2, 1fr); }
-      .sec-header { grid-template-columns: 1fr; }
-      .sec-num { display: none; }
-      .about-body { grid-template-columns: 1fr; }
-      .about-para { padding-right: 0; }
-      .day-one-list { padding-left: 0; border-left: none; border-top: 1px solid var(--rule); padding-top: 28px; margin-top: 28px; }
-      .project-row { grid-template-columns: 1fr; gap: 24px; }
-      .proj-meta { flex-direction: row; flex-wrap: wrap; }
-      .proj-metrics { align-items: flex-start; padding-left: 0; flex-direction: row; flex-wrap: wrap; gap: 24px; }
-      .metric-item { text-align: left; }
-      .mini-grid { grid-template-columns: repeat(2, 1fr); }
-      .pub-row { grid-template-columns: auto 1fr; gap: 18px; }
-      .pub-year { display: none; }
-      .sec-proj-intro { grid-template-columns: 1fr; }
-      .contact-inner { grid-template-columns: 1fr; }
-      .contact-right { padding-top: 0; }
-      footer { flex-direction: column; gap: 6px; padding: 20px; }
-      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+      .hero-layout { grid-template-columns: 1fr; gap: 32px; }
+      .hero-right-col { flex-direction: row; align-items: flex-start; gap: 20px; }
+      .hero-photo-frame { width: 80px; height: 80px; aspect-ratio: 1/1; border-radius: 50%; flex-shrink: 0; }
+      .hero-photo-caption { display: none; }
+      .hero-stats-col { flex: 1; }
+      .day-one-grid { grid-template-columns: 1fr; }
+      .mini-grid { grid-template-columns: 1fr 1fr; }
+      .skills-cols { grid-template-columns: 1fr 1fr; }
+      .skill-col:nth-child(even) { border-right: none; }
+      .skill-col:nth-child(3),
+      .skill-col:nth-child(4) { border-top: 1px solid var(--rule); }
+      .contact-wrap { grid-template-columns: 1fr; }
+      .contact-left { border-right: none; border-bottom: 1px solid rgba(247,244,239,0.08); padding: 36px 28px; }
+      .contact-right { padding: 28px 28px; }
+      .pub-card { grid-template-columns: 1fr; gap: 8px; }
+      .hero-strip { flex-wrap: wrap; }
+      .strip-item { min-width: 45%; }
     }
 
-    /* ─── PHONE ─── */
     @media (max-width: 580px) {
-      .topbar { padding: 12px 16px; }
-      .hero, .wrap { padding: 0 16px; }
-      .hero-inner { padding-top: 80px; padding-bottom: 32px; flex-direction: column; align-items: flex-start; gap: 24px; }
-      h1.hero-name { font-size: clamp(3.2rem, 14vw, 5rem); }
-      .hero-desc { margin-top: 20px; font-size: 1rem; }
-      .hero-actions { margin-top: 24px; }
-      .hero-actions .btn-solid, .hero-actions .btn-ghost { padding: 12px 18px; font-size: 0.7rem; }
-      .hero-statusbar { grid-template-columns: 1fr 1fr; }
-      .status-item { padding: 16px 0; }
-      .status-item .s-value { font-size: 0.92rem; }
+      .col, .col-hero, .nav-inner, .footer-inner { width: calc(100% - 24px); }
+      h1.hero-title { font-size: clamp(2.2rem, 9vw, 3rem); }
       .mini-grid { grid-template-columns: 1fr; }
-      .skills-grid { grid-template-columns: 1fr; }
-      .contact-left, .contact-right { padding: 44px 16px; }
-      .contact-left h2 { font-size: clamp(2rem, 10vw, 3rem); }
-      .project-row { padding: 36px 0; }
-      .pub-row { grid-template-columns: 1fr; gap: 12px; }
-      footer { padding: 16px; }
-      .sec-header { padding: 28px 0; }
-      .sec-title { font-size: clamp(3rem, 6vw, 5rem); }
-    }
-
-    /* very small phones */
-    @media (max-width: 380px) {
-      h1.hero-name { font-size: 2.8rem; }
-      .hero-statusbar { grid-template-columns: 1fr; }
+      .skills-cols { grid-template-columns: 1fr; }
+      .skill-col { border-right: none !important; border-top: 1px solid var(--rule); }
+      .skill-col:first-child { border-top: none; }
+      .contact-left, .contact-right { padding: 28px 18px; }
+      .section { padding: 44px 0; }
+      .hero { padding: 44px 0 36px; }
+      .proj-metrics-row { gap: 20px; }
+      .strip-item { min-width: 48%; }
+      .footer-inner { flex-direction: column; gap: 4px; }
     }
   </style>
 </head>
 <body>
 
-  <header class="topbar">
-    <div class="topbar-left">V. Mullur — Robotics Researcher</div>
-    <nav class="topbar-nav">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#coursework">Coursework</a>
-      <a href="#research">Research</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a class="topbar-cta" href="#contact">Available for roles</a>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">Venkatesh Mullur</a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#coursework">Coursework</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="#contact">Available for roles</a>
+    </div>
   </header>
 
   <!-- ══════════ HERO ══════════ -->
-  <section class="hero" id="top">
-    <div class="hero-bg-text" aria-hidden="true">VM</div>
-    <div class="hero-inner">
-      <div class="hero-left">
-        <div class="hero-eyebrow fade-up d1">PhD Candidate · WPI Robotics Engineering · Worcester, MA</div>
-        <h1 class="hero-name fade-up d2">Venkatesh<br><em>Mullur</em></h1>
-        <p class="hero-desc fade-up d3">
-          Seeking research and engineering roles in <strong>robotic manipulation, robot perception, and physical AI</strong> — where the goal is systems that deploy, not just papers that publish.
-        </p>
-        <div class="hero-actions fade-up d4">
-          <a class="btn-solid" href="#projects">View Research Work</a>
-          <a class="btn-ghost" href="#research">Publications</a>
-          <a class="btn-ghost" href="https://github.com/venk221" target="_blank">GitHub ↗</a>
-        </div>
-      </div>
+  <div class="hero">
+    <div class="col-hero">
+      <div class="hero-layout">
 
-      <div class="hero-photo fade-up d3">
-        <div class="hero-photo-frame">
-          <img src="assets/profile_picture.png" alt="Venkatesh Mullur">
-        </div>
-        <div class="hero-photo-label">Venkatesh Mullur</div>
-      </div>
+        <!-- LEFT: text + strip -->
+        <div>
+          <!-- <div class="hero-eyebrow fu fu-1">PhD Candidate · WPI Robotics Engineering · Worcester, MA</div> -->
+          <h1 class="hero-title fu fu-2">
+            Making robots work<br>
+            when the world<br>
+            <span style="color: var(--accent);">gets messy.</span>   
+          </h1>
+          <p class="hero-sub fu fu-3">
+            I build <strong>perception and learning systems for robotics</strong> — from grasp detection and occlusion-robust vision to vision-language models, validated end-to-end on physical robots.
+          </p>
+          <div class="hero-actions fu fu-4">
+            <a class="btn btn-fill" href="#projects">View Research Work ↗</a>
+            <a class="btn btn-fill" href="https://github.com/venk221" target="_blank">GitHub ↗</a>
+            <a class="btn btn-fill" href="mailto:vmullur@wpi.edu">Email Me ↗</a>
+            <a class="btn btn-fill" href="https://drive.google.com/file/d/1z2FwzGn_ZhDpQt_76yTka_xXbu33ayWn/view?usp=sharing">Resume ↗</a>
+          </div>
 
-      <div class="hero-right fade-up d4">
-        <div class="stat-block">
-          <div class="num plain">4+</div>
-          <div class="label">Years in CV &<br>Robotics Research</div>
+          <!-- STATUS STRIP — inside left col, fits under buttons -->
+          <div class="hero-strip fu fu-5">
+            <div class="strip-item">
+              <span class="strip-label">Role</span>
+              <span class="strip-value">Robotics Researcher</span>
+            </div>
+            <a class="strip-item linkable" href="https://wp.wpi.edu/merlab/" target="_blank" rel="noreferrer">
+              <span class="strip-label">Lab</span>
+              <span class="strip-value">MER Lab <span class="strip-arrow">↗</span></span>
+            </a>
+            <a class="strip-item linkable" href="https://scholar.google.com/citations?user=HxJTHvMAAAAJ&hl=en" target="_blank" rel="noreferrer">
+              <span class="strip-label">Advisor</span>
+              <span class="strip-value">Prof. Berk Calli <span class="strip-arrow">↗</span></span>
+            </a>
+            <div class="strip-item">
+              <span class="strip-label">Status</span>
+              <span class="strip-value">Open to roles<span class="dot-live"></span></span>
+            </div>
+          </div>
         </div>
-        <div class="stat-block">
-          <div class="num red">3</div>
-          <div class="label">Publications &<br>Conferences</div>
-        </div>
-        <div class="stat-block">
-          <div class="num green">2</div>
-          <div class="label">Robot Platforms<br>Deployed On</div>
-        </div>
-        <div class="stat-block hobby">
-          <div class="num">🏊</div>
-          <div class="label">National-level<br>competitive swimmer</div>
+
+        <!-- RIGHT: photo + stats -->
+        <div class="hero-right-col fu fu-3">
+          <div class="hero-photo-frame">
+            <img src="assets/profile_picture2.png" alt="Venkatesh Mullur">
+          </div>
+          <div class="hero-photo-caption">Venkatesh Mullur</div>
+          <div class="hero-stats-col" style="width: 320px; margin-left: -40px;">
+            <div class="hs-item">
+              <div class="hs-num">4+</div>
+              <div class="hs-label">Years DL &<br>Robotics Research</div>
+            </div>
+            <div class="hs-item">
+              <div class="hs-num red">3</div>
+              <div class="hs-label">Publications &<br>Conferences</div>
+            </div>
+            <div class="hs-item">
+              <div class="hs-num green">3</div>
+              <div class="hs-label">Robot Platforms<br>Deployed On</div>
+            </div>
+            <div class="hs-item">
+              <div class="hs-num" style="font-size:1.3rem;">🏊</div>
+              <div class="hs-label">Swimmer, Soccer player</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- Status bar — with clickable links -->
-    <div class="hero-statusbar fade-up d5">
-      <div class="status-item">
-        <span class="s-label">Role</span>
-        <span class="s-value">Robotics Researcher</span>
-      </div>
-      <a class="status-item has-link" href="https://wp.wpi.edu/merlab/" target="_blank" rel="noreferrer">
-        <span class="s-label">Lab</span>
-        <span class="s-value">MER Lab, WPI <span class="s-arrow">↗</span></span>
-      </a>
-      <a class="status-item has-link" href="https://scholar.google.com/citations?user=HxJTHvMAAAAJ&hl=en" target="_blank" rel="noreferrer">
-        <span class="s-label">Advisor</span>
-        <span class="s-value">Prof. Berk Calli <span class="s-arrow">↗</span></span>
-      </a>
-      <div class="status-item">
-        <span class="s-label">Status</span>
-        <span class="s-value">Open to opportunities<span class="dot-live"></span></span>
-      </div>
-    </div>
-  </section>
+  </div>
 
   <!-- ══════════ ABOUT ══════════ -->
-  <section id="about">
-    <div class="wrap">
-      <div class="sec-header">
-        <div class="sec-num">01 / About</div>
-        <h2 class="sec-title">Perception, grasping, and manipulation for robots that handle <em>uncertainty</em></h2>
-      </div>
+  <div class="section" id="about">
+    <div class="col">
+      <!-- <div class="section-label">01 / About</div> -->
+      <h2 class="section-title">A little about <em>who I am</em></h2>
       <div class="about-body">
-        <div class="spacer"></div>
-        <div class="about-para">
-          <p>I'm a PhD candidate in Robotics Engineering at Worcester Polytechnic Institute, advised by Prof. Berk Calli. I work on robot perception, grasp detection, and vision-language systems for manipulation in cluttered and uncertain environments.</p>
-          <p>My background is in Electronics Engineering from Savitribai Phule Pune University, which gave me a strong foundation in embedded systems and low-level signal processing before I moved into robotics and deep learning at WPI. That path from hardware to software shapes how I think — I care about the full stack, not just the model.</p>
-          <p>I'm actively looking for roles in <strong>robotic manipulation, robot perception, and physical AI</strong> at companies building systems that need to work outside a controlled lab setting. Also affiliated with CogniAux, a faculty-founded computer vision startup.</p>
-        </div>
-        <div class="day-one-list">
-          <div class="day-one-heading">What I can do from day one</div>
+        <p>I'm a second-year PhD student in Robotics Engineering at WPI, working in the <a href="https://wp.wpi.edu/merlab/" target="_blank">Manipulation and Environmental Robotics Lab</a> with Prof. Berk Calli.</p>
+        <p>Watching <a href="https://youtu.be/BjZPvXKewFk?si=nvzF_hXmd61Ecesx" target="_blank">Yamaha's Motobot</a> struggle against Valentino Rossi got me thinking about the gap between perceiving an environment and making the right decision in it — in conditions the system wasn't built for. That question has shaped most of my research.</p>
+        <p>I came to robotics through Electronics Engineering in Pune, India, which means I think about systems from the hardware up. My work spans <strong>robot perception, deep learning for manipulation, and vision-language reasoning</strong> — all validated on real robots, not just in simulation.</p>
+        <p>Outside the lab I'm a competitive swimmer and a die hard soccer fan (Glory Glory Man United!). The early-morning training discipline has been useful. Especially when a model training run fails at 3am.</p>
+        <p>I'm looking for internship roles in <strong>robot perception, computer vision, deep learning, and physical AI</strong> — at teams building things that need to work when the situation changes.</p>
+      </div>
+      <div class="day-one">
+        <div class="day-one-heading">What I can contribute from day one</div>
+        <div class="day-one-grid">
           <div class="day-one-item">
-            <div class="day-one-icon">⚙️</div>
-            <div class="day-one-text">
+            <div class="doi-icon">⚙️</div>
+            <div class="doi-text">
               <strong>Deploy perception pipelines on real robots</strong>
               <span>Franka Panda, Yale OpenHand, ROS2 — I've taken systems from training to hardware execution, not just simulation</span>
             </div>
           </div>
           <div class="day-one-item">
-            <div class="day-one-icon">🧠</div>
-            <div class="day-one-text">
+            <div class="doi-icon">🧠</div>
+            <div class="doi-text">
               <strong>Train and evaluate deep learning models end-to-end</strong>
-              <span>From dataset curation and architecture design to benchmark evaluation and ablations — PyTorch, CUDA, HPC clusters</span>
+              <span>Dataset curation, architecture design, benchmark evaluation, ablations — PyTorch, CUDA, HPC clusters</span>
             </div>
           </div>
           <div class="day-one-item">
-            <div class="day-one-icon">📐</div>
-            <div class="day-one-text">
+            <div class="doi-icon">📐</div>
+            <div class="doi-text">
               <strong>Design rigorous evaluations and benchmarks</strong>
-              <span>Not just best-case numbers — I quantify failure modes, diversity, and complementarity across datasets and conditions</span>
+              <span>Not just best-case numbers — I quantify failure modes, diversity, and complementarity across datasets</span>
             </div>
           </div>
           <div class="day-one-item">
-            <div class="day-one-icon">📄</div>
-            <div class="day-one-text">
+            <div class="doi-icon">📄</div>
+            <div class="doi-text">
               <strong>Contribute to both research and engineering</strong>
               <span>Comfortable writing papers and shipping code — I've done both under deadline across three publications</span>
             </div>
@@ -1045,396 +972,311 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- ══════════ RESEARCH PROJECTS ══════════ -->
-  <section id="projects">
-    <div class="wrap">
-      <div class="sec-header">
-        <div class="sec-num">02 / Research Projects</div>
-        <h2 class="sec-title">Research<br><em>Work</em></h2>
-      </div>
+  <div class="section" id="projects">
+    <div class="col">
+      <!-- <div class="section-label">02 / Research Projects</div> -->
+      <h2 class="section-title">The work that <em>matters most</em></h2>
+      <div class="project-list">
 
-      <!-- Project 1 -->
-      <div class="project-row">
-        <div class="proj-meta">
-          <span class="proj-tag"><span class="proj-dot green"></span>Flagship · MER Lab</span>
-          <span class="proj-tag">2023 – 2024</span>
-          <span class="proj-tag" style="color:var(--accent-2); margin-top:4px;">IJRR Submission</span>
-        </div>
-        <div class="proj-body">
-          <h3 class="proj-title">Occlusion-Robust Robot Perception Pipeline</h3>
+        <div class="project-card">
+          <div class="proj-header">
+            <div class="proj-badges">
+              <span class="badge green">Flagship · MER Lab</span>
+              <span class="badge">Franka Panda</span>
+              <span class="badge">GANs</span>
+              <span class="badge">Keypoint Detection</span>
+              <span class="badge">UKF</span>
+              <span class="badge">IBVS</span>
+            </div>
+            <span class="proj-year">2023 – 2024</span>
+          </div>
+          <h3 class="proj-title">Occlusion-Robust Robot Perception Pipeline</h3> 
           <p class="proj-desc">Real-time perception stack for encoderless Franka Panda. WGAN-GP inpainting reconstructs occluded joints from markerless images; keypoint detection with UKF temporal smoothing feeds Image-Based Visual Servoing, enabling stable control under severe occlusion. Outperforms LaMa with 11.7 FID, 0.91 precision.</p>
           <div class="proj-media">
             <video src="assets/real_life_cup_stacking_under_occlusion.mp4" autoplay muted loop playsinline></video>
           </div>
-          <div class="proj-chips">
-            <span class="chip">WGAN-GP</span>
-            <span class="chip">Keypoint RCNN</span>
-            <span class="chip">GNN Tracking</span>
-            <span class="chip">UKF</span>
-            <span class="chip">IBVS</span>
-            <span class="chip">Franka Panda</span>
-            <span class="chip">PyTorch</span>
+          <div class="proj-metrics-row">
+            <div class="pm-item"><div class="pm-val green">91.6%</div><div class="pm-label">Occlusion accuracy</div></div>
+            <div class="pm-item"><div class="pm-val">&lt;2%</div><div class="pm-label">Pixel error</div></div>
+            <div class="pm-item"><div class="pm-val red">26%</div><div class="pm-label">Settling time ↓</div></div>
           </div>
         </div>
-        <div class="proj-metrics">
-          <div class="metric-item">
-            <div class="metric-val green">91.6%</div>
-            <div class="metric-label">Occlusion accuracy</div>
-          </div>
-          <div class="metric-item">
-            <div class="metric-val">&lt;2%</div>
-            <div class="metric-label">Pixel error</div>
-          </div>
-          <div class="metric-item">
-            <div class="metric-val red">26%</div>
-            <div class="metric-label">Settling time ↓</div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Project 2 -->
-      <div class="project-row">
-        <div class="proj-meta">
-          <span class="proj-tag"><span class="proj-dot"></span>Grasping Research</span>
-          <span class="proj-tag">2024 – 2026</span>
-          <span class="proj-tag" style="color:var(--accent); margin-top:4px;">IROS 2026 Submission</span>
-        </div>
-        <div class="proj-body">
+        <div class="project-card">
+          <div class="proj-header">
+            <div class="proj-badges">
+              <span class="badge">Robotic Grasping</span>
+              <span class="badge">Mixture-of-Experts</span>
+              <span class="badge">Feature Fusion</span>
+              <span class="badge">GraspNet-1B</span>
+              <span class="badge">Ensemble Learning</span>
+            </div>
+            <span class="proj-year">2024 – 2026</span>
+          </div>
           <h3 class="proj-title">Feature-Level Mixture-of-Experts for Grasping</h3>
-          <p class="proj-desc">Feature-level fusion across multiple grasp expert networks. Complementarity quantified via Q-statistics and error correlation — proving mid-accuracy moderately-correlated ensembles outperform SOTA individual models. Evaluated on Cornell, Jacquard, and GraspNet-1B; validated on Franka Panda.</p>
+          <p class="proj-desc">Feature-level fusion across multiple grasp expert networks. Complementarity quantified via Q-statistics and error correlation — proving mid-accuracy moderately-correlated ensembles outperform SOTA individual models. Evaluated on Cornell, Jacquard, GraspNet-1B and Franka Panda System.</p>
           <div class="proj-media">
             <img src="assets/Conceptual.jpg" alt="MoE Architecture">
           </div>
-          <div class="proj-chips">
-            <span class="chip">Mixture-of-Experts</span>
-            <span class="chip">Feature Fusion</span>
-            <span class="chip">GR-ConvNet</span>
-            <span class="chip">GG-CNN</span>
-            <span class="chip">Q-Statistics</span>
-            <span class="chip">GraspNet-1B</span>
-            <span class="chip">PyTorch</span>
+          <div class="proj-metrics-row">
+            <div class="pm-item"><div class="pm-val red">13%</div><div class="pm-label">Fewer grasp failures</div></div>
+            <div class="pm-item"><div class="pm-val">+7%</div><div class="pm-label">Over individual models</div></div>
           </div>
         </div>
-        <div class="proj-metrics">
-          <div class="metric-item">
-            <div class="metric-val red">13%</div>
-            <div class="metric-label">Fewer grasp failures</div>
-          </div>
-          <div class="metric-item">
-            <div class="metric-val">+7%</div>
-            <div class="metric-label">Over individual models</div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Project 3 -->
-      <div class="project-row">
-        <div class="proj-meta">
-          <span class="proj-tag"><span class="proj-dot green"></span>Physical AI</span>
-          <span class="proj-tag">2026 – Present</span>
-        </div>
-        <div class="proj-body">
+        <div class="project-card">
+          <div class="proj-header">
+            <div class="proj-badges">
+              <span class="badge green">Physical AI · Active</span>
+              <span class="badge">Yale OpenHand</span>
+              <span class="badge">VLA</span>
+              <span class="badge">6 DoF Grasping</span>
+              <span class="badge">Dexterous Picking</span>
+            </div>
+            <span class="proj-year">2026 – Present</span>
+          </div>
           <h3 class="proj-title">Vision-Language-Action Robotic Grasping</h3>
-          <p class="proj-desc">Proposal-conditioned VLA framework for cluttered tabletop grasping with Yale OpenHand gripper. RGB-D Mask R-CNN generates object proposals; confidence-based skill selection chooses the best planner across known, unknown, and occluded multi-object scenarios. Deployed end-to-end on real hardware.</p>
+          <p class="proj-desc">Proposal-conditioned VLA framework for cluttered tabletop grasping. RGB-D Mask R-CNN generates object proposals; confidence-based skill selection chooses the best planner across known, unknown, and occluded multi-object scenarios. Deployed end-to-end on Yale OpenHand gripper.</p>
           <div class="proj-media">
             <img src="assets/vla.png" alt="VLA Grasping">
           </div>
-          <div class="proj-chips">
-            <span class="chip">VLA</span>
-            <span class="chip">Mask R-CNN</span>
-            <span class="chip">RGB-D</span>
-            <span class="chip">Skill Selection</span>
-            <span class="chip">Yale OpenHand</span>
-            <span class="chip">ROS2</span>
+          <div class="proj-metrics-row">
+            <div class="pm-item"><div class="pm-val green">92%</div><div class="pm-label">Grasp success in clutter</div></div>
           </div>
         </div>
-        <div class="proj-metrics">
-          <div class="metric-item">
-            <div class="metric-val green">92%</div>
-            <div class="metric-label">Grasp success in clutter</div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Project 4 -->
-      <div class="project-row">
-        <div class="proj-meta">
-          <span class="proj-tag"><span class="proj-dot"></span>Industry · CogniAux</span>
-          <span class="proj-tag">2024</span>
-        </div>
-        <div class="proj-body">
+        <div class="project-card">
+          <div class="proj-header">
+            <div class="proj-badges">
+              <span class="badge">Industry · CogniAux</span>
+              <span class="badge">VLA</span>
+              <span class="badge">Sensor Fusion</span>
+              <span class="badge">Optical Flow</span>
+              <span class="badge">Computer Vision</span>
+            </div>
+            <span class="proj-year">2024</span>
+          </div>
           <h3 class="proj-title">Multimodal Human Activity Tracking</h3>
-          <p class="proj-desc">Real-time fusion of RGB-D, EEG, and audio for human activity tracking and attention estimation. Led a three-person team to full deployment: OpenPose, temporal attention, GMM, and optical flow as a full-stack GUI — not just a research prototype.</p>
+          <p class="proj-desc">Real-time fusion of RGB-D, EEG, and audio for human activity tracking and attention estimation. Led a three-person team to full deployment — OpenPose, temporal attention, GMM, and optical flow as a full-stack GUI, not just a research prototype.</p>
           <div class="proj-media">
             <img src="assets/output_video.gif" alt="CogniAux demo">
           </div>
-          <div class="proj-chips">
-            <span class="chip">Sensor Fusion</span>
-            <span class="chip">OpenPose</span>
-            <span class="chip">Vision-Language</span>
-            <span class="chip">GMM</span>
-            <span class="chip">Optical Flow</span>
-            <span class="chip">RGB-D + EEG</span>
-          </div>
-          <!-- <a class="proj-link" href="https://venk221.github.io/Machine_vision_engineer.html" target="_blank">View project page ↗</a> -->
-        </div>
-        <div class="proj-metrics">
-          <div class="metric-item">
-            <div class="metric-val red">+17%</div>
-            <div class="metric-label">mAP improvement</div>
-          </div>
-          <div class="metric-item">
-            <div class="metric-val">43%</div>
-            <div class="metric-label">Error rate ↓</div>
+          <div class="proj-metrics-row">
+            <div class="pm-item"><div class="pm-val red">+17%</div><div class="pm-label">mAP improvement</div></div>
+            <div class="pm-item"><div class="pm-val">43%</div><div class="pm-label">Error rate ↓</div></div>
+            <div class="pm-item"><div class="pm-val">+8%</div><div class="pm-label">Attention estimation</div></div>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
-  </section>
+  </div>
 
-  <!-- ══════════ COURSEWORK / SIDE PROJECTS ══════════ -->
-  <section id="coursework">
-    <div class="wrap">
-      <div class="sec-header">
-        <div class="sec-num">03 / Coursework & Side Projects</div>
-        <h2 class="sec-title">More<br><em>Projects</em></h2>
+  <!-- ══════════ PUBLICATIONS ══════════ -->
+  <div class="section" id="publications">
+    <div class="col">
+      <!-- <div class="section-label">03 / Publications</div> -->
+      <h2 class="section-title">Research & <em>publications</em></h2>
+      <div class="pub-list">
+
+        <div class="pub-card">
+          <div class="pub-status">
+            <span class="pub-badge review">Under Review</span>
+            <span class="pub-year">IROS 2026</span>
+          </div>
+          <div>
+            <div class="pub-title">Feature-Level Mixture-of-Experts for Robust Robotic Grasp Detection</div>
+            <div class="pub-venue">IEEE IROS 2026 · Under review</div>
+            <div class="pub-authors">
+              <strong>Venkatesh Mullur</strong>,
+              <a href="https://vinayakkapoor12.wixsite.com/vinayakapoor" target="_blank">Vinayak Kapoor</a>,
+              <a href="https://robotics.wpi.edu/people/berk-calli/" target="_blank">Prof. Berk Calli</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-status">
+            <span class="pub-badge review">Under Review</span>
+            <span class="pub-year">IJRR 2025</span>
+          </div>
+          <div>
+            <div class="pub-title">Utilizing Inpainting for Keypoint Detection for Vision-Based Control of Robotic Manipulators</div>
+            <div class="pub-venue">IJRR 2025 · Under review</div>
+            <div class="pub-authors">
+              <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=6eaRyWwAAAAJ" target="_blank">Sreejani Chatterjee</a>,
+              <strong>Venkatesh Mullur</strong>,
+              <a href="https://scholar.google.com/citations?user=vLOu8OQAAAAJ&hl=en" target="_blank">Abhinav Gandhi</a>,
+              <a href="https://robotics.wpi.edu/people/berk-calli/" target="_blank">Prof. Berk Calli</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-status">
+            <span class="pub-badge published">Presented</span>
+            <span class="pub-year">CASE 2025</span>
+          </div>
+          <div>
+            <div class="pub-title">Novel Sweeping Methods for Robotic Rearrangement of Object Piles</div>
+            <div class="pub-venue">IEEE CASE 2025 · Los Angeles · August 2025 · Presenter</div>
+            <div class="pub-authors">
+              Abhijeet Sanjay Rathi, Filip Radil, Hrishikesh Dhairyasheel Pawar,
+              <a href="https://robotics.wpi.edu/people/berk-calli/" target="_blank">Prof. Berk Calli</a>
+            </div>
+          </div>
+        </div>
+
       </div>
-      <div class="sec-proj-intro">
-        <div></div>
-        <p>Coursework and independent projects spanning 3D vision, robotics systems, and deep learning.</p>
-      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ COURSEWORK ══════════ -->
+  <div class="section" id="coursework">
+    <div class="col">
+      <!-- <div class="section-label">04 / Coursework & Side Projects</div> -->
+      <h2 class="section-title">More <em>projects</em></h2>
+      <p class="mini-intro">Coursework and independent projects spanning 3D vision, SLAM, and robotics systems.</p>
       <div class="mini-grid">
 
         <div class="mini-card">
-          <div class="mini-card-media">
-            <img src="assets/nerf.png" alt="NeRF">
-          </div>
+          <div class="mini-media"><img src="assets/nerf.png" alt="NeRF"></div>
           <span class="mini-tag">3D Vision</span>
           <h4 class="mini-title">Neural Radiance Fields</h4>
-          <p class="mini-desc">Enhanced NeRF with improved rendering and sampling strategies for photorealistic novel view synthesis.</p>
-          <div class="mini-chips">
-            <span class="mini-chip">PyTorch</span><span class="mini-chip">NeRF</span><span class="mini-chip">3D Rendering</span>
-          </div>
-          <a class="mini-link" href="https://github.com/venk221/Neural-Radiance-Fields-NeRF" target="_blank">View ↗</a>
+          <p class="mini-desc">Enhanced NeRF with improved rendering and sampling for photorealistic novel view synthesis.</p>
+          <div class="mini-chips"><span class="mini-chip">PyTorch</span><span class="mini-chip">NeRF</span></div>
+          <a class="mini-link" href="https://github.com/venk221/Neural-Radiance-Fields-NeRF" target="_blank">GitHub ↗</a>
         </div>
 
         <div class="mini-card">
-          <div class="mini-card-media">
-            <img src="assets/sfm.png" alt="SfM">
-          </div>
+          <div class="mini-media"><img src="assets/sfm.png" alt="SfM"></div>
           <span class="mini-tag">3D Reconstruction</span>
           <h4 class="mini-title">Structure from Motion</h4>
-          <p class="mini-desc">Full SfM pipeline with epipolar geometry and bundle adjustment for monocular depth estimation.</p>
-          <div class="mini-chips">
-            <span class="mini-chip">OpenCV</span><span class="mini-chip">Epipolar Geometry</span><span class="mini-chip">Bundle Adjustment</span>
-          </div>
-          <a class="mini-link" href="https://github.com/venk221/Structure-from-Motion-NeRF" target="_blank">View ↗</a>
+          <p class="mini-desc">Full SfM pipeline with epipolar geometry and bundle adjustment for monocular depth.</p>
+          <div class="mini-chips"><span class="mini-chip">OpenCV</span><span class="mini-chip">Bundle Adjustment</span></div>
+          <a class="mini-link" href="https://github.com/venk221/Structure-from-Motion-NeRF" target="_blank">GitHub ↗</a>
         </div>
 
         <div class="mini-card">
-          <div class="mini-card-media">
-            <video src="assets/fused_web.mp4" autoplay muted loop playsinline></video>
-          </div>
+          <div class="mini-media"><video src="assets/fused_web.mp4" autoplay muted loop playsinline></video></div>
           <span class="mini-tag">3D Perception</span>
           <h4 class="mini-title">Point Cloud Semantic Segmentation</h4>
-          <p class="mini-desc">3.2% IoU improvement via voxel grid filtering and bird's-eye-view representation with PointNet++.</p>
-          <div class="mini-chips">
-            <span class="mini-chip">PointNet++</span><span class="mini-chip">PCL</span><span class="mini-chip">Open3D</span>
-          </div>
-          <a class="mini-link" href="https://github.com/venk221/Point-Cloud_Semantic-Segmentation-Point-Painting" target="_blank">View ↗</a>
+          <p class="mini-desc">3.2% IoU improvement via voxel grid filtering and bird's-eye-view with PointNet++.</p>
+          <div class="mini-chips"><span class="mini-chip">PointNet++</span><span class="mini-chip">PCL</span></div>
+          <a class="mini-link" href="https://github.com/venk221/Point-Cloud_Semantic-Segmentation-Point-Painting" target="_blank">GitHub ↗</a>
         </div>
 
         <div class="mini-card">
-          <div class="mini-card-media">
-            <img src="assets/VIO.gif" alt="VIO">
-          </div>
+          <div class="mini-media"><img src="assets/VIO.gif" alt="VIO"></div>
           <span class="mini-tag">SLAM & Odometry</span>
           <h4 class="mini-title">Visual-Inertial Odometry (MSCKF)</h4>
-          <p class="mini-desc">VIO at 29 FPS via stereo camera and IMU fusion for real-time 6-DOF pose estimation.</p>
-          <div class="mini-chips">
-            <span class="mini-chip">MSCKF</span><span class="mini-chip">IMU Fusion</span><span class="mini-chip">ROS</span>
-          </div>
-          <a class="mini-link" href="https://github.com/venk221/Visual-Inertial-Odometry-using-MSCKF" target="_blank">View ↗</a>
+          <p class="mini-desc">VIO at 29 FPS via stereo camera + IMU fusion for real-time 6-DOF pose estimation.</p>
+          <div class="mini-chips"><span class="mini-chip">MSCKF</span><span class="mini-chip">IMU Fusion</span></div>
+          <a class="mini-link" href="https://github.com/venk221/Visual-Inertial-Odometry-using-MSCKF" target="_blank">GitHub ↗</a>
         </div>
 
         <div class="mini-card">
-          <div class="mini-card-media">
-            <img src="assets/motion_planning.gif" alt="Motion Planning">
-          </div>
+          <div class="mini-media"><img src="assets/motion_planning.gif" alt="Motion Planning"></div>
           <span class="mini-tag">Robotics</span>
           <h4 class="mini-title">Motion Planning in Adversarial Environments</h4>
-          <p class="mini-desc">RRT-APF hybrid planner for robot navigation in dynamic environments with moving obstacles.</p>
-          <div class="mini-chips">
-            <span class="mini-chip">RRT</span><span class="mini-chip">APF</span><span class="mini-chip">Motion Planning</span>
-          </div>
-          <a class="mini-link" href="https://github.com/venk221/Motion-Planning-of-Robots-in-Adversarial-Environments." target="_blank">View ↗</a>
+          <p class="mini-desc">RRT-APF hybrid planner for dynamic environments with moving obstacles.</p>
+          <div class="mini-chips"><span class="mini-chip">RRT</span><span class="mini-chip">APF</span></div>
+          <a class="mini-link" href="https://github.com/venk221/Motion-Planning-of-Robots-in-Adversarial-Environments." target="_blank">GitHub ↗</a>
         </div>
 
         <div class="mini-card">
-          <div class="mini-card-media">
-            <img src="assets/calib.png" alt="Calibration">
-          </div>
+          <div class="mini-media"><img src="assets/calib.png" alt="Calibration"></div>
           <span class="mini-tag">Computer Vision</span>
           <h4 class="mini-title">Automatic Camera Calibration</h4>
-          <p class="mini-desc">Automated multi-view calibration pipeline with robust homography estimation and distortion correction.</p>
-          <div class="mini-chips">
-            <span class="mini-chip">OpenCV</span><span class="mini-chip">Homography</span><span class="mini-chip">Camera Models</span>
-          </div>
-          <a class="mini-link" href="https://github.com/venk221/Robust-Automatic-Camera-Calibration" target="_blank">View ↗</a>
+          <p class="mini-desc">Multi-view calibration with robust homography estimation and distortion correction.</p>
+          <div class="mini-chips"><span class="mini-chip">OpenCV</span><span class="mini-chip">Homography</span></div>
+          <a class="mini-link" href="https://github.com/venk221/Robust-Automatic-Camera-Calibration" target="_blank">GitHub ↗</a>
         </div>
 
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- ══════════ SKILLS ══════════ -->
-  <section id="skills">
-    <div class="wrap">
-      <div class="sec-header">
-        <div class="sec-num">04 / Skills</div>
-        <h2 class="sec-title">Technical<br><em>Depth</em></h2>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-col"></div>
+  <div class="section" id="skills">
+    <div class="col">
+      <!-- <div class="section-label">05 / Skills</div> -->
+      <h2 class="section-title">Technical <em>depth</em></h2>
+      <div class="skills-cols">
         <div class="skill-col">
-          <div class="skill-heading">Robotics & Systems</div>
-          <ul class="skill-items">
-            <li>ROS1 / ROS2</li>
-            <li>MoveIt! · RViz</li>
-            <li>Gazebo · Isaac Sim</li>
-            <li>Franka Panda</li>
-            <li>Yale OpenHand</li>
-            <li>Visual Servoing (IBVS)</li>
-            <li>Visual SLAM</li>
+          <div class="skill-heading">Robotics</div>
+          <ul class="skill-list">
+            <li>ROS1 / ROS2</li><li>MoveIt! · RViz</li>
+            <li>Gazebo · Isaac Sim</li><li>Franka Panda</li>
+            <li>Yale OpenHand</li><li>IBVS Control</li><li>Visual SLAM</li>
           </ul>
         </div>
         <div class="skill-col">
-          <div class="skill-heading">Perception & Vision</div>
-          <ul class="skill-items">
-            <li>RGB-D · Point Clouds</li>
-            <li>Keypoint Detection</li>
-            <li>Pose Estimation</li>
-            <li>Occlusion Handling</li>
-            <li>OpenCV · Open3D · PCL</li>
-            <li>Epipolar Geometry</li>
-            <li>Sensor Fusion</li>
+          <div class="skill-heading">Perception</div>
+          <ul class="skill-list">
+            <li>RGB-D · Point Clouds</li><li>Keypoint Detection</li>
+            <li>Pose Estimation</li><li>Occlusion Handling</li>
+            <li>OpenCV · Open3D</li><li>Epipolar Geometry</li><li>Sensor Fusion</li>
           </ul>
         </div>
         <div class="skill-col">
           <div class="skill-heading">Deep Learning</div>
-          <ul class="skill-items">
-            <li>PyTorch · TensorFlow</li>
-            <li>GANs · GNNs</li>
-            <li>Vision-Language Models</li>
-            <li>Mixture-of-Experts</li>
-            <li>Mask R-CNN</li>
-            <li>CUDA · HuggingFace</li>
-            <li>Few-shot Learning</li>
+          <ul class="skill-list">
+            <li>PyTorch · TensorFlow</li><li>GANs · GNNs</li>
+            <li>Vision-Language Models</li><li>Mixture-of-Experts</li>
+            <li>Mask R-CNN</li><li>CUDA · HuggingFace</li><li>Few-shot Learning</li>
           </ul>
         </div>
         <div class="skill-col">
           <div class="skill-heading">Engineering</div>
-          <ul class="skill-items">
-            <li>Python · C/C++</li>
-            <li>Docker · AWS</li>
-            <li>Git · CI/CD</li>
-            <li>Bash · SQL · MATLAB</li>
-            <li>HPC Clusters</li>
-            <li>Lidar / Radar</li>
-            <li>Kubernetes</li>
+          <ul class="skill-list">
+            <li>Python · C/C++</li><li>Docker · AWS</li>
+            <li>Git · CI/CD</li><li>Bash · MATLAB</li>
+            <li>HPC Clusters</li><li>Lidar / Radar</li><li>Kubernetes</li>
           </ul>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- ══════════ PUBLICATIONS ══════════ -->
-  <section id="research">
-    <div class="wrap">
-      <div class="sec-header">
-        <div class="sec-num">05 / Research</div>
-        <h2 class="sec-title">Publications<br>& <em>Research</em></h2>
-      </div>
-      <div>
-        <div class="pub-row">
-          <div><span class="pub-badge review">Under Review</span></div>
-          <div>
-            <h3 class="pub-title">Feature-Level Mixture-of-Experts for Robust Robotic Grasp Detection</h3>
-            <div class="pub-authors">
-              <a><strong>Venkatesh Mullur</strong></a>, 
-              <a href="https://vinayakkapoor12.wixsite.com/vinayakapoor">Vinayak Kapoor</a>, 
-              <a href="https://robotics.wpi.edu/people/berk-calli/">Prof. Berk Calli</a>
-            </div>
-            <div class="pub-venue">IEEE IROS 2026 · Under review</div>
-          </div>
-          <div class="pub-year">26</div>
-        </div>
-        <div class="pub-row">
-          <div><span class="pub-badge review">Under Review</span></div>
-          <div>
-            <h3 class="pub-title">Utilizing Inpainting for Keypoint Detection for Vision-Based Control of Robotic Manipulators</h3>
-            <div class="pub-authors">
-              <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=6eaRyWwAAAAJ">Sreejani Chatterjee</a>,
-              <a><strong>Venkatesh Mullur</strong></a>, 
-              <a href="https://scholar.google.com/citations?user=vLOu8OQAAAAJ&hl=en">Abhinav Gandhi</a>, 
-              <a href="https://robotics.wpi.edu/people/berk-calli/">Prof. Berk Calli</a>
-            </div>
-            <div class="pub-venue">IJRR 2025 · Under review</div>
-          </div>
-          <div class="pub-year">25</div>
-        </div>
-        <div class="pub-row">
-          <div><span class="pub-badge published">Presented</span></div>
-          <div>
-            <h3 class="pub-title">Novel Sweeping Methods for Robotic Rearrangement of Object Piles</h3>
-            <div class="pub-authors">Abhijeet Sanjay Rathi, Filip Radil, Hrishikesh Dhairyasheel Pawar, Prof. Berk Calli  </div>
-            <div class="pub-venue">IEEE CASE 2025 · Los Angeles · August 2025 · Presenter</div>
-          </div>
-          <div class="pub-year">25</div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
 
   <!-- ══════════ CONTACT ══════════ -->
-  <section class="contact-section" id="contact">
-    <div class="contact-inner">
-      <div class="contact-left">
-        <h2>Let's build robots that <em>survive</em> the real world.</h2>
-        <p>Actively seeking roles in robotic manipulation, robot perception, and deep learning for physical AI. If your system needs to work in clutter, occlusion, and real deployment conditions — let's talk.</p>
-      </div>
-      <div class="contact-right">
-        <div class="contact-links">
-          <a class="contact-link" href="mailto:vmullur@wpi.edu">
-            <span>vmullur@wpi.edu</span>
-            <span class="c-arrow">↗</span>
-          </a>
-          <a class="contact-link" href="https://www.linkedin.com/in/vmullur/" target="_blank" rel="noreferrer">
-            <span>LinkedIn — @vmullur</span>
-            <span class="c-arrow">↗</span>
-          </a>
-          <a class="contact-link" href="https://github.com/venk221" target="_blank" rel="noreferrer">
-            <span>GitHub — venk221</span>
-            <span class="c-arrow">↗</span>
-          </a>
-          <a class="contact-link" href="tel:+15083042824">
-            <span>+1 (508) 304-2824</span>
-            <span class="c-arrow">↗</span>
-          </a>
+  <div class="section" id="contact" style="border-bottom:none;">
+    <div class="col">
+      <!-- <div class="section-label">06 / Contact</div> -->
+      <div class="contact-wrap">
+        <div class="contact-left">
+          <h2>Let's build robots that <em>survive</em> the real world.</h2>
+          <p>Looking for research and engineering internship roles in robot perception, computer vision, deep learning, and physical AI. If your team cares about what happens when the system meets the real world — let's talk.</p>
         </div>
-        <div class="contact-bottom">
-          Worcester, MA · Open to relocation · PhD exp. 2028
+        <div class="contact-right">
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:vmullur@wpi.edu">
+              <span>vmullur@wpi.edu</span><span class="c-arr">↗</span>
+            </a>
+            <a class="contact-link" href="https://www.linkedin.com/in/vmullur/" target="_blank">
+              <span>LinkedIn — @vmullur</span><span class="c-arr">↗</span>
+            </a>
+            <a class="contact-link" href="https://github.com/venk221" target="_blank">
+              <span>GitHub — venk221</span><span class="c-arr">↗</span>
+            </a>
+            <a class="contact-link" href="tel:+15083042824">
+              <span>+1 (508) 304-2824</span><span class="c-arr">↗</span>
+            </a>
+          </div>
+          <div class="contact-note">Worcester, MA · Open to relocation · PhD exp. 2028</div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
   <footer>
-    <span>Venkatesh Mullur — Robotics Researcher</span>
-    <span>WPI · MER Lab · 2026</span>
+    <div class="footer-inner">
+      <span>Venkatesh Mullur — Robotics Researcher</span>
+      <span>WPI · MER Lab · 2026</span>
+    </div>
   </footer>
 
 </body>
